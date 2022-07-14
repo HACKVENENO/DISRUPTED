@@ -15,9 +15,13 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 
 Integrantes del equipo:
+
 Vanesa Barrios.
+
 Guillermo Pagani.
+
 Jimmy Robelto.
+
 Candelaria Sanchez.
 
 
