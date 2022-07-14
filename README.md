@@ -1,7 +1,8 @@
 # DISRUPTED MARKETPLACE
 
 Productos y servicios:
-Venta de indumentaria.
+
+👚 Venta de indumentaria 👕
 
 Público:
 
