@@ -18,7 +18,7 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 😊 Vanesa Barrios.
 
-😃 Guillermo Pagani.
+😃 Guillermo Pagani: Me encuentro iniciándome en el mundo de la programación luego de más de 20 años trabajando en el mundo de los servicios financieros.
 
 😉 Jimmy Robelto.
 
