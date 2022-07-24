@@ -22,7 +22,7 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 😉 Jimmy Robelto.
 
-😀 Candelaria Sanchez.
+😀 Candelaria Sanchez: Es el segundo curso de sistemas que hago luego de abandonar mi carrera de Diseño de Imagen y Sonido tras 4 años de estudio, ya que me desmotivó la pandemia, y encontré muy divertida la programación. Mientras tanto trabajo de Cabify por Buenos Aires 🤟🏼
 
 
 ### Referencias:
