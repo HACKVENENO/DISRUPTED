@@ -16,7 +16,7 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 ### Integrantes del equipo:
 
-😊 Vanesa Barrios.
+😊 Vanesa Barrios: Inicié el curso ya que quiero cambiar mi rumbo laboral después de muchos años dedicándome al comercio exterior.
 
 😃 Guillermo Pagani: Me encuentro iniciándome en el mundo de la programación luego de más de 20 años trabajando en el mundo de los servicios financieros.
 
