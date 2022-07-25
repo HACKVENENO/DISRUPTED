@@ -20,7 +20,7 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 😃 Guillermo Pagani: Me encuentro iniciándome en el mundo de la programación luego de más de 20 años trabajando en el mundo de los servicios financieros.
 
-😉 Jimmy Robelto.
+😉 Jimmy Robelto: Emprendedor, Avicultor y me gusta retarme día a día. veremos si logramos conquistar este nuevo camino que he tomado.
 
 😀 Candelaria Sanchez: Es el segundo curso de sistemas que hago luego de abandonar mi carrera de Diseño de Imagen y Sonido tras 4 años de estudio, ya que me desmotivó la pandemia, y encontré muy divertida la programación. Mientras tanto trabajo de Cabify por Buenos Aires 🤟🏼
 
