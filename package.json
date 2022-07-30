@@ -1,0 +1,24 @@
+{
+  "name": "grupo9_disrupted",
+  "version": "1.0.0",
+  "description": "👚 Venta de indumentaria 👕",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackVeneno/Grupo9_DISRUPTED.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackVeneno/Grupo9_DISRUPTED/issues"
+  },
+  "homepage": "https://github.com/HackVeneno/Grupo9_DISRUPTED#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
