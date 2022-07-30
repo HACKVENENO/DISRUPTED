@@ -37,3 +37,6 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 5.https://www.shein.com/
 
+### Tablero trello:
+
+https://trello.com/b/EVL3nKrT/disrupted
