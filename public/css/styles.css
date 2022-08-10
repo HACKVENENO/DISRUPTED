@@ -8,27 +8,50 @@ body{
     font-family: 'Montserrat', sans-serif;    
 }
 
-.mainHeader {
+.main-header{
+    display: flex;
+    width: 100vw;
     padding: 20px;
 }
 
-.logo {
-    width: 10px;
-    height: 10px;
+.main-header-top-bar{
+    display: flex;
+    flex: 1;
+    height: 8vh;
+    justify-content: flex-start;
+    align-items: center;    
 }
 
-.principal{
-    width: 90%;
+.nav-right{
     display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    margin: auto;        
-    justify-content: center;
-    padding-bottom: 10px;
+    flex: 1;
+    height: 8vh;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo{
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+.fa-search{
+    font-size: 20px;
+}
+
+.burger-menu{
+    font-size: 20px;
+    padding-left: 10px;
 }
 
 .section-articles{
-    width: 40%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 25px;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 .section-articles img{
