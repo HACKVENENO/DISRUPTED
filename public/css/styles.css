@@ -16,3 +16,34 @@ body{
     width: 10px;
     height: 10px;
 }
+
+.principal{
+    width: 90%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin: auto;        
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.section-articles{
+    width: 40%;
+}
+
+.section-articles img{
+    width: 100%;
+}
+
+.container-video{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.legend{
+    text-align: center;
+    font-size: 15px;
+}
