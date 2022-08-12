@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family: 'Montserrat', sans-serif;        
+    font-family: 'Montserrat', sans-serif;          
 }
 
 .main-header{
@@ -57,6 +57,14 @@ body{
 
 .section-articles img{
     width: 100%;
+}
+
+.description{
+    color: #ffffff;
+    position: relative;
+    top: -27px;    
+    font-size: 0.9em;
+    left: 6%;    
 }
 
 video{
