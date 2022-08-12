@@ -1,0 +1,146 @@
+body footer .prefooter .redes-sociales .redes{
+    width: 15vw;
+    height: 20vw;
+    z-index: 100;
+    position: relative;
+}
+
+body footer .prefooter .redes-sociales .logos{
+    width: 7vw;
+    height: 7vw;
+    z-index: 200;
+    text-align: center;
+    justify-content: center;
+    right: 25%;
+    top: 25%;
+    position: absolute;
+    opacity: 30%;
+    transition: all 450ms;
+}
+
+body footer .prefooter .redes-sociales .logos:hover{
+    opacity: 100%;
+    width: 10vw;
+    height: 10vw;
+}
+
+.redes-sociales{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 2vw;
+    margin-left: 0.5vw;
+}
+
+.facebook, .instagram, .tiktok, .youtube{
+    display: flex;
+    position: relative;
+}
+
+footer .prefooter div img {
+    border-radius: 10%;
+}
+
+.prefooter{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+body footer .prefooter .newsletter h2{
+    font-size: 4vw;
+}
+body footer .prefooter .newsletter h2{
+    font-size: 4vw;
+}
+
+body footer .prefooter h2{
+    font-size: 4vw;
+}
+body footer .prefooter h3{
+    font-size: 3vw;
+}
+
+body footer .prefooter label,
+body footer .prefooter input{
+    font-size: 2vw;
+}
+
+.footerInfo{
+    background-color: black;
+    color : white;
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+.footerInfo div{
+    background-color: black;
+    justify-content: space-around;
+    flex-direction: row;    
+    align-items : flex-start;
+}
+
+.footerInfo i{
+    background-color: black;
+    font-size: 2em;
+    margin: 10px;
+}
+
+.footerInfo p, .footerInfo h4{
+    background-color: black;
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.footerPie{
+    background-color: grey;
+    color : black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items : flex-start;
+    margin: 10px;
+}
+
+.footerPie nav{
+    background-color: grey;
+    padding: 10px;
+}
+
+.footerPie nav .cuenta{
+    background-color: grey;
+    padding-right: 10px;
+}
+
+.footerPie a{
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footerPie ul, li, a, .footerPie h5{
+    list-style: none;
+    color: black;
+    background-color: grey;
+}
+
+footer div .copyright{
+    text-align: right;
+    font-size: 10px;
+    margin: 10px;
+}
+
+@media (min-width: 460px){
+    .footerInfo{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footerPie{
+        justify-content: space-around;
+    }  
+} 
