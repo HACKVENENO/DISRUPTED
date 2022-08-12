@@ -8,6 +8,10 @@ body{
     font-family: 'Montserrat', sans-serif;          
 }
 
+a {
+    text-decoration: none;
+  }
+
 .main-header{
     display: flex;
     width: 100vw;
@@ -46,25 +50,35 @@ body{
 }
 
 .section-articles{
-    width: 90%;
-    margin: auto;
-    display: flex;
+    display: flex;    
+    padding: 15px;
+    width: 80%;
+    margin: auto;    
     flex-wrap: nowrap;
     gap: 15px;
-    justify-content: center;
-    padding-top: 10px;
+    justify-content: center;    
 }
 
-.section-articles img{
+.articles-card img{
     width: 100%;
 }
 
-.description{
-    color: #ffffff;
-    position: relative;
-    top: -27px;    
-    font-size: 0.9em;
-    left: 6%;    
+.articles-card{
+    position: relative;        
+}
+
+.description-card{
+    position: absolute;
+    bottom: 4px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+.description-card h5,
+.description-card p{
+    width: 100%;
+    object-fit: cover;
 }
 
 video{
@@ -95,5 +109,13 @@ video{
     width: 150px;
     object-fit: cover;
 }
+
+@media (min-width: 1024px){
+    .card img{
+        width: 327px;
+        object-fit: cover;
+    }    
+}
+
 
 
