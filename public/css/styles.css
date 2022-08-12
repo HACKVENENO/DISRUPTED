@@ -77,6 +77,23 @@ video{
 .legend{
     text-align: center;
     font-size: 15px;
+    padding-top: 10px;
 
 }
+
+.slider{
+    display: flex;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.card{
+    margin-right: 10px;    
+}
+
+.card img{
+    width: 150px;
+    object-fit: cover;
+}
+
 
