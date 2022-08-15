@@ -1,0 +1,119 @@
+.login{
+    width: 93%;
+    margin: 25px auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    font-size: 3vw;
+    box-shadow: 0px 0px 5px rgb(100 100 100);
+}
+
+.login form{
+    width: 80%;
+}
+
+.login h2{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.login .datos div{
+    padding-top: 10px;
+}
+
+.login .datos label{
+    line-height: 2;
+    font-weight: bold;
+}
+
+.login .datos input{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 5px;
+}
+
+/*.login .recordar{
+    font-size: 10px;
+    font-weight:lighter;
+    margin-top: 10px;
+    padding-left: 5px;
+}
+
+.login .recordar input{
+    width: 11px;
+}*/
+
+.login .olvidoContraseña{
+    font-size: 10px;
+    font-weight:lighter;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.login .olvidoContraseña a{
+    text-decoration: none;
+    color: black;
+}
+
+.login .ingresar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.login .botonIngresar{
+    padding: 10px;
+    color: #fff;
+    background-color: grey;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 15px 0px 5px;
+    border-width: 0px;
+    transition: background 0.5s;
+}
+
+.login .botonIngresar a{
+    text-decoration: none;
+    color: white;
+}
+
+.login .botonIngresar:hover{
+    background: black;
+}
+
+.login .registrate{
+    background-color: #f2f2f2;
+    font-size: 14px;
+    font-weight:lighter;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.login .registrate a{
+    color: black;
+}
+
+@media (min-width: 460px){
+    .login{
+        font-size: 1.7vw;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1080px){
+    .login{
+        font-size: 1.3vw;
+        width: 30%;
+    }
+}

@@ -70,22 +70,26 @@ body footer .prefooter input{
 .footerInfo{
     background-color: black;
     color : white;
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     text-align: center;
+    font-weight:lighter;
     margin: 10px;
-
+    margin: 10px;
 }
 
 .footerInfo div{
     background-color: black;
     justify-content: space-around;
-    flex-direction: row;    
-    align-items : flex-start;
+    flex-direction: row;
+    align-items : center;
+    width: 50%;
+    font-size: 2.5vw;
 }
 
 .footerInfo i{
     background-color: black;
-    font-size: 2em;
     margin: 10px;
 }
 
@@ -104,11 +108,17 @@ body footer .prefooter input{
     flex-direction: row;
     align-items : flex-start;
     margin: 10px;
+    
 }
 
 .footerPie nav{
     background-color: grey;
     padding: 10px;
+    list-style: none;
+    color: black;
+    background-color: grey;
+    text-decoration: none;
+    font-size: 2.5vw;
 }
 
 .footerPie nav .cuenta{
@@ -116,22 +126,21 @@ body footer .prefooter input{
     padding-right: 10px;
 }
 
-.footerPie a{
-    text-decoration: none;
-    font-size: 12px;
-}
-
-.footerPie ul, li, a, .footerPie h5{
+.footerPie ul, li, .footerPie a, .footerPie h5{
     list-style: none;
     color: black;
     background-color: grey;
+    text-decoration: none;
 }
 
 footer div .copyright{
     text-align: right;
     font-size: 10px;
     margin: 10px;
+    font-size: 1vw;
 }
+
+/* MEDIA */
 
 @media (min-width: 460px){
     .footerInfo{
@@ -139,8 +148,49 @@ footer div .copyright{
         flex-wrap: wrap;
         justify-content: space-around;
     }
+    
+    .footerInfo div{
+        width: 50%;
+        font-size: 1.7vw;
+    }
+    
+    .footerPie{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footerPie nav{
+        font-size: 1.5vw;
+    }
+
+}
+
+@media (min-width: 1080px){
+     .footerInfo{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .footerInfo div{
+        width: 25%;
+    }
+    
+    .footerInfo h4, .footerInfo p{
+        font-size: 1.1vw;
+    }
 
     .footerPie{
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
-    }  
-} 
+    }
+
+    .footerPie nav{
+        font-size: 0.8vw;
+    }
+
+}        
+
