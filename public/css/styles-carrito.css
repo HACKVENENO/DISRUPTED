@@ -1,0 +1,151 @@
+/* *{
+    /*outline: 1px solid red; /* todo lo que aparece en rojo no va a ir en el proyecto, es solo para referencia
+}*/
+
+body .titulo{
+    width: 93%;
+    margin: 20px auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.carrito{
+    width: 93%;
+    margin: 0px auto 10px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    font-size: 3vw;
+    /*border-radius: 5px;*/
+    /*box-shadow: 0px 0px 5px rgb(100 100 100);*/
+}
+
+.contenedorProductos{
+    outline: 1px solid black;
+    padding: 10px;
+    width: 100%;
+}
+
+.carrito .imagen{
+    width: 100%;
+    padding: 5px;
+}
+
+.contenedorProductos .infoProducto{
+    padding: 5px;
+}
+
+.contenedorProductos div{
+    padding: 5px 0px;
+}
+
+.contenedorProductos .cantidadProducto select{
+    width: 12%;
+}
+
+.contenedorProductos .cantidadProducto option{
+    width: 12%;
+    font-size: 12px;
+}
+
+.contenedorProductos .eliminar{
+    text-decoration: none;
+    color: black; 
+    padding: 5px;
+    font-size: 15px;
+}
+
+.contenedorResumen{
+    outline: 1px solid black;
+    padding: 10px;
+    width: 100%;
+
+}
+
+.contenedorResumen div{
+    padding: 5px 0px;
+}
+
+.contenedorResumen .suma{
+    padding: 5px;
+}
+
+.carrito .comprar, .carrito .seguirComprando{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.carrito .botonComprar, .carrito .botonSeguirComprando{
+    padding: 10px;
+    width: 80%;
+    background-color: grey;
+    border-radius: 4px;
+    border-width: 1px; 
+    transition: background 0.5s;
+}
+
+.carrito .botonComprar a, .carrito .botonSeguirComprando a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.carrito .botonComprar:hover, .carrito .botonSeguirComprando:hover{
+    background: black;
+}
+
+@media (min-width: 460px){
+    .carrito .imagen{
+        width: 75%;
+    }
+
+    .carrito{
+        width: 98%;
+        margin: 20px auto;
+        padding: 10px;        
+        font-size: 2vw;
+        background-color: #f2f2f2;
+    }
+
+    .carrito .contenedorProductos{
+        width: 40%;
+    }
+
+    .carrito .contenedorResumen{
+        width: 40%;
+    }
+
+    .carrito .botonComprar, .carrito .botonSeguirComprando{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1080px){
+    .carrito .imagen{
+        width: 75%;
+    }
+
+    .carrito{
+        width: 98%;
+        margin: 20px auto;
+        padding: 10px;        
+        font-size: 1vw;
+        background-color: #f2f2f2;
+    }
+
+    .carrito .contenedorProductos{
+        width: 30%;
+    }
+
+    .carrito .contenedorResumen{
+        width: 30%;
+    }
+
+    .carrito .botonComprar, .carrito .botonSeguirComprando{
+        width: 90%;
+    }
+}

@@ -16,4 +16,8 @@ app.get("/login", (req, res) =>{
     res.sendFile(path.join(__dirname, "/views/login.html"))
 });
 
+app.get("/carrito-compras", (req, res) =>{
+    res.sendFile(path.join(__dirname, "/views/carrito-compras.html"))
+});
+
 app.listen(3060, () => console.log("Servidor corriendo en el puerto 3060"));
