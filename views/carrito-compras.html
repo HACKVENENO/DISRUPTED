@@ -7,6 +7,7 @@
     <link rel = "stylesheet" href = "css/styles-carrito.css">
     <link rel = "stylesheet" href = "css/styles.css">
     <link rel = "stylesheet" href = "css/styles-footer.css">
+    <link rel = "stylesheet" href = "css/styles-header.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +15,23 @@
     <title>Carrito de compras</title>
 </head>
 <body>
-
+    <header class="main-header">
+        <div class="main-header-top-bar">
+            <picture>
+                <a href="/"> 
+                    <img src="/img/logo-mobile.png" class="logo">
+                </a>                                
+            </picture>          
+        </div>
+        <div class="nav-right">
+            <i class="fas fa-search"></i>      
+            <a href="#" class="burger-menu">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>  
+    </header>
     <div class = "titulo">
-        <h2>CARRITO DE COMPRAS</h2>
+        <h1>CARRITO DE COMPRAS</h1>
     </div>
     <!-- Se declara un solo producto a modo de ejemplo-->
     <section class = "carrito">
@@ -74,8 +89,20 @@
             </div>
         </div>    
     </section>
-
     <footer>
+
+        <!-- <div class="prefooter" >
+            <div class="newsletter" >
+                <h2>SUBSCRIBITE AL NEWSLETTER</h2>
+                <h3>y recibí descuentos y novedades</h3>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" size="30" placeholder="  tuemail@ejemplo.com" required>
+                <br>
+                <br>
+                <h2># D I S R U P T E D</h2>
+            </div>  -->
+
         <section class = "footerInfo">
                 <div>
                     <i class="fas fa-truck"></i>

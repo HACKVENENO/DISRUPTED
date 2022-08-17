@@ -72,6 +72,14 @@ body .titulo{
     padding: 5px;
 }
 
+.contenedorResumen .subtotal, .descuentoAplicado, .total{
+    text-align: right;
+}
+
+.contenedorResumen .total{
+    font-size: 18px;
+}
+
 .carrito .comprar, .carrito .seguirComprando{
     display: flex;
     flex-wrap: wrap;
@@ -113,10 +121,12 @@ body .titulo{
 
     .carrito .contenedorProductos{
         width: 40%;
+        margin: 10px;
     }
 
     .carrito .contenedorResumen{
         width: 40%;
+        margin: 10px;
     }
 
     .carrito .botonComprar, .carrito .botonSeguirComprando{

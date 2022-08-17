@@ -1,8 +1,9 @@
 .titularAvances h3 {
     display: flex;
     font-size: 4vw;
-    font-family: Comic Sans MS;
+    /*font-family: Comic Sans MS;*/
     justify-content: center;
+    padding: 10px; /*Notas Vanesa: Le saqué el estilo de letra Comic Sans porque no lo veía en armonía con el resto del contenido. También le agregué padding al titular*/
 }
 
 .avances {
