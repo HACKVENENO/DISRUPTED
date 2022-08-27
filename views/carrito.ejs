@@ -9,13 +9,15 @@
 
     <div class = "titulo">
         <h1>CARRITO DE COMPRAS</h1>
+        
     </div>
+    <div class = linea></div>
     <!-- Se declara un solo producto a modo de ejemplo-->
 
     <% for(let compra of comprados) {%> 
     <section class = "carrito">
         <div class = "contenedorProductos">
-            <div class = "contenedorUnProducto">
+            <div class = "productoUno">
                 <div class = "fotoProducto">
                     <img class = "imagen" src = "/img/<%= productos.image%>" alt = "foto producto">
                 </div>
@@ -45,20 +47,26 @@
         <% } %>
 
         <div class = "contenedorResumen">
+            <div class = "descuento">
+                <p class = "cuponPregunta">¿Tenés un cupón de descuento?</p>
+                <span class = "cuponDescuento">
+                    <input type = "text" name = "cupon" id = "cupon" placeholder="Cupón de descuento">
+                    <button>APLICAR</button>
+                </span>
+            </div>
             <div class = "suma">
-            <div>
-                <input type = "text" name = "cupon" id = "cupon" placeholder="Cupón de descuento">
-                <label for = "cupon">APLICAR</label>
-            </div>
-            <div class = "subtotal">
-                $15.000
-            </div>
-            <div class = "descuentoAplicado">
-                - $4.000
-                <!-- Esto no tendría que aparecer si no hay un descuento-->
-            </div>
-            <div class = "total">
-                $11.000
+                <div class = "subTotal">
+                    <div class = "sumaSubtotal">
+                        <p class = "textoSubtotal">SUBTOTAL</p>
+                        <p class = "precioSubtotal">$15.000</p>
+                    </div>
+                </div>
+                <div class = "total">
+                    <div class = "sumaTotal">
+                        <p class = "textoTotal">TOTAL</p>
+                        <p class = "precioTotal">$15.000</p>
+                    </div>
+                </div>
             </div>
             <div class = "comprar">
                 <button class = "botonComprar" type = "submit"><a href = "/home">FINALIZAR COMPRA</a></button>

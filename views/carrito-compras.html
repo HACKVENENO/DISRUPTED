@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "css/styles-login.css">
-    <link rel = "stylesheet" href = "css/styles-footer.css">
+    <link rel = "stylesheet" href = "css/styles-carrito.css">
     <link rel = "stylesheet" href = "css/styles.css">
+    <link rel = "stylesheet" href = "css/styles-footer.css">
     <link rel = "stylesheet" href = "css/styles-header.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Ingresar</title>
+    <title>Carrito de compras</title>
 </head>
 <body>
     <header class="main-header">
@@ -30,38 +30,103 @@
             </a>
         </div>  
     </header>
-    <main class = "login">
-        <form>
-            <div>
-                <h2>INGRESÁ</h2>
-            </div>
-            <div class = "datos">
-                <div>            
-                    <label for = "email">EMAIL</label>
-                    <input type = "email" name = "email" id = "email">
+    <div class = "titulo">
+        <h1>CARRITO DE COMPRAS</h1>
+    </div>
+    <div class = linea></div>
+    <!-- Se declaran productos a modo de ejemplo-->
+    <section class = "carrito">
+        <div class = "contenedorProductos">
+            <div class = "productoUno">
+                <div class = "fotoProducto">
+                    <img class = "imagen" src = "img/productoUno.jpg" alt = "foto producto">
                 </div>
-                <div>
-                    <label for = "password">CONTRASEÑA</label>
-                    <input type = "password" name = "password" id = "password">
+                <div class = "infoProducto">
+                    <div class = "nombreModelo">TRAJE NAOKI
+                    </div>
+                    <div class = "talle">Talle: M
+                    </div>
+                    <div class = "color">Color: Morado
+                    </div>
+                    <div class = "precio">$15.000
+                    </div>
+                    <div class = "cantidadProducto">
+                        <label for = "cantidad">CANTIDAD</label>
+                        <select name = "cantidad" id = "cantidad">
+                            <option value = "uno">1</option>
+                            <option value = "dos">2</option>
+                            <option value = "tres">3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class = "eliminar">
+                    <a href = "#"><i class="fas fa-trash-alt"></a></i>
                 </div>
             </div>
-            <!--<div class = "recordar">
-                <input type = "checkbox" name = "rebember">
-                <label for = "rebember">Recordar contraseña</label>
-            </div>-->
-            <div class = "olvidoContraseña">
-                <p><a href="/recuperar-contrasenia">¿Olvidaste tu contraseña?</a></p>
+        </div>
+        <!-- Este se agrega solo para que pueda verse de ejemplo en el carrito -->
+        <div class = "productoUno">
+            <div class = "fotoProducto">
+            <img class = "imagen" src = "img/productoUno.jpg" alt = "foto producto">
             </div>
-            <div class = "ingresar">  
-                <button class = "botonIngresar" type = "submit"><a href="/home">INGRESAR</a></button>
+            <div class = "infoProducto">
+                <div class = "nombreModelo">TRAJE NAOKI
+                </div>
+                <div class = "talle">Talle: M
+                </div>
+                <div class = "color">Color: Morado
+                </div>
+                <div class = "precio">$15.000
+                </div>
+                <div class = "cantidadProducto">
+                    <label for = "cantidad">CANTIDAD</label>
+                    <select name = "cantidad" id = "cantidad">
+                        <option value = "uno">1</option>
+                        <option value = "dos">2</option>
+                        <option value = "tres">3</option>
+                    </select>
+                </div>
+                <div class = "eliminar">
+                    <a href = "#"><i class="fas fa-trash-alt"></a></i>
+                </div>
             </div>
-            <div class = "registrate">
-                <p>¿No tenés cuenta? <a href="/register">Registrate ahora</a></p>
+        </div>
+
+        <div class = "contenedorResumen">
+            <div class = "descuento">
+                <p class = "cuponPregunta">¿Tenés un cupón de descuento?</p>
+                <span class = "cuponDescuento">
+                    <input type = "text" name = "cupon" id = "cupon" placeholder="Cupón de descuento">
+                    <button>APLICAR</button>
+                </span>
             </div>
-        </form>
-    </main>
+            <div class = "suma">
+                <div class = "subTotal">
+                    <div class = "sumaSubtotal">
+                        <p class = "textoSubtotal">SUBTOTAL</p>
+                        <p class = "precioSubtotal">$15.000</p>
+                    </div>
+                </div>
+                <div class = "total">
+                    <div class = "sumaTotal">
+                        <p class = "textoTotal">TOTAL</p>
+                        <p class = "precioTotal">$15.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "comprar">
+                <button class = "botonComprar" type = "submit"><a href = "/home">FINALIZAR COMPRA</a></button>
+            </div> <!-- Acá debería llevar al pago-->
+            <div class = "seguirComprando">
+                <button class = "botonSeguirComprando" type = "submit"><a href = "/home">SEGUIR COMPRANDO</a></button> <!--Acá en realidad debería llevar a los productos-->
+            </div>
+            </div>
+        </div>    
+    </section>
     <footer>
-                <!-- <div class="prefooter" >
+
+        <!-- <div class="prefooter" >
             <div class="newsletter" >
                 <h2>SUBSCRIBITE AL NEWSLETTER</h2>
                 <h3>y recibí descuentos y novedades</h3>
@@ -72,6 +137,7 @@
                 <br>
                 <h2># D I S R U P T E D</h2>
             </div>  -->
+
         <section class = "footerInfo">
                 <div>
                     <i class="fas fa-truck"></i>

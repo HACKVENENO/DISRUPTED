@@ -1,0 +1,88 @@
+.recuperar-contrasenia{
+    width: 93%;
+    margin: 25px auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    font-size: 3vw;
+    box-shadow: 0px 0px 5px rgb(100 100 100);
+}
+
+.recuperar-contrasenia form{
+    width: 80%;
+}
+
+.recuperar-contrasenia h2{
+    text-align: center;
+    padding: 10px;
+}
+
+.recuperar-contrasenia .completarEmail div{
+    padding-top: 10px;
+}
+
+.recuperar-contrasenia .completarEmail label{
+    line-height: 2;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.recuperar-contrasenia .completarEmail input{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 5px;
+}
+
+.recuperar-contrasenia p{
+    text-align: center;
+    padding: 10px;
+}
+
+.recuperar-contrasenia .enviar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recuperar-contrasenia .botonEnviar{
+    padding: 10px;
+    color: #fff;
+    background-color: grey;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 15px 0px 5px;
+    border-width: 0px;
+    transition: background 0.5s;
+}
+
+.recuperar-contrasenia .botonEnviar a{
+    text-decoration: none;
+    color: white;
+}
+
+.recuperar-contrasenia .botonEnviar:hover{
+    background: black;
+}
+
+@media (min-width: 460px){
+    .recuperar-contrasenia{
+        font-size: 1.7vw;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1080px){
+    .recuperar-contrasenia{
+        font-size: 1.3vw;
+        width: 30%;
+    }
+}

@@ -1,35 +1,41 @@
 [
     {
+        "id": 1,
         "image": "wear-one.png",
         "name": "WEAR ONE",
         "price": 1111,
         "bought": "True"
     },
     {
+        "id": 2,
         "image": "wear-two.png",
         "name": "WEAR TWO",
         "price": 2222,
         "bought": "False"
     },
     {
+        "id": 3,
         "image": "wear-three.png",
         "name": "WEAR THREE",
         "price": 3333,
         "bought": "True"
     },
     {
+        "id": 4,
         "image": "wear-four.png",
         "name": "WEAR FOUR",
         "price": 4444,
         "bought": "True"
     },
     {
+        "id": 5,
         "image": "wear-five.png",
         "name": "WEAR FIVE",
         "price": 5555,
         "bought": "False"
     },
     {
+        "id": 6,
         "image": "wear-six.png",
         "name": "WEAR SIX",
         "price": 6666,

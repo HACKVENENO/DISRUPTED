@@ -15,11 +15,13 @@
             <% for( const producto of productos) { %>
 
                 <article>
-                    <img src="/img/<%=producto.image %>" alt="image-product">
-                        <div class="description-products" >
-                            <p><%= producto.name %></p>
-                            <p>$<%= producto.price %></p>
-                        </div>                
+                    <a href="/productos/details/<%= producto.id %>">
+                        <img src="/img/<%=producto.image %>" alt="image-product">
+                            <div class="description-products" >
+                                <p><%= producto.name %></p>
+                                <p>$<%= producto.price %></p>
+                            </div> 
+                    </a>                   
                 </article>            
 
             <% } %>

@@ -5,7 +5,7 @@ const indexController = {
     /**
      *  logica
      */     
-        res.render(path.join(__dirname, "../views/index.ejs"))
+        res.render("index")
     },
 };
 

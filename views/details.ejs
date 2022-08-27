@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- head-->    
+    <%- include('./partials/head.ejs') %>
+
+<body>
+
+    <h1>Detalle del Producto</h1>
+
+    <div>
+        <article class="details-products">
+            <img src="/img/<%=producto.image %>" alt="image-product">
+            <div class="description-products" >
+                <p><%= producto.name %></p>
+                <p>$<%= producto.price %></p>
+            </div> 
+        </article>
+    </div>
+
+
+</body>
+</html>

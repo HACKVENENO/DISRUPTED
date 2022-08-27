@@ -98,6 +98,19 @@
     background: black;
 }
 
+.register .yaTieneCuenta{
+    font-size: 14px;
+    font-weight:lighter;
+    margin-top: 10px;
+    text-align: center;
+    color: black;
+    padding-bottom: 10px;
+}
+
+.register .yaTieneCuenta a{
+    color: black;
+}
+
 @media (min-width: 460px){
     .register{
         font-size: 2vw;
