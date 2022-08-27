@@ -1,0 +1,28 @@
+/* *{
+    /*outline: 1px solid red; /* todo lo que aparece en rojo no va a ir en el proyecto, es solo para referencia
+}*/
+
+.slider{
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.slider img{
+    width: 100%;
+    /* object-fit: cover;      
+    esto hace que la imagen se vea bien si son de diferentes tamaños aunque puede perder una parte de la imagen (ahora no lo necesitamos) */
+    scroll-snap-align: center;
+}
+
+
+
+@media (min-width: 460px){
+
+}
+
+@media (min-width: 1080px){
+    
+}

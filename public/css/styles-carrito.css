@@ -1,12 +1,16 @@
-/* *{
-    /*outline: 1px solid red; /* todo lo que aparece en rojo no va a ir en el proyecto, es solo para referencia
-}*/
-
 body .titulo{
     width: 93%;
     margin: 20px auto;
     text-align: center;
     justify-content: center;
+}
+
+.linea{
+    width: 75%;
+    border-top: 1px solid black;
+    height: 2px;
+    padding: 0;
+    margin: 20px auto 0 auto;
 }
 
 .carrito{
@@ -16,69 +20,136 @@ body .titulo{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #f2f2f2;
-    font-size: 3vw;
-    /*border-radius: 5px;*/
-    /*box-shadow: 0px 0px 5px rgb(100 100 100);*/
+    font-size: 4vw;
 }
 
+/* CONTENEDOR PRODUCTOS */
+
 .contenedorProductos{
-    outline: 1px solid black;
     padding: 10px;
     width: 100%;
 }
 
+.productoUno{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.carrito .fotoProducto{
+    width: 50%;
+    justify-content: center; 
+}
+
 .carrito .imagen{
-    width: 100%;
+    width: 90%;
     padding: 5px;
 }
 
 .contenedorProductos .infoProducto{
     padding: 5px;
+    width: 60%;
 }
 
 .contenedorProductos div{
     padding: 5px 0px;
+    align-items: flex-start;
+}
+
+.contenedorProductos .cantidadProducto{
+    width: 50%;
+    display: inline;
 }
 
 .contenedorProductos .cantidadProducto select{
-    width: 12%;
+    width: 25%;
+    padding: 5px;
 }
 
 .contenedorProductos .cantidadProducto option{
     width: 12%;
     font-size: 12px;
+    padding: 5px;
 }
 
 .contenedorProductos .eliminar{
+    padding: 5px;
+    display: inline;
+}
+
+.contenedorProductos .eliminar i{
     text-decoration: none;
     color: black; 
-    padding: 5px;
     font-size: 15px;
 }
 
+/* CONTENEDOR RESUMEN */
+
 .contenedorResumen{
-    outline: 1px solid black;
     padding: 10px;
     width: 100%;
-
 }
 
-.contenedorResumen div{
-    padding: 5px 0px;
-}
+/* CONTENEDOR RESUMEN *//* CUPON */
 
-.contenedorResumen .suma{
+.contenedorResumen .cuponPregunta{
+    font-size: 12px;
+    color: grey;
     padding: 5px;
 }
 
-.contenedorResumen .subtotal, .descuentoAplicado, .total{
-    text-align: right;
+.contenedorResumen .cuponDescuento{
+    padding: 5px;
+    width: 100%;
+}
+
+.contenedorResumen .cuponDescuento input{
+    padding: 5px;
+    width: 70%;
+    border-radius: 4px;
+    border-width: 1px; 
+}
+
+.contenedorResumen .cuponDescuento button{
+    padding: 5px;
+    width: 25%;
+    border-radius: 4px;
+    border-width: 1px; 
+    transition: background 0.5s;
+}
+
+.contenedorResumen .cuponDescuento button:hover{
+    background-color:gray;
+    color : white;
+}
+
+/* CONTENEDOR RESUMEN *//* SUMA */
+
+.contenedorResumen .suma{
+    width: 100%;
+    padding: 20px 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedorResumen .subTotal{
+    padding: 5px;
+    width: 100%;
+    font-size: 14px;
 }
 
 .contenedorResumen .total{
-    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+    font-weight: 900;
+    font-size: 25px;
 }
+
+.contenedorResumen .suma p{
+    display: inline;
+}
+
+/* CONTENEDOR RESUMEN *//* BOTONES COMPRA */
 
 .carrito .comprar, .carrito .seguirComprando{
     display: flex;
@@ -89,7 +160,7 @@ body .titulo{
 
 .carrito .botonComprar, .carrito .botonSeguirComprando{
     padding: 10px;
-    width: 80%;
+    width: 100%;
     background-color: grey;
     border-radius: 4px;
     border-width: 1px; 
@@ -108,51 +179,70 @@ body .titulo{
 
 @media (min-width: 460px){
     .carrito .imagen{
-        width: 75%;
+        width: 100%;
+        padding: 5px;
     }
 
     .carrito{
         width: 98%;
         margin: 20px auto;
         padding: 10px;        
-        font-size: 2vw;
-        background-color: #f2f2f2;
-    }
+        font-size: 1.6vw;
+     }
 
     .carrito .contenedorProductos{
-        width: 40%;
-        margin: 10px;
+        width: 50%;
+    }
+
+    .carrito .productoUno{
+        width: 100% ;
+    }  
+
+    .carrito .infoProducto{
+        padding-left: 20px;
     }
 
     .carrito .contenedorResumen{
-        width: 40%;
-        margin: 10px;
+        width: 50%;
+    }
+
+    .contenedorResumen .cuponDescuento{
+        padding: 5px;
+        width: 90%;
     }
 
     .carrito .botonComprar, .carrito .botonSeguirComprando{
-        width: 100%;
+        width: 90%;
     }
 }
 
 @media (min-width: 1080px){
     .carrito .imagen{
-        width: 75%;
+        width: 100%;
+        padding: 5px;
     }
 
     .carrito{
         width: 98%;
         margin: 20px auto;
         padding: 10px;        
-        font-size: 1vw;
-        background-color: #f2f2f2;
+        font-size: 1.2vw;
     }
 
     .carrito .contenedorProductos{
-        width: 30%;
+        width: 60%;
+    }
+
+    .carrito .productoUno{
+        width: 65% ;
+    }  
+
+    .carrito .infoProducto{
+        padding-left: 20px;
     }
 
     .carrito .contenedorResumen{
-        width: 30%;
+        width: 40%;
     }
 
     .carrito .botonComprar, .carrito .botonSeguirComprando{

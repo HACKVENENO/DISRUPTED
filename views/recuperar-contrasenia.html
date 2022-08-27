@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "css/styles-login.css">
+    <link rel = "stylesheet" href = "css/styles-recuperar-contrasenia.css">
     <link rel = "stylesheet" href = "css/styles-footer.css">
     <link rel = "stylesheet" href = "css/styles.css">
     <link rel = "stylesheet" href = "css/styles-header.css">
@@ -12,66 +12,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Ingresar</title>
+    <title>Recuperar contraseña</title>
 </head>
 <body>
-    <header class="main-header">
-        <div class="main-header-top-bar">
-            <picture>
-                <a href="/"> 
-                    <img src="/img/logo-mobile.png" class="logo">
-                </a>                                
-            </picture>          
-        </div>
-        <div class="nav-right">
-            <i class="fas fa-search"></i>      
-            <a href="#" class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </a>
-        </div>  
-    </header>
-    <main class = "login">
-        <form>
+
+    <main class = "recuperar-contrasenia">
+        <form action = "/recuperar-contrasenia" method = "POST">
             <div>
-                <h2>INGRESÁ</h2>
+                <h2>RECUPERÁ TU CONTRASEÑA</h2>
             </div>
-            <div class = "datos">
+            <p>Se enviará un enlace a tu email para recuperar tu contraseña</p>
+            <div class = "completarEmail">
                 <div>            
-                    <label for = "email">EMAIL</label>
+                    <label for = "email">Ingresá tu email</label>
                     <input type = "email" name = "email" id = "email">
                 </div>
-                <div>
-                    <label for = "password">CONTRASEÑA</label>
-                    <input type = "password" name = "password" id = "password">
-                </div>
             </div>
-            <!--<div class = "recordar">
-                <input type = "checkbox" name = "rebember">
-                <label for = "rebember">Recordar contraseña</label>
-            </div>-->
-            <div class = "olvidoContraseña">
-                <p><a href="/recuperar-contrasenia">¿Olvidaste tu contraseña?</a></p>
-            </div>
-            <div class = "ingresar">  
-                <button class = "botonIngresar" type = "submit"><a href="/home">INGRESAR</a></button>
-            </div>
-            <div class = "registrate">
-                <p>¿No tenés cuenta? <a href="/register">Registrate ahora</a></p>
-            </div>
+            <div class = "enviar">  
+                <button class = "botonEnviar" type = "submit"><a href="#">ENVIAR</a></button>
+            </div>    
         </form>
     </main>
+
     <footer>
-                <!-- <div class="prefooter" >
-            <div class="newsletter" >
-                <h2>SUBSCRIBITE AL NEWSLETTER</h2>
-                <h3>y recibí descuentos y novedades</h3>
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" size="30" placeholder="  tuemail@ejemplo.com" required>
-                <br>
-                <br>
-                <h2># D I S R U P T E D</h2>
-            </div>  -->
         <section class = "footerInfo">
                 <div>
                     <i class="fas fa-truck"></i>
@@ -103,7 +66,7 @@
                     <ul class = "cuenta"><h5>Mi cuenta</h5>
                         <li><a href="/login">Iniciar sesión</a></li>
                         <li><a href="/register">Registrate</a></li>
-                        <li><a href="#">Recuperar contraseña</a></li>
+                        <li><a href="/recuperar-contrasenia">Recuperar contraseña</a></li>
                     </ul>
                 </nav>
                 <nav>
