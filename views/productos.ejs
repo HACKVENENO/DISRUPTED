@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- head-->
+    <%- include('./partials/head.ejs') %>
+
+<body>
+
+    <!-- header-->
+    <%- include('./partials/header.ejs') %>
+
+        <h1 class="title-page">NOMBRE TIPO PRENDA</h1>
+        <div class="container-products">
+    
+            <% for( const producto of productos) { %>
+
+                <article>
+                    <img src="/img/<%=producto.image %>" alt="image-product">
+                        <div class="description-products" >
+                            <p><%= producto.name %></p>
+                            <p>$<%= producto.price %></p>
+                        </div>                
+                </article>            
+
+            <% } %>
+        </div> 
+        
+     <!-- footer-->
+     <%- include('./partials/footer.ejs') %>            
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- head-->    
+    <%- include('./partials/head.ejs') %>
+
+<body>
+    <!-- header-->
+    <%- include('./partials/header.ejs') %>
+
+        <div class="titularAvances">
+            <h3>
+                <!-- Adelantos de la Temporada 2023 -->
+                ADELANTOS DE LA TEMPORADA 2023
+            </h3>
+        </div>
+
+    <div class="avances">
+        <ul>
+            <li><img src="/img/slider1.jpg" alt=""></li>
+            <li><img src="/img/slider2.jpg" alt=""></li>
+            <li><img src="/img/slider3.jpg" alt=""></li>
+            <li><img src="/img/slider4.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <section class="section-articles">
+        <article  class="articles-card">
+            <img src="/img/wear-one.png" alt="product1">
+                <section class="description-card">
+                    <h5>Winter Season</h5>
+                    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+                </section>                  
+        </article>
+        <article  class="articles-card">
+            <img src="/img/wear-two.png" alt="product1">
+            <section class="description-card">
+                <h5>Winter Season</h5>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+            </section>                
+        </article>
+    </section>
+
+    <video  autoplay loop  muted>
+        <source src="/img/season.mp4" type="video/mp4">
+    </video>
+    
+
+
+    <h3 class="legend">
+        NEW ARRIVALS
+    </h3>
+
+    <section class="slider">
+        <article class="card">
+            <img src="img/wear-one.png" alt="wear-one">
+        </article>
+        <article class="card">
+            <img src="img/wear-two.png" alt="wear-one">
+        </article>
+        <article class="card">
+            <img src="img/wear-trhree.png" alt="wear-one">
+        </article>
+        <article class="card">
+            <img src="img/wear-four.png" alt="wear-one">
+        </article>
+        <article class="card">
+            <img src="img/wear-five.png" alt="wear-one">
+        </article>
+        <article class="card">
+            <img src="img/wear-six.png" alt="wear-one">
+        </article>
+    </section>
+
+     <!-- footer-->
+     <%- include('./partials/footer.ejs') %>    
+</body>
+</html>

@@ -1,27 +1,23 @@
 const express = require('express');
 const path = require('path');
+const indexRouter = require('./routes/index.routes')
+const productosRouter = require('./routes/productos.routes')
+
 const app = express();
 
-app.use(express.static(path.join(__dirname, "./public")));
+// Indicamos motor de plantilla a usar.
+app.set('view engine', 'ejs');
 
-app.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "./views/home.html"))
-})
 
-app.get("/register", (req, res) =>{
-    res.sendFile(path.join(__dirname, "/views/register.html"))
-});
+// Ruta de componentes estaticos
+app.use(express.static(path.join(__dirname, '/public')));
 
-app.get("/login", (req, res) =>{
-    res.sendFile(path.join(__dirname, "/views/login.html"))
-});
 
-app.get("/products", (req, res) =>{
-    res.sendFile(path.join(__dirname, "/views/products.html"))
-});
+// Rutas Dinamicas MVC
+app.use('/', indexRouter);
+app.use('/productos', productosRouter);
 
-app.get("/carrito-compras", (req, res) =>{
-    res.sendFile(path.join(__dirname, "/views/carrito-compras.html"))
-});
 
-app.listen(3060, () => console.log("Servidor corriendo en el puerto 3060"));
+
+// Creamos el servidor
+app.listen(3040, () => console.log('Servidor corriendo en el puerto 3040'));

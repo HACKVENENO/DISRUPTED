@@ -1,0 +1,32 @@
+[
+    {
+        "image": "wear-one.png",
+        "name": "WEAR ONE",
+        "price": 1111
+    },
+    {
+        "image": "wear-two.png",
+        "name": "WEAR TWO",
+        "price": 2222
+    },
+    {
+        "image": "wear-three.png",
+        "name": "WEAR THREE",
+        "price": 3333
+    },
+    {
+        "image": "wear-four.png",
+        "name": "WEAR FOUR",
+        "price": 4444
+    },
+    {
+        "image": "wear-five.png",
+        "name": "WEAR FIVE",
+        "price": 5555
+    },
+    {
+        "image": "wear-six.png",
+        "name": "WEAR SIX",
+        "price": 6666
+    }
+]
