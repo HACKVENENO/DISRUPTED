@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const indexRouter = require('./routes/index.routes')
 const productosRouter = require('./routes/productos.routes')
+const carritoRouter = require('./routes/carrito.routes')
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Rutas Dinamicas MVC
 app.use('/', indexRouter);
 app.use('/productos', productosRouter);
-
+app.use('/carrito', carritoRouter);
 
 
 // Creamos el servidor

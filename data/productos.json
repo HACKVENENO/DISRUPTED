@@ -2,31 +2,37 @@
     {
         "image": "wear-one.png",
         "name": "WEAR ONE",
-        "price": 1111
+        "price": 1111,
+        "bought": "True"
     },
     {
         "image": "wear-two.png",
         "name": "WEAR TWO",
-        "price": 2222
+        "price": 2222,
+        "bought": "False"
     },
     {
         "image": "wear-three.png",
         "name": "WEAR THREE",
-        "price": 3333
+        "price": 3333,
+        "bought": "True"
     },
     {
         "image": "wear-four.png",
         "name": "WEAR FOUR",
-        "price": 4444
+        "price": 4444,
+        "bought": "True"
     },
     {
         "image": "wear-five.png",
         "name": "WEAR FIVE",
-        "price": 5555
+        "price": 5555,
+        "bought": "False"
     },
     {
         "image": "wear-six.png",
         "name": "WEAR SIX",
-        "price": 6666
+        "price": 6666,
+        "bought": "False"
     }
 ]
