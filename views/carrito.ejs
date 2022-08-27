@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+ 
     <!-- head-->    
     <%- include('./partials/head.ejs') %>
 
 <body>
     <!-- header-->
     <%- include('./partials/header.ejs') %>
+ 
 
     <div class = "titulo">
+        
         <h1>CARRITO DE COMPRAS</h1>
         
     </div>
@@ -19,16 +22,16 @@
         <div class = "contenedorProductos">
             <div class = "productoUno">
                 <div class = "fotoProducto">
-                    <img class = "imagen" src = "/img/<%= productos.image%>" alt = "foto producto">
+                    <img class = "imagen" src = "/img/<%=compra.image%>" alt = "foto producto">
                 </div>
                 <div class = "infoProducto">
-                    <div class = "nombreModelo"><%= productos.name%>
+                    <div class = "nombreModelo"><%= compra.name%>
                     </div>
                     <div class = "talle">Talle: M
                     </div>
                     <div class = "color">Color: Morado
                     </div>
-                    <div class = "precio"><%= productos.precio%>
+                    <div class = "precio"><%= compra.precio%>
                     </div>
                     <div class = "cantidadProducto">
                         <label for = "cantidad">CANTIDAD</label>

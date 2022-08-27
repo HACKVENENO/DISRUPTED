@@ -7,10 +7,11 @@ const carritoController = {
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const comprados = [];
         for(const p of productos){
-            if (productos.bought == "True"){
+            if (p.bought == "True"){
                 comprados.push(p)
             }
         }    
+        console.log(comprados)
         res.render("carrito", { comprados : comprados });
     },
 };
