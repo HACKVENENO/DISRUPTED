@@ -18,7 +18,7 @@
         "image": "wear-three.png",
         "name": "WEAR THREE",
         "price": 3333,
-        "bought": "True"
+        "bought": "False"
     },
     {
         "id": 4,
