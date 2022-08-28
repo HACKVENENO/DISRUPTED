@@ -27,12 +27,20 @@ const productosController = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		// Do the magic
+		// Obtener el producto del body
+        //Date.now() 
+        //default-image.png
+        //guardan en el json
+        //redirect
+
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
-		// Do the magic
+        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+        const producto = products.find((p) => p.id == req.params.id);
+    
+        res.redirect("product-edit-form", { productToEdit: producto });
 	},
 	// Update - Method to update
 	update: (req, res) => {
@@ -41,6 +49,9 @@ const productosController = {
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+        const producto = products.filter((p) => p.id != req.params.id);
+        res.redirect('/')
 		// Do the magic
 	}
 
