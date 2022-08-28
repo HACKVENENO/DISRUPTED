@@ -19,7 +19,31 @@ const productosController = {
      */         
         const producto = productos.find((p) => p.id == req.params.id);                
         res.render("details", { producto : producto });
-    }
+    },
+
+    create: (req, res) => {
+		// Do the magic
+	},
+	
+	// Create -  Method to store
+	store: (req, res) => {
+		// Do the magic
+	},
+
+	// Update - Form to edit
+	edit: (req, res) => {
+		// Do the magic
+	},
+	// Update - Method to update
+	update: (req, res) => {
+		// Do the magic
+	},
+
+	// Delete - Delete one product from DB
+	destroy : (req, res) => {
+		// Do the magic
+	}
+
 };
 
 module.exports = productosController;
