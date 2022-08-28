@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <!-- head-->    
+    <%- include('./partials/head.ejs') %>
+    <title>Ingresar</title>
+
+<body>
+    <!-- header-->
+    <%- include('./partials/header.ejs') %>
+
+    <main class = "recuperar-contrasenia">
+        <form action = "/recuperar-contrasenia" method = "POST">
+            <div>
+                <h2>RECUPERÁ TU CONTRASEÑA</h2>
+            </div>
+            <p>Se enviará un enlace a tu email para recuperar tu contraseña</p>
+            <div class = "completarEmail">
+                <div>            
+                    <label for = "email">Ingresá tu email</label>
+                    <input type = "email" name = "email" id = "email">
+                </div>
+            </div>
+            <div class = "enviar">  
+                <button class = "botonEnviar" type = "submit"><a href="#">ENVIAR</a></button>
+            </div>    
+        </form>
+    </main>
+
+         <!-- footer-->
+         <%- include('./partials/footer.ejs') %>  
+         
+</body>
+</html>
