@@ -25,9 +25,11 @@
     margin: 20px;
 }
 
-a{    
+header a{    
     text-decoration: none;
-}
+    color:#000;
+} 
+/* puse el header antes de a porque sino me modificaba el styles de los demás que si necesito el subrayado, de paso te cambié el color -Vane */
 
 .nav-center li{
     list-style: none;

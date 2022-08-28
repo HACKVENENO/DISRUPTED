@@ -1,8 +1,4 @@
-/* *{
-    /*outline: 1px solid red; /* todo lo que aparece en rojo no va a ir en el proyecto, es solo para referencia
-}*/
-
-.slider{
+.sliderProducto{
     display: flex;
     max-width: 500px;
     width: 100%;
@@ -10,19 +6,126 @@
     scroll-snap-type: x mandatory;
 }
 
-.slider img{
+.sliderProducto img{
     width: 100%;
     /* object-fit: cover;      
     esto hace que la imagen se vea bien si son de diferentes tamaños aunque puede perder una parte de la imagen (ahora no lo necesitamos) */
     scroll-snap-align: center;
 }
 
+.details .detalle-producto{
+    padding: 10px;
+}
+
+.details .color{
+    padding: 10px;
+}
+
+.details .size{
+    padding: 10px;
+}
+
+.details .guiaTalle{
+    padding: 10px;
+}
+
+.details .guiaTalle a{
+    color:black; 
+}
+
+.details .agregarCarrito{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.details .botonAgregarCarrito{
+    padding: 10px;
+    width: 50%;
+    background-color: grey;
+    border-radius: 4px;
+    border-width: 1px;
+    transition: background 0.5s;
+}
+
+.details .botonAgregarCarrito a{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.details button:hover{
+    background: black;
+}
+
+.details .descripcion{
+    padding: 10px;
+}
+
+.details h4{
+    padding-bottom: 5px;
+}
+
+.details .edicion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.details button{
+    padding: 10px;
+    background-color: grey;
+    border-radius: 4px;
+    border-width: 1px; 
+    color:#fff;
+    transition: background 0.5s;
+}
+
+.details a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.details .action-button-delete{
+    padding: 0px 43px;
+}
+
 
 
 @media (min-width: 460px){
+    .details .contenedorProducto{
+        width: 50%;
+    }
 
+    .details .sliderProducto{
+        width: 50%;
+    }
 }
 
 @media (min-width: 1080px){
+    .details .contenedorProducto{
+        width: 50%;
+    }
+
+    .details .sliderProducto{
+        width: 50%;
+    }
+
+    .sliderProducto{
+        display: flex;
+        max-width: 500px;
+        width: 100%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .sliderProducto img{
+        width: 100%;
+        /* object-fit: cover;      
+        esto hace que la imagen se vea bien si son de diferentes tamaños aunque puede perder una parte de la imagen (ahora no lo necesitamos) */
+        scroll-snap-align: center;
+    }
     
 }

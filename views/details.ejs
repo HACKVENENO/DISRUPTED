@@ -6,18 +6,68 @@
 
 <body>
 
-    <h1>Detalle del Producto</h1>
+        <!-- header-->
+        <%- include('./partials/header.ejs') %>
 
-    <div>
-        <article class="details-products">
-            <img src="/img/<%=producto.image %>" alt="image-product">
-            <div class="description-products" >
-                <p><%= producto.name %></p>
-                <p>$<%= producto.price %></p>
-            </div> 
-        </article>
+    <div class = "titulo">
+        <h1>DETALLE DEL PRODUCTO</h1>
     </div>
+    <section class = "details">
+        <div class = "sliderProducto">
+            <img src="/img/<%=producto.image %>" alt="image-product">
+            <img src="/img/<%=producto.image %>" alt="image-product">
+            <img src="/img/<%=producto.image %>" alt="image-product">
+            <!-- <img class = "imagen" src = "img/Captura2.png" alt = "foto producto">
+            <img class = "imagen" src = "img/Captura8.png" alt = "foto producto"> -->
+        </div>
+        <div class = "contendedorProducto">
+            <div class = "detalle-producto">
+                <h1><%= producto.name %></h1>
+                <h2>$<%= producto.price %></h2>
+            </div>
+            <div class = "color">
+                <label for = "color">COLOR</label>
+                <select name = "color" id = "color">
+                    <option value = "GREEN">OXI GREEN</option>
+                    <option value = "GOLD">GOLD</option>
+                    <option value = "PINK">DUSTY PINK</option>
+                    <option value = "BLACK">BLACK</option>
+                </select>
+            </div>
+            <div class = "size">
+                <label for = "size">TALLE</label>
+                <select name = "size" id = "size">
+                    <option value = "XS">XS</option>
+                    <option value = "S">S</option>
+                    <option value = "M">M</option>
+                    <option value = "L">L</option>
+                    <option value = XL">XL</option>
+                    <option value = "XXL">XXL</option>
+                </select>
+            </div>
+            <div class = "guiaTalle">
+                <a href="#">GUÍA DE TALLES</a>
+            </div>
+            <div class = "agregarCarrito">  
+                <button class = "botonAgregarCarrito" type = "submit"><a href="/carrito">AGREGAR AL CARRITO</a></button>
+            </div>
+            <div class = "descripcion">
+                <h4>DESCRIPCIÓN DEL PRODUCTO</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, esse. Tempora nostrum, accusantium consequuntur hic molestiae et, repellat illum facilis vel qui ab error voluptatem harum animi expedita officia sunt!</p>
+            </div>    
+            <div class = "edicion">
+                <button><a href action="/productos/edit/<%= producto.id%>" class="action-button edit">EDITAR PRODUCTO</a></button>
+                <form action="/products/delete/<%= producto.id%>_method=DELETE" method="POST" style="display: inline-flex" >
+                <button type="submit" class="action-button-delete">ELIMINAR</button>
+                </form>
+            </div>
+        </div>
 
+        
+    </section>
+
+          <!-- footer-->
+          <%- include('./partials/footer.ejs') %>  
 
 </body>
 </html>
