@@ -29,18 +29,18 @@
     display: flex;    
 }
 
-<<<<<<< HEAD
+
 .nav-center a{    
     text-decoration: none;
-    color: #4B4B4B ;
+    color: #4B4B4B;
 }
-=======
+
 header a{    
     text-decoration: none;
     color:#000;
 } 
 /* puse el header antes de a porque sino me modificaba el styles de los demás que si necesito el subrayado, de paso te cambié el color -Vane */
->>>>>>> 3aedfc10e9ad1b30cd2d5a843024b790006f703b
+
 
 .nav-center li{
     list-style: none;
