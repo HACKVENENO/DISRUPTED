@@ -11,7 +11,7 @@ router.put('/create', productosController.create);
 
 router.get('/store', productosController.store);
 
-router.get('/:id/qu', productosController.edit);
+router.get('/edit/:id', productosController.edit);
 
 router.get('/create', productosController.create);
 
