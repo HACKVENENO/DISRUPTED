@@ -9,6 +9,11 @@ const recuperarContraseniaRouter = require("./routes/recuperar-contrasenia.route
 
 const app = express();
 
+
+// Capturar todo lo que venga de un formulario y lo convierta en objeto literal
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
+
 // Indicamos motor de plantilla a usar.
 app.set('view engine', 'ejs');
 
