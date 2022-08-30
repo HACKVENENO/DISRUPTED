@@ -30,6 +30,11 @@ app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/recuperar-contrasenia", recuperarContraseniaRouter);
 
+// Capturar todo lo que venga de un formulario y lo convierta en objeto literal
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
+
+
 
 // Creamos el servidor
 app.listen(3040, () => console.log('Servidor corriendo en el puerto 3040'));
