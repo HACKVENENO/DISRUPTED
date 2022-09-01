@@ -81,6 +81,16 @@ video{
 }
 
 @media (min-width: 768px){
+
+    .carousel-inner img {
+        width: 100%;
+        max-height: 460px;
+    }
+    
+    .carousel-inner{
+     height: 400px;
+    }
+    
     .section-articles{
         grid-template-columns: repeat(3, 1fr);    
     }
