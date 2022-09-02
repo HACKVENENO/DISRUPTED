@@ -4,41 +4,69 @@
         "image": "wear-one.png",
         "name": "WEAR ONE",
         "price": 1111,
-        "bought": "True"
+        "bought": "True",
+        "color": "blue",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "S",
+        "category":"sale"
     },
+    
     {
         "id": 2,
         "image": "wear-two.png",
         "name": "WEAR TWO",
         "price": 2222,
-        "bought": "False"
+        "bought": "False",
+        "color": "red",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "M",
+        "category":"sale"
     },
     {
         "id": 3,
         "image": "wear-three.png",
         "name": "WEAR THREE",
         "price": 3333,
-        "bought": "False"
+        "bought": "False",
+        "color": "green",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "L",
+        "category": "sale"
     },
     {
         "id": 4,
         "image": "wear-four.png",
         "name": "WEAR FOUR",
         "price": 4444,
-        "bought": "True"
+        "bought": "True",
+        "color": "white",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "XL",
+        "category": "winter"
+
+
+
     },
     {
         "id": 5,
         "image": "wear-five.png",
         "name": "WEAR FIVE",
         "price": 5555,
-        "bought": "False"
+        "bought": "False",
+        "color": "blue",
+        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "S",
+        "category": "summer"
     },
     {
         "id": 6,
         "image": "wear-six.png",
         "name": "WEAR SIX",
         "price": 6666,
-        "bought": "False"
+        "bought": "False",
+        "color": "blue",
+        "description":"Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "size": "S",
+        "category": "sale"
     }
 ]
