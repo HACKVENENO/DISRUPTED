@@ -12,6 +12,11 @@
     padding: 0 15px;
 }
 
+.main-header-top-bar a{
+    text-decoration: none;
+    color: #000;    
+}
+
 .main-header{        
     width: 100vw;
     padding-top: 20px;
@@ -21,25 +26,30 @@
 }
 
 .nav-center{
-    display: flex;
-    margin: 20px;
+    display: flex;    
 }
 
-a{    
+
+.nav-center a{    
     text-decoration: none;
+    color: #4B4B4B;
 }
+
+header a{    
+    text-decoration: none;
+    color:#000;
+} 
+/* puse el header antes de a porque sino me modificaba el styles de los demás que si necesito el subrayado, de paso te cambié el color -Vane */
+
 
 .nav-center li{
     list-style: none;
     text-decoration: none;
     background-color: #F4F4F4;
-    padding-left: 15PX;
+    padding-left: 35PX;
 }
 
-
-
-.nav-right{
-    display: flex;           
+.nav-right{          
     align-items: center;
 }
 
@@ -78,7 +88,7 @@ a{
     }
 
     .main-header{
-        background-color: #F4F4F4;
+        background-color: #F4F4F4;        
     }
 
     .main-header-top-bar{        

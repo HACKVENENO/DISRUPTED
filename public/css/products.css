@@ -8,6 +8,7 @@ body{
     font-family: 'Montserrat', sans-serif;            
 }
 
+
 .title-page{
     width: 90%;
     font-size: 1rem; 
@@ -35,6 +36,11 @@ img{
     flex-wrap: wrap;    
     font-size: .7rem;
     align-items: center;
+}
+
+.container-products a{
+    text-decoration: none;
+    color: #000;    
 }
 
 .details-products {
