@@ -2,9 +2,9 @@ const express = require('express');
 const productosController = require('../controllers/productos.controller');
 const router = express.Router();
 
-
+/*** OBTENER TODOS LOS PRODUCTOS **/
 router.get('/', productosController.productos);
-//router.get("/details", productosController.details);
+
 router.get("/details/:id", productosController.details);
 
 router.put('/create', productosController.create);
