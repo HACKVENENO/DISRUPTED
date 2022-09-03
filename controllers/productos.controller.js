@@ -14,44 +14,66 @@ const productosController = {
     },
 
     details: (req, res) =>{
-    /**
-     *  logica     
-     */         
+    
         const producto = productos.find((p) => p.id == req.params.id);                
         res.render("details", { producto : producto });
     },
 
     create: (req, res) => {
-		// Do the magic
-	},
+        res.render("product-create-form");
+        
+    },
 	
 	// Create -  Method to store
-	store: (req, res) => {
-		// Obtener el producto del body
-        //Date.now() 
-        //default-image.png
-        //guardan en el json
-        //redirect
-
-	},
+    store: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+    
+        console.log(req.file);
+    
+        const productoNuevo = {
+          id: Date.now(),
+          image: "default-image.png",
+          name: req.body.name,
+          price: req.body.price,
+          bought: req.body.bought,
+          color: req.body.color,
+          description: req.body.description,
+          size: req.body.description,
+          category: req.body.category
+          
+        };
+    
+        /**
+         * si hay file guardan el nombre de la imagen
+         */
+    
+        products.push(productoNuevo);
+    
+        const data = JSON.stringify(products, null, " ");
+        fs.writeFileSync(productsFilePath, data);
+        res.redirect("/productos");
+      },
 
 	// Update - Form to edit
 	edit: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
-        const producto = products.find((p) => p.id == req.params.id);
-    
-        res.redirect("product-edit-form", { productToEdit: producto });
-	},
+            const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+            const producto = products.find((p) => p.id == req.params.id);
+            let idProducto = req.params.idProducto
+            let productoToEdit = producto[idProducto]
+            res.redirect("product-edit-form", { productoToEdit: producto });  
+        },
+        
+	
 	// Update - Method to update
 	update: (req, res) => {
-		// Do the magic
+
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
         const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         const producto = products.filter((p) => p.id != req.params.id);
-        res.redirect('/')
+        res.redirect('/productos')
 		// Do the magic
 	}
 
