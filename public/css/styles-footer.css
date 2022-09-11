@@ -75,8 +75,7 @@ body footer .prefooter input{
     padding: 10px;
     text-align: center;
     font-weight:lighter;
-    margin: 10px;
-    margin: 10px;
+    margin: 10px 0px;
 }
 
 .footerInfo div{
@@ -107,7 +106,7 @@ body footer .prefooter input{
     justify-content: space-between;
     flex-direction: row;
     align-items : flex-start;
-    margin: 10px;
+    margin: 10px 0px;
     
 }
 
