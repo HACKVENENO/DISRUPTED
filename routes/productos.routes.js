@@ -3,10 +3,16 @@ const productosController = require('../controllers/productos.controller');
 const router = express.Router();
 
 
+
 /*** OBTENER TODOS LOS PRODUCTOS **/
 
 
-// ************ MULTER ************
+
+
+/*** OBTENER TODOS LOS PRODUCTOS **/
+
+
+/* // ************ MULTER ************
 const multer = require("multer");
 
 var storage = multer.diskStorage({
@@ -22,6 +28,8 @@ var storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+ */
+
 
 
 router.get('/', productosController.productos);
@@ -29,7 +37,7 @@ router.get('/', productosController.productos);
 router.get("/details/:id", productosController.details);
 
 router.get('/create', productosController.create);
-router.post('/create', upload.single("fotoProducto"), productosController.store);
+// router.post('/create', upload.single("fotoProducto"), productosController.store);
 
 
 router.get('/edit/:idProducto', productosController.edit);
