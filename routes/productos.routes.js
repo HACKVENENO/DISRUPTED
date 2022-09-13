@@ -27,7 +27,7 @@ var storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage });
+const fileUpload = multer({storage});
  
 
 
@@ -37,7 +37,7 @@ router.get('/', productosController.productos);
 router.get("/details/:id", productosController.details);
 
 router.get('/create', productosController.create);
-// router.post('/create', upload.single("fotoProducto"), productosController.store);
+router.post('/create', fileUpload.single("fotoProducto"), productosController.store);
 
 
 

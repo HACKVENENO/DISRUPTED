@@ -46,11 +46,15 @@ const productosController = {
         /**
          * si hay file guardan el nombre de la imagen
          */
-    
+         if (req.file) {
+          productoNuevo.image = req.file.filename;
+        }
+
         products.push(productoNuevo);
     
         const data = JSON.stringify(products, null, " ");
         fs.writeFileSync(productsFilePath, data);
+        
         res.redirect("/productos");
       },
 

@@ -9,7 +9,7 @@
     <%- include('./partials/header.ejs') %>
 
 <main class = "crearProducto">
-	<form action = "/productos/create" method = "POST">
+	<form action="/productos/create" method="POST" enctype="multipart/form-data">
 		<div>
 			<h2>CREAR PRODUCTO</h2>
 		</div>
@@ -117,7 +117,7 @@
 		</div>
 		<div  class = "div-3">
 			<label for = "image">SUBIR IMAGEN</label>
-			<input type = "file" id = "image" name = "image">
+			<input type = "file" id = "image" name = "fotoProducto">
 		</div>
 		<div class = "guardar">
 			<button class = "botonGuardar" type="submit">GUARDAR PRODUCTO</button>
