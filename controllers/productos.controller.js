@@ -58,9 +58,8 @@ const productosController = {
 	edit: (req, res) => {
             const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
             const producto = products.find((p) => p.id == req.params.id);
-            let idProducto = req.params.idProducto
-            let productoToEdit = producto[idProducto]
-            res.redirect("product-edit-form", { productoToEdit: producto });  
+
+            res.render("product-edit-form", { productoToEdit: producto });  
         },
         
 	
