@@ -8,37 +8,29 @@
     <!-- header-->
     <%- include('./partials/header.ejs') %>
 
-        <h1 class="title-page">EDITAR UN PRODUCTO</h1>
- 
-       
-     
+    <main class = "editarProducto">
+        <h1>EDITAR PRODUCTO</h1>
         <div class="container-products">
-            <div class="col-12">
+            <div>
 				<h2 class="products-title">Estás editando: <i><%= productoToEdit.name %></i></h2>
 			</div>
-
             
-
             <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6">
-						<label for="name" class="form-label">Nombre del producto:</label>
+				<div class="div-1">
+						<label for="name">NOMBRE DEL PRODUCTO</label>
 						<input type="text" id="name" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
-					</div>
                 </div>
             </form>
 
             <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6">
-						<label for="price" class="form-label">Precio del producto:</label>
+				<div class="div-1">
+						<label for="price">PRECIO DEL PRODUCTO</label>
 						<input type="text" id="price" name="price" value="<%= productoToEdit.price %>" placeholder="$5600" class="form-input">
-					</div>
                 </div>
             </form>
 
             <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class = "color">
+                <div class="div-1">
                     <label for = "color">COLOR</label>
                     <select name = "color" id = "color">
                         <option value = "GREEN" <%= (productoToEdit.color == "GREEN")? "selected":"" %> >OXI GREEN</option>
@@ -47,7 +39,7 @@
                         <option value = "BLACK" <%= (productoToEdit.color == "BLACK")? "selected":"" %>  >BLACK</option>
                     </select>
                 </div>
-                <div class = "size">
+                <div class="div-1">
                     <label for = "size">TALLE</label>
                     <select name = "size" id = "size">
                         <option value = "XS" <%= (productoToEdit.size == "XS")? "selected":"" %> >XS</option>
@@ -60,19 +52,22 @@
                 </div>
             </form>
 
-        <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-            <div class="col-12 col-md-6">
-                <label for="foto" class="form-label">Foto:</label>
-                <input type="file" id="foto" name="fotoProducto" class="form-input">
+            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div  class = "div-1">
+                    <label for="foto">SUBIR IMAGEN</label>
+                    <input type="file" id="foto" name="fotoProducto" class="form-input">
+                </div>
+            </form>
+		    <div class = "guardar">
+			    <button class = "botonGuardar" type="submit">GUARDAR CAMBIOS</button>
+		    </div>
+            <div class = "eliminar">
+                <form action="/productos/delete/<%=productoToEdit%>?_method=DELETE" method="POST" >
+                    <button type="submit" class = "botonBorrar">ELIMINAR</button>
+                </form>
             </div>
-        </form>
-        <div class="col-12">
-            <button type="submit" class="buy-now-button">Guardar producto</button>
-        </div>
-        <form action="/productos/delete/<%=productoToEdit%>?_method=DELETE" method="POST" >
-            <button type="submit">Borrar</button>
-        </form>
-
+        </div>    
+    </main>    
 
           <!-- footer-->
           <%- include('./partials/footer.ejs') %>  

@@ -9,7 +9,15 @@
     <!-- header-->
     <%- include('./partials/header.ejs') %>
 
-        <h1 class="title-page">NOMBRE TIPO PRENDA</h1>
+    <main class = "products">
+        <h2 class = "title-page">NOMBRE TIPO PRENDA</h2>
+
+        <div class = "nuevoProducto">
+            <form action="/"" method="POST" >
+                <button type="submit" class = "botonCrear">CREAR PRODUCTO</button>
+            </form>
+        </div>
+
         <div class="container-products">
     
             <% for( const producto of productos) { %>
@@ -26,7 +34,7 @@
 
             <% } %>
         </div> 
-        
+    </main>    
      <!-- footer-->
      <%- include('./partials/footer.ejs') %>            
     </body>
