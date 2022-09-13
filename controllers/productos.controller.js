@@ -53,7 +53,7 @@ const productosController = {
         products.push(productoNuevo);
     
         const data = JSON.stringify(products, null, " ");
-        fs.writeFileSync(productsFilePath, data);
+        fs.writeFileSync(productosFilePath, data);
 
         res.redirect("/productos");
       },
