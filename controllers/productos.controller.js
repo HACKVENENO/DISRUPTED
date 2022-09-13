@@ -93,7 +93,7 @@ const productosController = {
 	},
 
 	// Delete - Delete one product from DB
-	destroy : (req, res) => {
+	delete : (req, res) => {
         const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         const producto = products.filter((p) => p.id != req.params.id);
         res.redirect('/productos')

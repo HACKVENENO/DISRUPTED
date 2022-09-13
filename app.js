@@ -7,11 +7,11 @@ const loginRouter = require("./routes/login.routes");
 const registerRouter = require("./routes/register.routes");
 const recuperarContraseniaRouter = require("./routes/recuperar-contrasenia.routes");
 //Para que funcionen el put y el delete
-// const methodOverride = require('method-override');
-// app.use(methodOverride('_method'));
+const methodOverride = require('method-override');
 
 const app = express();
 
+app.use(methodOverride('_method'));
 
 // Capturar todo lo que venga de un formulario y lo convierta en objeto literal
 app.use(express.urlencoded({extended : false}));

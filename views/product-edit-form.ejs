@@ -19,50 +19,60 @@
 
             
 
-            <form action="/products/edit/?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="name" class="form-label">Nombre del producto:</label>
-						<input type="text" id="name" name="name" placeholder="Ej: Campera Negra" class="form-input">
+						<input type="text" id="name" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
 					</div>
                 </div>
             </form>
 
-            <form action="/products/edit/?_method=PUT" method="POST" enctype="multipart/form-data">
+            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
 				<div class="row product-detail">
 					<div class="col-12 col-md-6">
 						<label for="price" class="form-label">Precio del producto:</label>
-						<input type="text" id="price" name="price" placeholder="$5600" class="form-input">
+						<input type="text" id="price" name="price" value="<%= productoToEdit.price %>" placeholder="$5600" class="form-input">
 					</div>
                 </div>
             </form>
 
-            <form action="/products/edit/?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6">
-						<label for="color" class="form-label">Color del producto:</label>
-						<input type="text" id="color" name="color" placeholder="Ej: Negro" class="form-input">
-					</div>
+            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class = "color">
+                    <label for = "color">COLOR</label>
+                    <select name = "color" id = "color">
+                        <option value = "GREEN" <%= (productoToEdit.color == "GREEN")? "selected":"" %> >OXI GREEN</option>
+                        <option value = "GOLD" <%= (productoToEdit.color == "GOLD")? "selected":"" %> >GOLD</option>
+                        <option value = "PINK" <%= (productoToEdit.color == "PINK")? "selected":"" %>  >DUSTY PINK</option>
+                        <option value = "BLACK" <%= (productoToEdit.color == "BLACK")? "selected":"" %>  >BLACK</option>
+                    </select>
+                </div>
+                <div class = "size">
+                    <label for = "size">TALLE</label>
+                    <select name = "size" id = "size">
+                        <option value = "XS" <%= (productoToEdit.size == "XS")? "selected":"" %> >XS</option>
+                        <option value = "S" <%= (productoToEdit.size == "S")? "selected":"" %> >S</option>
+                        <option value = "M" <%= (productoToEdit.size == "M")? "selected":"" %> >M</option>
+                        <option value = "L" <%= (productoToEdit.size == "L")? "selected":"" %> >L</option>
+                        <option value = XL" <%= (productoToEdit.size == "XL")? "selected":"" %> >XL</option>
+                        <option value = "XXL" <%= (productoToEdit.size == "XXL")? "selected":"" %> >XXL</option>
+                    </select>
                 </div>
             </form>
 
-            <form action="/products/edit/?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="row product-detail">
-					<div class="col-12 col-md-6">
-						<label for="sizw" class="form-label">Talle del producto:</label>
-						<input type="text" id="talle" name="talle" placeholder="M" class="form-input">
-					</div>
-                </div>
-            </form>
-
-        </div>
-        <div class="col-12 col-md-6">
-            <label for="foto" class="form-label">Foto:</label>
-            <input type="file" id="foto" name="fotoProducto" class="form-input">
-        </div>
+        <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="col-12 col-md-6">
+                <label for="foto" class="form-label">Foto:</label>
+                <input type="file" id="foto" name="fotoProducto" class="form-input">
+            </div>
+        </form>
         <div class="col-12">
             <button type="submit" class="buy-now-button">Guardar producto</button>
         </div>
+        <form action="/productos/delete/<%=productoToEdit%>?_method=DELETE" method="POST" >
+            <button type="submit">Borrar</button>
+        </form>
+
 
           <!-- footer-->
           <%- include('./partials/footer.ejs') %>  
