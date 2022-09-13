@@ -69,7 +69,7 @@ const productosController = {
 	
 	// Update - Method to update
 	update: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+        const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         console.log(req.body);
         console.log(req.params.id);
 
