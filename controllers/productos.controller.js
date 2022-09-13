@@ -26,7 +26,7 @@ const productosController = {
 	
 	// Create -  Method to store
     store: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
     
         console.log(req.file);
     
@@ -54,7 +54,7 @@ const productosController = {
     
         const data = JSON.stringify(products, null, " ");
         fs.writeFileSync(productsFilePath, data);
-        
+
         res.redirect("/productos");
       },
 
@@ -69,7 +69,7 @@ const productosController = {
 	
 	// Update - Method to update
 	update: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         console.log(req.body);
         console.log(req.params.id);
 
