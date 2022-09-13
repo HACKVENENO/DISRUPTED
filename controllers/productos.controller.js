@@ -65,7 +65,31 @@ const productosController = {
 	
 	// Update - Method to update
 	update: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+        console.log(req.body);
+        console.log(req.params.id);
 
+        productos.forEach((p) => {
+            if (p.id == req.params.id) {
+              p.name = req.body.name;
+              p.price = req.body.price;
+              p.bought = req.body.bought;
+              p.color = req.body.color;
+              p.description = req.body.description;
+              p.size = req.body.size;
+              p.category = req.body.category;
+      
+              if (req.file) {
+                fs.unlinkSync("./public/img/" + p.image);
+                p.image = req.file.filename;
+              }
+            }
+          });
+
+          const data = JSON.stringify(productos, null, " ");
+    fs.writeFileSync(productosFilePath, data);
+
+    res.redirect("/productos/detail/" + req.params.id);
 	},
 
 	// Delete - Delete one product from DB

@@ -12,7 +12,7 @@ const router = express.Router();
 /*** OBTENER TODOS LOS PRODUCTOS **/
 
 
-/* // ************ MULTER ************
+ // ************ MULTER ************
 const multer = require("multer");
 
 var storage = multer.diskStorage({
@@ -28,7 +28,7 @@ var storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
- */
+ 
 
 
 
@@ -40,8 +40,11 @@ router.get('/create', productosController.create);
 // router.post('/create', upload.single("fotoProducto"), productosController.store);
 
 
-router.get('/edit/:idProducto', productosController.edit);
-router.put('/edit/:idProducto', productosController.update);
+
+router.get('/edit/:id', productosController.edit);
+router.put('/edit/:id',
+    upload.single ('fotoProducto'),
+    productosController.update);
 
 router.delete('/destroy', productosController.destroy);
 
