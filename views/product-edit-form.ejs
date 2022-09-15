@@ -15,54 +15,117 @@
 				<h2 class="products-title">Estás editando: <i><%= productoToEdit.name %></i></h2>
 			</div>
             
-            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="div-1">
-						<label for="name">NOMBRE DEL PRODUCTO</label>
-						<input type="text" id="name" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
+            <form action="/productos/edit/<%= productoToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="div-1">
+                            <label for="name">NOMBRE DEL PRODUCTO</label>
+                            <input type="text" id="name" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
+                    </div>
+                <!-- </form> -->
+
+                <!-- <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data"> -->
+                    <div class="div-1">
+                            <label for="price">PRECIO DEL PRODUCTO</label>
+                            <input type="text" id="price" name="price" value="<%= productoToEdit.price %>" placeholder="$5600" class="form-input">
+                    </div>
+                <!-- </form> -->
+
+                <!-- <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data"> -->
+                    <div class="div-1">
+                        <label for = "color">COLOR</label>
+                        <select name = "color" id = "color">
+                            <option value = "GREEN" <%= (productoToEdit.color == "GREEN")? "selected":"" %> >OXI GREEN</option>
+                            <option value = "GOLD" <%= (productoToEdit.color == "GOLD")? "selected":"" %> >GOLD</option>
+                            <option value = "PINK" <%= (productoToEdit.color == "PINK")? "selected":"" %>  >DUSTY PINK</option>
+                            <option value = "BLACK" <%= (productoToEdit.color == "BLACK")? "selected":"" %>  >BLACK</option>
+                        </select>
+                    </div>
+                    <div class="div-1">
+                        <label for = "size">TALLE</label>
+                        <select name = "size" id = "size">
+                            <option value = "XS" <%= (productoToEdit.size == "XS")? "selected":"" %> >XS</option>
+                            <option value = "S" <%= (productoToEdit.size == "S")? "selected":"" %> >S</option>
+                            <option value = "M" <%= (productoToEdit.size == "M")? "selected":"" %> >M</option>
+                            <option value = "L" <%= (productoToEdit.size == "L")? "selected":"" %> >L</option>
+                            <option value = XL" <%= (productoToEdit.size == "XL")? "selected":"" %> >XL</option>
+                            <option value = "XXL" <%= (productoToEdit.size == "XXL")? "selected":"" %> >XXL</option>
+                        </select>
+                    </div>
+                <!-- </form> -->
+
+                <!-- <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data"> -->
+                    <p>CATEGORÍAS<p>
+                    <div class = "categorias">
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "newCollection" <%= (productoToEdit.category == "newCollection")? "checked":"" %> >
+                            <label for = "category">NUEVA COLECCIÓN</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "sale" <%= (productoToEdit.category == "sale")? "checked":"" %> >
+                            <label for = "category">SALE</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "winter" <%= (productoToEdit.category == "winter")? "checked":"" %> >
+                            <label for = "category">INVIERNO</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "summer"  <%= (productoToEdit.category == "summer")? "checked":"" %> >
+                            <label for = "category">VERANO</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "remeras"  <%= (productoToEdit.category == "remeras")? "checked":"" %> >
+                            <label for = "category">REMERAS</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "buzos"  <%= (productoToEdit.category == "buzos")? "checked":"" %> >
+                            <label for = "category">BUZOS</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "pantalones"  <%= (productoToEdit.category == "pantalones")? "checked":"" %> >
+                            <label for = "category">PANTALONES</label>
+                        </div>
+                        <div>
+                            <input type = "checkbox" name = "category" id = "category" value = "camperas"  <%= (productoToEdit.category == "camperas")? "checked":"" %> >
+                            <label for = "category">CAMPERAS</label>
+                        </div>
+                    </div>
+                <!-- </form> -->
+
+                <!-- <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data"></form> -->
+                    <div class = "div-1">
+                        <label for = "stock" name = "stock">STOCK DISPONIBLE</label>
+                        <select name = "stock" id = "stock">
+                            <option>SELECCIONAR</option>
+                            <option value = 0 <%= (productoToEdit.stock == "0")? "selected":"" %>>0</option>
+                            <option value = 1 <%= (productoToEdit.stock == "1")? "selected":"" %>>1</option>
+                            <option value = 2 <%= (productoToEdit.stock == "2")? "selected":"" %>>2</option>
+                            <option value = 3 <%= (productoToEdit.stock == "3")? "selected":"" %>>3</option>
+                            <option value = 4 <%= (productoToEdit.stock == "4")? "selected":"" %>>4</option>
+                            <option value = 5 <%= (productoToEdit.stock == "5")? "selected":"" %>>5</option>
+                            <option value = 6 <%= (productoToEdit.stock == "6")? "selected":"" %>>6</option>
+                        </select>
+                    </div>
+                    <div  class = "div-3">
+                        <label>DESCRIPCIÓN</label>
+                        <textarea name = "description"  id = "description"><%=productoToEdit.description%></textarea>
+                    </div>
+                <!-- </form> -->
+
+
+                <!-- <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data"> -->
+                    <div  class = "div-1">
+                        <label for="foto">SUBIR IMAGEN</label>
+                        <input type="file" id="foto" name="fotoProducto" class="form-input">
+                    </div>
+                
+                <div class = "guardar">
+                    <button class = "botonGuardar" type="submit">GUARDAR CAMBIOS</button>
                 </div>
             </form>
 
-            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-				<div class="div-1">
-						<label for="price">PRECIO DEL PRODUCTO</label>
-						<input type="text" id="price" name="price" value="<%= productoToEdit.price %>" placeholder="$5600" class="form-input">
-                </div>
-            </form>
 
-            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div class="div-1">
-                    <label for = "color">COLOR</label>
-                    <select name = "color" id = "color">
-                        <option value = "GREEN" <%= (productoToEdit.color == "GREEN")? "selected":"" %> >OXI GREEN</option>
-                        <option value = "GOLD" <%= (productoToEdit.color == "GOLD")? "selected":"" %> >GOLD</option>
-                        <option value = "PINK" <%= (productoToEdit.color == "PINK")? "selected":"" %>  >DUSTY PINK</option>
-                        <option value = "BLACK" <%= (productoToEdit.color == "BLACK")? "selected":"" %>  >BLACK</option>
-                    </select>
-                </div>
-                <div class="div-1">
-                    <label for = "size">TALLE</label>
-                    <select name = "size" id = "size">
-                        <option value = "XS" <%= (productoToEdit.size == "XS")? "selected":"" %> >XS</option>
-                        <option value = "S" <%= (productoToEdit.size == "S")? "selected":"" %> >S</option>
-                        <option value = "M" <%= (productoToEdit.size == "M")? "selected":"" %> >M</option>
-                        <option value = "L" <%= (productoToEdit.size == "L")? "selected":"" %> >L</option>
-                        <option value = XL" <%= (productoToEdit.size == "XL")? "selected":"" %> >XL</option>
-                        <option value = "XXL" <%= (productoToEdit.size == "XXL")? "selected":"" %> >XXL</option>
-                    </select>
-                </div>
-            </form>
 
-            <form action="/productos/edit/:id?_method=PUT" method="POST" enctype="multipart/form-data">
-                <div  class = "div-1">
-                    <label for="foto">SUBIR IMAGEN</label>
-                    <input type="file" id="foto" name="fotoProducto" class="form-input">
-                </div>
-            </form>
-		    <div class = "guardar">
-			    <button class = "botonGuardar" type="submit">GUARDAR CAMBIOS</button>
-		    </div>
             <div class = "eliminar">
-                <form action="/productos/delete/<%=productoToEdit%>?_method=DELETE" method="POST" >
+                <form action="/productos/delete/<%=productoToEdit.id%>?_method=DELETE" method="POST" >
                     <button type="submit" class = "botonBorrar">ELIMINAR</button>
                 </form>
             </div>

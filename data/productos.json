@@ -1,72 +1,73 @@
 [
-    {
-        "id": 1,
-        "image": "wear-one.png",
-        "name": "WEAR ONE",
-        "price": 1111,
-        "bought": "True",
-        "color": "blue",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "S",
-        "category":"sale"
-    },
-    
-    {
-        "id": 2,
-        "image": "wear-two.png",
-        "name": "WEAR TWO",
-        "price": 2222,
-        "bought": "False",
-        "color": "red",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "M",
-        "category":"sale"
-    },
-    {
-        "id": 3,
-        "image": "wear-three.png",
-        "name": "WEAR THREE",
-        "price": 3333,
-        "bought": "False",
-        "color": "green",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "L",
-        "category": "sale"
-    },
-    {
-        "id": 4,
-        "image": "wear-four.png",
-        "name": "WEAR FOUR",
-        "price": 4444,
-        "bought": "True",
-        "color": "white",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "XL",
-        "category": "winter"
-
-
-
-    },
-    {
-        "id": 5,
-        "image": "wear-five.png",
-        "name": "WEAR FIVE",
-        "price": 5555,
-        "bought": "False",
-        "color": "blue",
-        "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "S",
-        "category": "summer"
-    },
-    {
-        "id": 6,
-        "image": "wear-six.png",
-        "name": "WEAR SIX",
-        "price": 6666,
-        "bought": "False",
-        "color": "blue",
-        "description":"Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "size": "S",
-        "category": "sale"
-    }
+ {
+  "id": 1,
+  "image": "1663251668431wear38.jpg",
+  "name": "WEAR ONE",
+  "price": "1111",
+  "color": "GREEN",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "S",
+  "category": "summer",
+  "stock": "3"
+ },
+ {
+  "id": 2,
+  "image": "wear-two.png",
+  "name": "WEAR TWO",
+  "price": 2222,
+  "bought": "False",
+  "color": "red",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "M",
+  "category": "sale",
+  "stock": 3
+ },
+ {
+  "id": 3,
+  "image": "wear-three.png",
+  "name": "WEAR THREE",
+  "price": 3333,
+  "bought": "False",
+  "color": "green",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "L",
+  "category": "sale",
+  "stock": 2
+ },
+ {
+  "id": 4,
+  "image": "wear-four.png",
+  "name": "WEAR FOUR",
+  "price": 4444,
+  "bought": "True",
+  "color": "white",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "XL",
+  "category": "winter",
+  "stock": 3
+ },
+ {
+  "id": 5,
+  "image": "wear-five.png",
+  "name": "WEAR FIVE",
+  "price": 5555,
+  "bought": "False",
+  "color": "blue",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "S",
+  "category": "summer",
+  "stock": 4
+ },
+ {
+  "id": 6,
+  "image": "wear-six.png",
+  "name": "WEAR SIX",
+  "price": 6666,
+  "bought": "False",
+  "color": "blue",
+  "description": "Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "size": "S",
+  "category": "sale",
+  "stock": 5
+ }
 ]

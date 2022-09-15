@@ -2,11 +2,12 @@ const fs = require("fs");
 const path = require('path');
 
 const productosFilePath = path.join(__dirname, "../data/productos.json");
-const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+// const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 
 
 const productosController = {
     productos: (req, res) => {
+      const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
      /**
      *  logica     
      */   
@@ -14,19 +15,20 @@ const productosController = {
     },
 
     details: (req, res) =>{
-    
+        const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         const producto = productos.find((p) => p.id == req.params.id);                
         res.render("details", { producto : producto });
     },
 
     create: (req, res) => {
+        const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         res.render("product-create-form");
         
     },
 	
 	// Create -  Method to store
     store: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+        const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
     
         console.log(req.file);
     
@@ -50,9 +52,9 @@ const productosController = {
           productoNuevo.image = req.file.filename;
         }
 
-        products.push(productoNuevo);
+        productos.push(productoNuevo);
     
-        const data = JSON.stringify(products, null, " ");
+        const data = JSON.stringify(productos, null, " ");
         fs.writeFileSync(productosFilePath, data);
 
         res.redirect("/productos");
@@ -72,6 +74,7 @@ const productosController = {
         const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
         console.log(req.body);
         console.log(req.params.id);
+        console.log(req.file)
 
         productos.forEach((p) => {
             if (p.id == req.params.id) {
@@ -82,10 +85,12 @@ const productosController = {
               p.description = req.body.description;
               p.size = req.body.size;
               p.category = req.body.category;
+              p.stock = req.body.stock;
       
               if (req.file) {
                 fs.unlinkSync("./public/img/" + p.image);
                 p.image = req.file.filename;
+                console.log(req.file.filename)
               }
             }
           });
@@ -93,16 +98,24 @@ const productosController = {
           const data = JSON.stringify(productos, null, " ");
     fs.writeFileSync(productosFilePath, data);
 
-    res.redirect("/productos/detail/" + req.params.id);
+    res.redirect("/productos/details/" + req.params.id);
 	},
 
 	// Delete - Delete one product from DB
 	delete : (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
-        const producto = products.filter((p) => p.id != req.params.id);
-        res.redirect('/productos')
-		// Do the magic
-	}
+    let products = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+    const producto = products.find((p) => p.id == req.params.id);
+
+    products = products.filter((p) => p.id != req.params.id);
+
+    if (producto && producto.image != "default-image.png") {
+      fs.unlinkSync("./public/img/" + producto.image);
+    }
+
+    const data = JSON.stringify(products, null, " ");
+    fs.writeFileSync(productosFilePath, data);
+    res.redirect("/productos");
+  },
 
 };
 
