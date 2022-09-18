@@ -1,6 +1,6 @@
 const path = require('path');
 
-const loginController = {    
+const usersController = {    
     login: (req, res) =>  {
     /**
      *  logica
@@ -9,4 +9,4 @@ const loginController = {
     },
 };
 
-module.exports = loginController;
+module.exports = usersController;
