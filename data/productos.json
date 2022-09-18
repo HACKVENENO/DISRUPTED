@@ -69,5 +69,85 @@
   "size": "S",
   "category": "sale",
   "stock": 5
+ },
+ {
+  "id": 1663345053521,
+  "image": "1663345053515wear36.jpg",
+  "name": "hola",
+  "price": "235435",
+  "color": "BLANCO",
+  "description": "asdfghjkl",
+  "size": "asdfghjkl",
+  "category": [
+   "on",
+   "on",
+   "on"
+  ]
+ },
+ {
+  "id": 1663345338750,
+  "image": "1663345338745Captura6.PNG",
+  "name": "asdf",
+  "price": "3456",
+  "color": "BLANCO",
+  "description": "asdfgh",
+  "size": "asdfgh",
+  "category": [
+   "on",
+   "on",
+   "on"
+  ]
+ },
+ {
+  "id": 1663373506024,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373507164,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373515416,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373516701,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373517636,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373518395,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373518841,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373519813,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373520577,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373910213,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373918399,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373919935,
+  "image": "default-image.png"
+ },
+ {
+  "id": 1663373920768,
+  "image": "default-image.png"
  }
 ]

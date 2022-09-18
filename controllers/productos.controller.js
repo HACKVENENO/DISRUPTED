@@ -29,8 +29,8 @@ const productosController = {
 	// Create -  Method to store
     store: (req, res) => {
         const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
-    
-        console.log(req.file);
+        console.log(req.body)
+  
     
         const productoNuevo = {
           id: Date.now(),
@@ -42,6 +42,7 @@ const productosController = {
           description: req.body.description,
           size: req.body.description,
           category: req.body.category
+          // armar array para recibir categorías
           
         };
     
@@ -91,6 +92,10 @@ const productosController = {
                 fs.unlinkSync("./public/img/" + p.image);
                 p.image = req.file.filename;
                 console.log(req.file.filename)
+                if (producto && producto.image != "default-image.png") {
+                  fs.unlinkSync("./public/img/" + producto.image);
+           
+                }
               }
             }
           });
