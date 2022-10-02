@@ -5,3 +5,5 @@ const router = express.Router();
 router.get('/', registerController.register);
 
 module.exports = router
+
+//debería pasarse todo lo relacionado al usuario a users.routes

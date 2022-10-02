@@ -10,7 +10,7 @@
     <%- include('./partials/header.ejs') %>
 
     <main class = "login">
-        <form action = "/login" method = "POST">
+        <form action = "/user/login" method = "POST">
             <div>
                 <h2>INGRESÁ</h2>
             </div>
@@ -18,21 +18,31 @@
                 <div>            
                     <label for = "email">EMAIL</label>
                     <input type = "email" name = "email" id = "email">
+                    <% if(locals.errors && errors.email){ %>
+                        <div class="text-danger">
+                            <%= errors.email.msg %> 
+                        </div>
+                    <% } %>
                 </div>
                 <div>
                     <label for = "password">CONTRASEÑA</label>
                     <input type = "password" name = "password" id = "password">
+                    <% if(locals.errors && errors.password){ %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %> 
+                        </div>
+                    <% } %>
                 </div>
             </div>
-            <!--<div class = "recordar">
-                <input type = "checkbox" name = "rebember">
-                <label for = "rebember">Recordar contraseña</label>
-            </div>-->
             <div class = "olvidoContraseña">
                 <p><a href="/recuperar-contrasenia">¿Olvidaste tu contraseña?</a></p>
             </div>
+            <div class = "recordar">
+                <input type = "checkbox" name = "rebemberUser">
+                <label for = "rebember">Recordar contraseña</label>
+            </div>
             <div class = "ingresar">  
-                <button class = "botonIngresar" type = "submit"><a href="/home">INGRESAR</a></button>
+                <button class = "botonIngresar" type = "submit">INGRESAR</button>
             </div>
             <div class = "registrate">
                 <p>¿No tenés cuenta? <a href="/register">Registrate ahora</a></p>
