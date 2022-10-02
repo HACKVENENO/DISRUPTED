@@ -6,7 +6,7 @@
         <title>Ingresar</title>
     
     <body>
-        <!-- header-->
+        <!-- header -->
         <%- include('./partials/header.ejs') %>
 
     <main class = "register">
@@ -24,7 +24,7 @@
                     <label for = "lastName">APELLIDO</label>
                     <input type = "text" name = "lastName" id = "lastName">
                 </div>
-                <div>
+                <!-- <div>
                     <label for = "gender">GÉNERO</label>
                     <select name = "gender" id = "gender">
                         <option value = "selecciona">Seleccionar</option>
@@ -33,7 +33,13 @@
                         <option value = "noBinario">No Binario</option>
                         <option value = "noIndica">Prefiero no indicarlo</option>
                     </select>
+                </div>-->
+
+                <div  class = "div-3">
+                    <label for = "image">SUBIR IMAGEN</label>
+                    <input type = "file" id = "image" name = "fotoPerfil">
                 </div>
+
             </div>
             <div class = "datosInicio">
                     <h4>DATOS DE INICIO DE SESIÓN</h4>
@@ -42,12 +48,12 @@
                     <input type = "email" name = "email" id = "email">
                 </div>
                 <div>
-                    <label for = "confirmPassword">CONTRASEÑA</label>
-                    <input type = "password" name = "confirmPassword" id = "confirmPassword">
+                    <label for = "password">CONTRASEÑA</label>
+                    <input type = "password" name = "password" id = "password">
                 </div>
                 <div>
                     <label for = "password">CONFIRMAR CONTRASEÑA</label>
-                    <input type = "password" name = "password" id = "password">
+                    <input type = "password" name = "confirmPassword" id = "confirmPassword">
                 </div>
             </div>  
                 <div class = "suscripcion">
@@ -55,7 +61,7 @@
                     <label for="newsletter">SUSCRIBIRME AL NEWSLETTER</label>
                 </div>
             <div class = "confirmar">  
-                <button class = "botonCrear" type = "submit"><a href="/home">CREAR CUENTA</a></button>
+                <button class = "botonCrear" type = "submit">CREAR CUENTA</button>
             </div>
             <div class = "yaTieneCuenta">
                 <p>¿Ya tenés una cuenta? <a href="/login">Iniciá sesión</a></p>
