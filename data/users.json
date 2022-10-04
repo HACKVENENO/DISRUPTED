@@ -1,0 +1,22 @@
+[
+ {
+  "id": 1,
+  "name": "hola",
+  "lastName": "hello",
+  "gender": "femenino",
+  "imagenPerfil": "default.jpg",  
+  "email": "hola@hola.com",
+  "password": "hola1234",
+  "subscription": "true"
+ },
+ {
+  "id": 2,
+  "name": "chau",
+  "lastName": "bye",
+  "gender": "femenino",
+  "imagenPerfil": "default.jpg",
+  "email": "chau@chau.com",
+  "password": "chau1234",
+  "subscription": "true"
+ }
+]

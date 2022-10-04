@@ -41,3 +41,5 @@ const registerController = {
     };
 
 module.exports = registerController;
+
+//debería pasarse todo a users.controller

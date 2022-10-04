@@ -27,3 +27,5 @@ router.post('/register', fileUpload.single("fotoPerfil"), registerController.sto
 router.get('/', registerController.register);
 
 module.exports = router
+
+//debería pasarse todo lo relacionado al usuario a users.routes

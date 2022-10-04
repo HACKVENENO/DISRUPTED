@@ -58,9 +58,15 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, esse. Tempora nostrum, accusantium consequuntur hic molestiae et, repellat illum facilis vel qui ab error voluptatem harum animi expedita officia sunt!</p>
             </div>    
             <div class = "edicion">
+<<<<<<< HEAD
                 <button><a href= "/productos/edit/<%= producto.id%>" class="action-button edit">EDITAR PRODUCTO</a></button>
                 <form action="/productos/delete/<%= producto.id%>_method=DELETE" method="POST" style="display: inline-flex" >
                 <button type="submit" class="action-button-delete">ELIMINAR</button>
+=======
+                <button><a href= "../edit/<%= producto.id%>" class="action-button edit">EDITAR PRODUCTO</a></button>
+                <form action="/productos/delete/<%= producto.id%>?_method=DELETE" method="POST" style="display: inline-flex" >
+                    <button type="submit" class="action-button-delete">ELIMINAR</button>
+>>>>>>> e36941cec0a2f737893a583894a00a1970a47294
                 </form>
             </div>
         </div>
