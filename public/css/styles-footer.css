@@ -125,7 +125,7 @@ body footer .prefooter input{
     padding-right: 10px;
 }
 
-.footerPie ul, li, .footerPie a, .footerPie h5{
+.footerPie ul, .footerPie li, .footerPie a, .footerPie h5{
     list-style: none;
     color: black;
     background-color: grey;
