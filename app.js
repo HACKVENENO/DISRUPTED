@@ -14,7 +14,7 @@ const carritoRouter = require('./routes/carrito.routes')
 const usersRouter = require("./routes/users.routes");
 const loginRouter = require("./routes/users.routes");
 const userProfileRouter = require("./routes/users.routes");
-const registerRouter = require("./routes/users.routes"); //ver para mi debería ir dentro de users.routes
+const registerRouter = require("./routes/users.routes"); 
 const recuperarContraseniaRouter = require("./routes/recuperar-contrasenia.routes"); //este también debería ser cambiado a users.routes
 const logoutRouter = require("./routes/users.routes");
 

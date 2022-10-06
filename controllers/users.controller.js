@@ -1,11 +1,10 @@
-//const path = require('path');
 const bcryptjs = require("bcryptjs");
 const User = require("../models/User");
 
 const fs = require ('fs');
 const path = require('path');
 
-const registrosFilePath = path.join(__dirname, "../data/registros.json");
+const registrosFilePath = path.join(__dirname, "../data/users.json");
 const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 
 const {validationResult}= require ('express-validator')
@@ -55,7 +54,7 @@ const usersController = {
                 let data = JSON.stringify(registro, null, " ");
                 fs.writeFileSync(registrosFilePath, data);
         
-                res.redirect("/");
+                res.redirect("/user/login");
     },
 
 

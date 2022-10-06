@@ -5,14 +5,14 @@
 <div class="top-header">
     <ul>
         <% if (locals.logged) { %>
-            <li><a><img src = "/img/profile/avatar_default.png" width = "40">Hola Carola!</a></li>
+            <li><a><img src = "/img/profile/avatar_default.png" width = "40">Hola <%= locals.userLogged.name %></a></li>
             <li><a href = "/user/user-profile">Mi cuenta</a></li>
             <li><a href = "/user/logout">Cerrar Sesión</a></li>
         <% } else {%>
-            <li><a href="/register">Crear cuenta</a></li>
+            <li><a href="/user/register">Crear cuenta</a></li>
             <li><a href="/user/login">Iniciar sesión</a></li>
         <% } %>
-        <li><i class="fa-solid fa-cart-shopping"></i></li>
+        <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
     </ul>
 </div>
 

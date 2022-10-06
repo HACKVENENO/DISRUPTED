@@ -32,7 +32,7 @@ const validations = [
     body('password').notEmpty().withMessage('Debes generar un Password válido!')
   ]
 
-router.get("/register", usersController.register);
+router.get("/register", usersMiddlewares, usersController.register);
 router.post("/user/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.proccessRegister
 
 router.get('/', usersController.register);

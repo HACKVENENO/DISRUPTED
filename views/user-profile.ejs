@@ -8,14 +8,20 @@
 <body>
     <!-- header-->
     <%- include('./partials/header.ejs') %>
-    
-<h1>ESTE ES EL PERFIL DE USUARIO :) </h1>
 
-<form action = "/user/logout" method = "GET">
-    <div class = "cerrarSesion">  
-        <button class = "botonSalir" type = "submit">CERRAR SESIÓN</button>
+<main class = "userProfile">   
+    <h1>Este es el perfil de <%= locals.userLogged.name%> <%= locals.userLogged.lastName%></h1>
+
+    <div class = "fotoPerfil">
+        <img class = "imagen" src = "/img/profile/avatar_default.png" alt = "foto perfil">
     </div>
-</form>
+
+    <form action = "/user/logout" method = "GET">
+        <div class = "cerrarSesion">  
+            <button class = "botonSalir" type = "submit">CERRAR SESIÓN</button>
+        </div>
+    </form>
+</main> 
 
 
          <!-- footer-->
