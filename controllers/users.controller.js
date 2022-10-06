@@ -2,16 +2,63 @@
 const bcryptjs = require("bcryptjs");
 const User = require("../models/User");
 
+const fs = require ('fs');
+const path = require('path');
+
+const registrosFilePath = path.join(__dirname, "../data/registros.json");
+const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
+
+const {validationResult}= require ('express-validator')
+
 const usersController = {
     register: (req, res)=> {
-
-        res.render("register")
+        return res.render("register")
     },
 
     proccessRegister: (req, res)=> {
-        password : bcryptjs.hashSync(req.body.password, 10), //si te sirve joya
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors : resultValidation.mapped()
+            });
+        }
+
+        password : bcryptjs.hashSync(req.body.password, 10),
         res.send("ok");
     },
+    
+            // Método Registrar
+
+    store: (req, res) => {
+        let registro = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
+    
+            
+        let usuarioNuevo = {
+                  id: Date.now(),
+                  image: "avatar_default.png",
+                  name: req.body.name,
+                  lastName: req.body.lastName,
+                  email: req.body.email, 
+                  gender: req.body.gender,
+                  password: req.body.password,                       
+                    };
+            
+                //si hay foto guarda el nombre de la imagen
+                 
+            if (req.file) {
+                  usuarioNuevo.image = req.file.filename;
+                };
+        
+                registro.push(usuarioNuevo);
+            
+                let data = JSON.stringify(registro, null, " ");
+                fs.writeFileSync(registrosFilePath, data);
+        
+                res.redirect("/");
+    },
+
+
 
     login: (req, res) =>  {
 

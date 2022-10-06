@@ -10,7 +10,13 @@
         <%- include('./partials/header.ejs') %>
 
     <main class = "register">
-        <form action = "/register" method = "POST">
+        <form action = "user/register" method = "POST" enctype="multipart/form-data">
+            
+            <% if (locals.errors) { %>
+                <%  for (let oneError in errors) {%>
+                <p><%= errors[oneError].msg   %></p>
+                <% } %>
+            <% } %>
             <div>
                 <h2>CREÁ TU CUENTA</h2>
             </div>
@@ -24,7 +30,7 @@
                     <label for = "lastName">APELLIDO</label>
                     <input type = "text" name = "lastName" id = "lastName">
                 </div>
-                <!-- <div>
+                <div>
                     <label for = "gender">GÉNERO</label>
                     <select name = "gender" id = "gender">
                         <option value = "selecciona">Seleccionar</option>
@@ -33,20 +39,13 @@
                         <option value = "noBinario">No Binario</option>
                         <option value = "noIndica">Prefiero no indicarlo</option>
                     </select>
-                </div>-->
-
-                <div  class = "div-3">
-                    <label for = "image">SUBIR IMAGEN</label>
-                    <input type = "file" id = "image" name = "fotoPerfil">
                 </div>
-<<<<<<< HEAD
 
-=======
+
                 <div>
                     <label for = "image">IMAGEN DE PERFIL</label>
                     <input type = "file" id = "image" name = "imagenPerfil">
                 </div>
->>>>>>> e36941cec0a2f737893a583894a00a1970a47294
             </div>
             <div class = "datosInicio">
                     <h4>DATOS DE INICIO DE SESIÓN</h4>

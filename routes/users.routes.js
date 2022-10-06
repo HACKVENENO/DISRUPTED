@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
+const multer = require("multer");
+const {body} = require ('express-validator')
 
 //controller
 const usersController = require('../controllers/users.controller');
@@ -9,8 +12,31 @@ const usersMiddlewares = require("../middlewares/usersMiddlewares");
 const noUsersMiddlewares = require("../middlewares/noUsersMiddlewares");
 
 //register VER! el userMiddlewares sirve para que no pueda alguien que ya está en su cuenta ver el register porque ya  ingresó a una cuenta //no funciona igual pero así debería ser, con login si funciona
-router.get("/register", usersMiddlewares, usersController.register);
-//router.post("/register", usersController.proccessRegister);
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./public/img/profile");
+  },
+  filename: (req, file, cb) => {
+   // cb(null, file.fieldname + "-" + Date.now());
+   cb(null, Date.now() + "" + file.originalname);
+  },
+});
+
+const fileUpload = multer({storage});
+
+const validations = [
+    body('name').notEmpty().withMessage('Tienes que escribir tu Nombre!'),
+    body('lastName').notEmpty().withMessage('Tienes que escribir tu Apellido!'),
+    body('email').notEmpty().withMessage('Tienes que ingresar un eMail válido!'),
+    body('password').notEmpty().withMessage('Debes generar un Password válido!')
+  ]
+
+router.get("/register", usersController.register);
+router.post("/user/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.proccessRegister
+
+router.get('/', usersController.register);
+
 
 //login 
 router.get("/login", usersMiddlewares, usersController.login); //el userMiddlewares sirve para que no pueda alguien que ya está en su cuenta ver el login porque ya ingresó

@@ -2,9 +2,9 @@
  {
   "id": 1,
   "image": "1663251668431wear38.jpg",
-  "name": "WEAR ONE",
-  "price": "1111",
-  "color": "GREEN",
+  "name": "WEAR two",
+  "price": "85000",
+  "color": "GOLD",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "size": "S",
   "category": "summer",
@@ -149,5 +149,14 @@
  {
   "id": 1663373920768,
   "image": "default-image.png"
+ },
+ {
+  "id": 1664932430340,
+  "image": "fotoProducto-1664932430334",
+  "name": "Pantalon Grande",
+  "price": "7799",
+  "color": "NEGRO",
+  "description": "",
+  "size": ""
  }
 ]

@@ -8,3 +8,4 @@ let usersMiddlewares = (req, res, next) => {
 module.exports = usersMiddlewares;
 
 //con esto ya no puedo entrar a login ni register si ya inicié sesión
+
