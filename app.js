@@ -4,6 +4,9 @@ const cookies = require("cookie-parser");
 const path = require('path');
 const app = express();
 
+//middlewares
+const loggedMiddlewares = require("./middlewares/loggedMiddlewares");
+
 //Routers
 const indexRouter = require('./routes/index.routes')
 const productosRouter = require('./routes/productos.routes')
@@ -11,11 +14,13 @@ const carritoRouter = require('./routes/carrito.routes')
 const usersRouter = require("./routes/users.routes");
 const loginRouter = require("./routes/users.routes");
 const userProfileRouter = require("./routes/users.routes");
-const registerRouter = require("./routes/register.routes"); //ver para mi debería ir dentro de users.routes
+const registerRouter = require("./routes/users.routes");
 const recuperarContraseniaRouter = require("./routes/recuperar-contrasenia.routes"); //este también debería ser cambiado a users.routes
+const logoutRouter = require("./routes/users.routes");
 
 //session
 app.use(session({ secret : "secret", resave : false, saveUninitialized : false }));
+app.use(loggedMiddlewares);
 
 //cookies
 app.use(cookies());
@@ -43,7 +48,8 @@ app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/recuperar-contrasenia", recuperarContraseniaRouter);
 app.use("/user", usersRouter);
-app.use("/user-profile", userProfileRouter)
+app.use("/user-profile", userProfileRouter);
+app.use("/logout", logoutRouter);
 
 // Creamos el servidor
 app.listen(3040, () => console.log('Servidor corriendo en el puerto 3040'));
