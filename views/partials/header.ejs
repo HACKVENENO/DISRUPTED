@@ -1,11 +1,17 @@
 <div class="offer-bar">
-    <p>3 Y 6 MESES SIN INTERÉS, ENVIOS GRATIS</p>
+    <p>3 Y 6 CUOTAS SIN INTERÉS, ENVIOS GRATIS</p>
 </div>
 
 <div class="top-header">
     <ul>
-        <li><a href="#">Crear cuenta</a></li>
-        <li><a href="#">Iniciar sesión</a></li>
+        <% if (locals.logged) { %>
+            <li><a><img src = "/img/profile/avatar_default.png" width = "40">Hola Carola!</a></li>
+            <li><a href = "/user/user-profile">Mi cuenta</a></li>
+            <li><a href = "/user/logout">Cerrar Sesión</a></li>
+        <% } else {%>
+            <li><a href="/register">Crear cuenta</a></li>
+            <li><a href="/user/login">Iniciar sesión</a></li>
+        <% } %>
         <li><i class="fa-solid fa-cart-shopping"></i></li>
     </ul>
 </div>
