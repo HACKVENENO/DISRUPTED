@@ -1,0 +1,51 @@
+.userProfile{
+    margin: 100px auto;
+}
+
+.userProfile img{
+    width: 60%;
+}
+
+.userProfile h1{
+    text-align: center;
+}
+
+.userProfile .cerrarSesion, .fotoPerfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.userProfile .botonSalir{
+    padding: 10px;
+    color: #fff;
+    background-color: grey;
+    border-radius: 4px;
+    font-size: 18px;
+    margin: 15px 0px 5px;
+    border-width: 0px;
+    transition: background 0.5s;
+}
+
+.userProfile .botonSalir a{
+    text-decoration: none;
+    color: white;
+}
+
+.userProfile .botonSalir:hover{
+    background: black;
+}
+
+@media (min-width: 460px){
+    .userProfile{
+        font-size: 1.7vw;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1080px){
+    .userProfile{
+        font-size: 1.3vw;
+        width: 30%;
+    }
+}

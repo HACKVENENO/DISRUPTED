@@ -5,13 +5,10 @@
 //4. Editar la información del usuario
 //5. Eliminar un usuario de la BD (el achivo json ahora)
 
-//video "proceso de login completo" -->
-
 //se crea objeto literal que va a tener metodos que se van a encargar de las características antes mencionadas
 
 const fs = require("fs");
 
-/////no puedo poner () => me tira error, por qué?
 const User = {
     //indicar archivo que hace referencia a nuestra base de datos (JSON ahora)
     fileName : "./data/users.json",
@@ -66,7 +63,5 @@ const User = {
     }
 
 }
-
-//console.log(User.create({ name: "Juan", email: "juan@gmail.com"}));
 
 module.exports = User;
