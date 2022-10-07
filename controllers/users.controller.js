@@ -19,13 +19,15 @@ const usersController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            return res.render('register', {
+            return res.render('/register', {
                 errors : resultValidation.mapped()
             });
         }
 
         password : bcryptjs.hashSync(req.body.password, 10),
         res.send("ok");
+
+
     },
     
             // Método Registrar
@@ -55,7 +57,7 @@ const usersController = {
                 let data = JSON.stringify(registro, null, " ");
                 fs.writeFileSync(registrosFilePath, data);
         
-                res.redirect("/");
+                res.redirect("../register");
     },
 
 
