@@ -1,4 +1,4 @@
-const bcryptjs = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 
 const fs = require ('fs');
@@ -23,8 +23,7 @@ const usersController = {
             });
         }
 
-        password : bcryptjs.hashSync(req.body.password, 10),
-        res.send("ok");
+
 
 
     },
@@ -42,7 +41,7 @@ const usersController = {
                   lastName: req.body.lastName,
                   email: req.body.email, 
                   gender: req.body.gender,
-                  password: req.body.password,                       
+                  password: bcrypt.hashSync(req.body.password, 10),                       
                     };
             
                 //si hay foto guarda el nombre de la imagen
@@ -70,8 +69,8 @@ const usersController = {
         let userToLogin = User.findByField("email", req.body.email);
         
         if(userToLogin) {
-            //let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //cuando este hecho el bcryptjs se habilita esto y se saca el que está abajo    
-            let correctPassword = User.findByField("password", req.body.password);
+
+            let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
             if (correctPassword) {
                 delete userToLogin.password; //por seguridad
                 req.session.userLogged = userToLogin;

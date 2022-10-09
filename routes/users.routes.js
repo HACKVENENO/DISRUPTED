@@ -33,13 +33,8 @@ const validations = [
     body('password').notEmpty().withMessage('Debes generar un Password válido!')
   ]
 
-<<<<<<< HEAD
-router.get("/register", usersController.register);
-router.post("/user/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.processRegister
-=======
 router.get("/register", usersMiddlewares, usersController.register);
 router.post("/user/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.proccessRegister
->>>>>>> d8b542c7326481898e31017eaa8ea25d5bc63538
 
 router.get('/', usersController.register);
 
