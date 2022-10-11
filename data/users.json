@@ -16,5 +16,32 @@
   "email": "hola@hola.com",
   "gender": "noBinario",
   "password": "hola1234"
+ },
+ {
+  "id": 1665104590218,
+  "image": "1665104590202foto-Youtube.JPG",
+  "name": "Juan",
+  "lastName": "De Los Palotes",
+  "email": "juandelospalotes@gmail.com",
+  "gender": "masculino",
+  "password": "1598"
+ },
+ {
+  "id": 1665105111819,
+  "image": "1665105111798wear12.jpg",
+  "name": "Josema",
+  "lastName": "Alvarez",
+  "email": "josema@dh.com",
+  "gender": "masculino",
+  "password": "1234"
+ },
+ {
+  "id": 1665105567666,
+  "image": "avatar_default.png",
+  "name": "",
+  "lastName": "Roig",
+  "email": "guillepagani@gmail.com",
+  "gender": "femenino",
+  "password": "1234"
  }
 ]

@@ -9,27 +9,19 @@
         <!-- header -->
         <%- include('./partials/header.ejs') %>
 
-
-    <div> 
-         <% if (locals.errors) { %>
+    <main class = "register">
+        <form action = "user/register" method = "POST" enctype="multipart/form-data">
+            
+            <% if (locals.errors) { %>
                 <%  for (let oneError in errors) {%>
                 <p><%= errors[oneError].msg   %></p>
                 <% } %>
             <% } %>
-    </div>
- 
-
-
-    <main class = "register">
-        <form action = "user/register" method = "POST" enctype="multipart/form-data">     
             <div>
                 <h2>CREÁ TU CUENTA</h2>
-            
-        </div>
-
-
+            </div>
             <div class = "datosPersonales">
-                <h4>DATOS PERSONALES</h4>
+                    <h4>DATOS PERSONALES</h4>
                 <div>
                     <label for = "name">NOMBRE</label>
                     <input type = "text" name = "name" id = "name">

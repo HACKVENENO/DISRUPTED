@@ -17,16 +17,16 @@ const usersController = {
     proccessRegister: (req, res)=> {
         const resultValidation = validationResult(req);
 
+        console.log (resultValidation);
+
         if (resultValidation.errors.length > 0) {
-            return res.render('/register', {
+            return res.render('register', {
                 errors : resultValidation.mapped()
             });
         }
 
         password : bcryptjs.hashSync(req.body.password, 10),
         res.send("ok");
-
-
     },
     
             // Método Registrar
@@ -71,7 +71,11 @@ const usersController = {
         
         if(userToLogin) {
             //let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password); //cuando este hecho el bcryptjs se habilita esto y se saca el que está abajo    
+        
             let correctPassword = User.findByField("password", req.body.password);
+
+console.log ('correct password', correctPassword)
+
             if (correctPassword) {
                 delete userToLogin.password; //por seguridad
                 req.session.userLogged = userToLogin;
