@@ -16,5 +16,14 @@
   "email": "hola@hola.com",
   "gender": "noBinario",
   "password": "hola1234"
+ },
+ {
+  "id": 1665292614154,
+  "image": "16652926141442022_08_16_183214.pdf",
+  "name": "cande",
+  "lastName": "laria",
+  "email": "cande@laria",
+  "gender": "femenino",
+  "password": "$2a$10$55G1TgnIFhTc6xwYjWnl.e0SIDSl6/lrdSmJIGZMyhIxwQyykJiCS"
  }
 ]
