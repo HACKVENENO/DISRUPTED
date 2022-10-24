@@ -25,5 +25,23 @@
   "email": "cande@laria",
   "gender": "femenino",
   "password": "$2a$10$55G1TgnIFhTc6xwYjWnl.e0SIDSl6/lrdSmJIGZMyhIxwQyykJiCS"
+ },
+ {
+  "id": 1666103792609,
+  "image": "16661037925951663345338745Captura6.PNG",
+  "name": "Matias",
+  "lastName": "Ferreyra",
+  "email": "mf@gggg.com",
+  "gender": "masculino",
+  "password": "$2a$10$gRgInxzZIf5yrXRiZL9XBO3l.t8bD17yxX6HBqJVn/hPjyQBRJE8."
+ },
+ {
+  "id": 1666183553674,
+  "image": "avatar_default.png",
+  "name": "Guillermo",
+  "lastName": "Pagani",
+  "email": "mf@gggg.com",
+  "gender": "selecciona",
+  "password": "$2a$10$miKXtWV6Byx216SMdnYFJugKruxUk.4fWOoDAT4.XGYWavb4mphl2"
  }
 ]
