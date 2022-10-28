@@ -34,7 +34,7 @@ CREATE TABLE `productos` (
   `category` varchar(50) NOT NULL,
   `stock` varchar(5) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,6 +43,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
+INSERT INTO `productos` VALUES (2,'1663251668431wear38.jpg','WEAR two',85000,1,'GOLD','LOREM IPSUM','S','SUMMER','5'),(3,'wear-two.png','WEAR TWO',222,0,'RED','ex ea commodo consequat.','M','SALE','2'),(4,'wear-four.png','INSIGHT',5000,0,'GREEN','Resolve all in one','L','WINTER','3'),(5,'wear-five.png','ALEC CLASS',120000,0,'GREY','Inner class at peer','XL','FALL','4'),(6,'wear-six.png','WEAR THREE',75000,0,'BLACK','Para bailar el meneadito','M','SUMMER','5'),(7,'1663345053515wear36.jpg','WEAR ALL',65444,1,'WHITE','Desde 1975','M','SPRING','7'),(8,'1663345338745Captura6.PNG','WEAR ALL TIME',75000,0,'PLATA','Hasat la fecha','S','FALL','1');
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-28 11:56:51
+-- Dump completed on 2022-10-28 12:27:25
