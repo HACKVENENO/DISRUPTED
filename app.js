@@ -40,6 +40,14 @@ app.set('view engine', 'ejs');
 // Ruta de componentes estaticos
 app.use(express.static(path.join(__dirname, '/public')));
 
+//sequelize
+module.exports = {
+    config: path.resolve('./database/config', 'config.js'),
+    'models-path': path.resolve('./database/models'),
+    'seeders-path': path.resolve('./database/seeders'),
+    'migrations-path': path.resolve('./database/migrations'),
+}
+
 // Rutas Dinamicas MVC
 app.use('/', indexRouter);
 app.use('/productos', productosRouter);
