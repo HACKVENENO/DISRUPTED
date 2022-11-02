@@ -17,15 +17,15 @@ module.exports = (sequelize, dataTypes) => {
 
         price: dataTypes.DECIMAL,
 
-        color: X,
+        color: dataTypes.STRING,
 
-        description: X,
+        description: dataTypes.STRING,
 
-        size: X,
+        size: dataTypes.STRING,
 
-        category: X,
+        category: dataTypes.STRING,
 
-        stock: X
+        stock: dataTypes.INTEGER,
     }
 
     const config = {
