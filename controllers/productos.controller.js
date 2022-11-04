@@ -8,18 +8,31 @@ const productosFilePath = path.join(__dirname, "../data/productos.json");
 
 
 const productosController = {
-  list: (req, res) => {
-  try {
-    const productos = await decodeBase64.productos.findAll();
-    console.log(productos);
-    res.render("productos", { productos : productos });
-  } catch (error) {
-    console.log({ error })
-    res.redirect("/productos")
-  }
-},
+  list: async (req, res) => {
+      try {
+          const productos = await decodeBase64.productos.findAll();
+          console.log(productos);
+          res.render("productos", { productos : productos });
+        } catch (error) {
+            console.log({ error })
+            res.redirect("/productos")
+        }
+    },
+    details: async (req, res) => {
+        try {
+ 
+            const producto = await db.products.findByPk(req.params.id);
+            res.render('details', { producto: producto });
 
-crearProducto: (req, res) => {
+        } catch (error) {
+            res.send(error)
+        }
+   
+    },
+
+    
+
+crearProducto: async (req, res) => {
     res.render('/create')
 },
 
@@ -35,6 +48,7 @@ modificarProducto: async (req, res) => {
 
 actualizarProducto: async (req, res) => {
     let file = req.file;
+    const productoEditado = db.products
 
     let archivo;
 
@@ -42,11 +56,11 @@ actualizarProducto: async (req, res) => {
         archivo = req.file.filename
     } else {
 
-        archivo = "default-image.png"
+        archivo = productoEditado.imagen
     }
-    // corregir!!!!
+
     try {
-        const productoEditado = await db.products.update({
+        await productoEditado.update({
               name : req.body.name,
               price : req.body.price,
               bought : req.body.bought,

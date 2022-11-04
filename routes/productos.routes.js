@@ -32,20 +32,20 @@ const fileUpload = multer({storage});
 
 
 
-router.get('/', productosController.productos);
+router.get('/', productosController.list);
 
 router.get("/details/:id", productosController.details);
 
-router.get('/create', productosController.create);
-router.post('/create', fileUpload.single("fotoProducto"), productosController.store);
+router.get('/create', productosController.crearProducto);
+router.post('/create', fileUpload.single("fotoProducto"), productosController.crearProducto);
 
 
 
-router.get('/edit/:id', productosController.edit);
+router.get('/edit/:id', productosController.modificarProducto);
 router.put('/edit/:id',
     fileUpload.single ('fotoProducto'),
-    productosController.update);
+    productosController.actualizarProducto);
 
-router.delete('/delete/:id', productosController.delete);
+router.delete('/delete/:id', productosController.borrarProducto);
 
 module.exports = router;

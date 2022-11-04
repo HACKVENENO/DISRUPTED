@@ -10,7 +10,7 @@ const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 const {validationResult}= require ('express-validator')
 
 const usersController = {
-    list: (req, res) => {
+    list: async (req, res) => {
     try {
       const users = await decodeBase64.users.findAll();
       console.log(users);
