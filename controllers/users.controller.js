@@ -10,22 +10,32 @@ const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 const {validationResult}= require ('express-validator')
 
 const usersController = {
-    list: async (req, res) => {
-    try {
-      const users = await decodeBase64.users.findAll();
-      console.log(users);
-      res.render("users", { users : users });
+
+
+
+  register: async (req, res) => {
+      res.render('/register')
+  },
+  create: async(req, res) => {
+      try{
+          const nuevoUsuario = await db.User.create({
+            imagen: archivo,
+            name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            gender: req.body.gender,
+            password: bcrypt.hashSync(req.body.password, 10),
+            
+      })
+      console.log({nuevoUsuario});
+      res.redirect('/login');
     } catch (error) {
-      console.log({ error })
-      res.redirect("/users")
+        res.send({ error })
     }
+
   },
   
-  crearUsuario: (req, res) => {
-      res.render('/create')
-  },
-  
-  modificarUsuario: async (req, res) => {
+  store: async (req, res) => {
       try {
           const user = await db.users.findByPk(req.params.id);
           console.log(user);
@@ -71,7 +81,62 @@ const usersController = {
       }
   
   },
-  
+  login: (req,res)=>{
+              return res.render("login");
+    },
+
+    processLogin: async(req, res) => {
+        try{
+            let userToLogin = await db.users.findOne({ where: { email: req.body.email } });
+            
+            if(userToLogin) {
+
+                let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                if (correctPassword) {
+                    delete userToLogin.password; //por seguridad
+                    req.session.userLogged = userToLogin;
+                    return res.redirect("/user/user-profile");
+                }
+    //POR QUÈ NO HAY UN ELSE??!!!!
+                return res.render("login", {
+                    errors: {
+                        password: {
+                                msg: "Contraseña incorrecta"
+                            }
+                        }
+                });
+            }
+            
+            if(userToLogin){
+                return res.send(userToLogin);
+            };
+            return res.render("login", {
+                errors: {
+                    email: {
+                        msg: "Email inválido"
+                        }
+                    }
+            });
+        } catch (error) {
+            res.send({ error })
+        }
+    },
+        logout: (req, res) =>{
+        req.session.destroy();
+        return res.redirect("/");
+    },
+
+    profile: async (req, res) => {
+        try {
+ 
+            const user = await db.products.findByPk(req.params.id);
+            res.render('details', { user: user });
+
+        } catch (error) {
+            res.send(error)
+        }
+   
+    },
   
   borrarUsuario: async(req,res)=>{
       try {
@@ -98,7 +163,7 @@ module.exports = usersController;
 
 // const usersController = {
 //     register: (req, res)=> {
-//         return res.render("register")
+        // return res.render("register")
 //     },
 
 //     proccessRegister: (req, res)=> {

@@ -49,4 +49,6 @@ router.get("/logout", usersController.logout);
 //profile
 router.get("/user-profile", noUsersMiddlewares, usersController.profile);
 
+router.delete('/delete/:id', usersController.borrarUsuario);
+
 module.exports = router;
