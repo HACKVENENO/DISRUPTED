@@ -33,7 +33,7 @@ const productosController = {
     
 
 crearProducto: async (req, res) => {
-    res.render('/create')
+    res.render('product-create-form')
 },
 
 modificarProducto: async (req, res) => {

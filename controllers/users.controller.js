@@ -14,7 +14,7 @@ const usersController = {
 
 
   register: async (req, res) => {
-      res.render('/register')
+      res.render('register')
   },
   create: async(req, res) => {
       try{
