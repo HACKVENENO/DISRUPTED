@@ -57,7 +57,7 @@ const usersController = {
           archivo = "default-image.png"
       }
       try {
-          const usuarioEditado = await db.usuario.update({
+          const usuarioEditado = await db.users.update({
                   id: Date.now(),
                   image: "avatar_default.png",
                   name: req.body.name,

@@ -28,7 +28,7 @@ const fileUpload = multer({storage});
 const validations = [
     body('name').notEmpty().withMessage('Tienes que escribir tu Nombre!'),
     body('lastName').notEmpty().withMessage('Tienes que escribir tu Apellido!'),
-    body('email').notEmpty().withMessage('Tienes que ingresar un eMail válido!'),
+    body('email').isEmail().withMessage('Tienes que ingresar un eMail válido!'),
     body('gender').notEmpty().withMessage('Tienes que seleccionar una opción'),
     body('password').notEmpty().withMessage('Debes generar un Password válido!')
   ]
