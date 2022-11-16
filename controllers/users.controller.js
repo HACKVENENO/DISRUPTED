@@ -1,5 +1,5 @@
 const bcrypt = require("bcryptjs");
-const User = require("../models/User");
+const db = require("../database/models");
 
 const fs = require ('fs');
 const path = require('path');
@@ -25,19 +25,20 @@ const usersController = {
         });
     }
       try{
-            let nuevoUsuario = await db.User.create({
-            imagen: archivo,
+            let hash = bcrypt.hashSync(req.body.password, 10);
+            let nuevoUsuario = await db.Usuario.create({
+            //imagen: archivo,
             name: req.body.name,
             lastName: req.body.lastName,
             email: req.body.email,
             gender: req.body.gender,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: hash
             
       })
-      console.log(nuevoUsuario);
+      
       res.redirect('/login');
     } catch (error) {
-        res.send({ error })
+        console.log(error);
     }
   },
 

@@ -2,7 +2,7 @@ const { Sequelize, dataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
 
-    const alias = 'Usuarios';
+    const alias = 'Usuario';
 
     const cols = {
         id: {
@@ -19,9 +19,11 @@ module.exports = (sequelize, dataTypes) => {
 
         email: dataTypes.STRING,
 
-        gender: dataTypes.INTEGER,
+        gender: dataTypes.STRING,
 
         productosComprados: dataTypes.STRING,
+
+        password: dataTypes.STRING,
 
     }
 
@@ -32,15 +34,15 @@ module.exports = (sequelize, dataTypes) => {
 
     const Usuario = sequelize.define(alias, cols, config);
 
-    Usuario.associate = function(models){
-        Usuario.belongsToMany(models.Producto, {
-            as: "products",
-            through: "user_producto",
-            foreingKey: "user_id",
+    // Usuario.associate = function(models){
+    //     Usuario.belongsToMany(models.Producto, {
+    //         as: "products",
+    //         through: "user_producto",
+    //         foreingKey: "user_id",
 
 
-        })
-    }
+    //     })
+    // }
 
 
     
