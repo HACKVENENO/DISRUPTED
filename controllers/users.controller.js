@@ -53,7 +53,7 @@ const usersController = {
 
   store: async (req, res) => {
       try {
-          const user = await db.users.findByPk(req.params.id);
+          const user = await db.User.findByPk(req.params.id);
           console.log(user);
           res.render('/edit', { user: user });
       } catch (error) {
