@@ -17,8 +17,15 @@ const usersController = {
       res.render('register')
   },
   create: async(req, res) => {
+        const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+        return res.render('/register', {
+            errors : resultValidation.mapped()
+        });
+    }
       try{
-          const nuevoUsuario = await db.User.create({
+            let nuevoUsuario = await db.User.create({
             imagen: archivo,
             name: req.body.name,
             lastName: req.body.lastName,
@@ -27,14 +34,23 @@ const usersController = {
             password: bcrypt.hashSync(req.body.password, 10),
             
       })
-      console.log({nuevoUsuario});
+      console.log(nuevoUsuario);
       res.redirect('/login');
     } catch (error) {
         res.send({ error })
     }
-
   },
-  
+
+    // proccessRegister: (req, res)=> {
+    //     const resultValidation = validationResult(req);
+
+    //     if (resultValidation.errors.length > 0) {
+    //         return res.render('/register', {
+    //             errors : resultValidation.mapped()
+    //         });
+    //     }
+    //     },
+
   store: async (req, res) => {
       try {
           const user = await db.users.findByPk(req.params.id);
