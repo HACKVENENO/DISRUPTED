@@ -34,10 +34,20 @@ const usersController = {
     }
 
   },
+    //   proccessRegister: (req, res)=> {
+    //     const resultValidation = validationResult(req);
+
+    //     if (resultValidation.errors.length > 0) {
+    //         return res.render('/register', {
+    //             errors : resultValidation.mapped()
+    //         });
+    //     }
+    // },
+
   
   store: async (req, res) => {
       try {
-          const user = await db.users.findByPk(req.params.id);
+          const user = await db.User.findByPk(req.params.id);
           console.log(user);
           res.render('/edit', { user: user });
       } catch (error) {

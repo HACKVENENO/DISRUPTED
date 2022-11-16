@@ -34,7 +34,7 @@ const validations = [
   ]
 
 router.get("/register", usersMiddlewares, usersController.register);
-router.post("/user/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.proccessRegister
+router.post("/register", fileUpload.single("imagenPerfil"), validations, usersController.store);//usersController.proccessRegister
 
 router.get('/', usersController.register);
 
