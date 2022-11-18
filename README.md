@@ -18,7 +18,7 @@ Al ser una página dirigida a un público joven, usaremos más dinamismos, imág
 
 😊 Vanesa Barrios: Inicié el curso ya que quiero cambiar mi rumbo laboral después de muchos años dedicándome al comercio exterior.
 
-😃 Guillermo Pagani: Me encuentro iniciándome en el mundo de la programación luego de más de 20 años trabajando en el mundo de los servicios financieros.
+😃 Guillermo Pagani: Tengo un gran interés por el desarrollo web y el interminable horizonte de posibilidades que ofrece.
 
 😉 Jimmy Robelto: Emprendedor, Avicultor y me gusta retarme día a día. veremos si logramos conquistar este nuevo camino que he tomado.
 
