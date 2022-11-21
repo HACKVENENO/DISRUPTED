@@ -38,11 +38,11 @@
                     <label for = "lastName">APELLIDO</label>
                     <input type = "text" name = "lastName" id = "lastName" value="<%=usuarioToEdit.lastName%>">
                 </div>
-                <div>
+                <div class = "div-3">
                     <label for = "gender">GÉNERO</label>
                     <select name = "gender" id = "gender">
                         <option value = "selecciona">Seleccionar</option>
-                        <option value = "femenino"<%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
+                        <option value = "femenino" <%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
                         <option value = "masculino"<%= (usuarioToEdit.gender == "masculino")? "selected":"" %> >Masculino</option>
                         <option value = "noBinario"<%= (usuarioToEdit.gender == "noBinario")? "selected":"" %> >No Binario</option>
                         <option value = "noIndica"<%= (usuarioToEdit.gender == "noIndica")? "selected":"" %> >Prefiero no indicarlo</option>
