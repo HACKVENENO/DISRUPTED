@@ -66,26 +66,27 @@ const usersController = {
   },
   
   updateUsuario: async (req, res) => {
-    //   let file = req.file;
+      let file = req.file;
   
-    //   let archivo;
+      let archivo;
   
-    //   if (file) {
-    //       archivo = req.file.filename
-    //   } else {
+      if (file) {
+          archivo = req.file.filename
+      } else {
   
-    //       archivo = "default-image.png"
-    //   }
+          archivo = "default-image.png"
+      }
       try {
           const usuarioEditado = await db.Usuario.update({
                   id: req.params.id,
-              //    image: "avatar_default.png",
+                 image: "avatar_default.png",
                   name: req.body.name,
                   lastName: req.body.lastName,
                   email: req.body.email, 
                   gender: req.body.gender,
-                //   password: bcrypt.hashSync(req.body.password, 10),
-                 // imagen: archivo
+                  password: bcrypt.hashSync(req.body.password, 10),
+                  password: req.body.password,
+                 imagen: archivo
               },
           {
               where :{
@@ -101,7 +102,6 @@ const usersController = {
           res.redirect('/')
       } catch (error) {
          res.send({ error })
-        //   console.log({error});
       }
   
   },
