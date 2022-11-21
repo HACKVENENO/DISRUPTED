@@ -77,30 +77,31 @@ const usersController = {
           archivo = "default-image.png"
       }
       try {
-          const usuarioEditado = await db.users.update({
+          const usuarioEditado = await db.Usuario.update({
                   id: Date.now(),
                   image: "avatar_default.png",
                   name: req.body.name,
                   lastName: req.body.lastName,
                   email: req.body.email, 
                   gender: req.body.gender,
-                  password: bcrypt.hashSync(req.body.password, 10),
+                //   password: bcrypt.hashSync(req.body.password, 10),
                   imagen: archivo
               },
           {
               where :{
-                  id_user : req.params.id
+                  id : req.params.id
               }
               
           }
           )
   
            console.log({ usuarioEditado })
-        //    req.session.userLogged = userToLogin;
-        //    res.render("product-edit-form", { usuarioToEdit: usuarioEditado });  
+           req.session.userLogged = userToLogin;
+           res.render("user-edit-form", { usuarioToEdit: usuarioEditado });  
           res.redirect('/')
       } catch (error) {
-          res.send({ error })
+         res.send({ error })
+        //   console.log({error});
       }
   
   },
