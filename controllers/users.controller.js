@@ -91,10 +91,13 @@ const usersController = {
               where :{
                   id_user : req.params.id
               }
+              
           }
           )
   
            console.log({ usuarioEditado })
+        //    req.session.userLogged = userToLogin;
+        //    res.render("product-edit-form", { usuarioToEdit: usuarioEditado });  
           res.redirect('/')
       } catch (error) {
           res.send({ error })

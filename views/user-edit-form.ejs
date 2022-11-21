@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+        <!-- head-->    
+        <%- include('./partials/head.ejs') %>
+        <title>Ingresar</title>
+    
+    <body>
+        <!-- header -->
+        <%- include('./partials/header.ejs') %>
+
+
+    <div> 
+         <% if (locals.errors) { %>
+                <%  for (let oneError in errors) {%>
+                <p><%= errors[oneError].msg   %></p>
+                <% } %>
+            <% } %>
+    </div>
+ 
+
+
+    <main class = "register">
+        <form action = "/user/register" method = "POST" enctype="multipart/form-data">     
+            <div>
+                <h2>CREÁ TU CUENTA</h2>
+            
+        </div>
+
+
+            <div class = "datosPersonales">
+                <h4>DATOS PERSONALES</h4>
+                <div>
+                    <label for = "name">NOMBRE</label>
+                    <input type = "text" name = "name" id = "name" value="<%= usuarioToEdit.name %>">
+                </div>
+                <div>
+                    <label for = "lastName">APELLIDO</label>
+                    <input type = "text" name = "lastName" id = "lastName" value="<%=usuarioToEdit.lastName%>">
+                </div>
+                <div>
+                    <label for = "gender">GÉNERO</label>
+                    <select name = "gender" id = "gender">
+                        <option value = "selecciona">Seleccionar</option>
+                        <option value = "femenino"<%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
+                        <option value = "masculino"<%= (usuarioToEdit.gender == "masculino")? "selected":"" %> >Masculino</option>
+                        <option value = "noBinario"<%= (usuarioToEdit.gender == "noBinario")? "selected":"" %> >No Binario</option>
+                        <option value = "noIndica"<%= (usuarioToEdit.gender == "noIndica")? "selected":"" %> >Prefiero no indicarlo</option>
+                    </select>
+                </div>
+
+
+                <div>
+                    <label for = "image">IMAGEN DE PERFIL</label>
+                    <input type = "file" id = "image" name = "imagenPerfil">
+                </div>
+            </div>
+            <div class = "datosInicio">
+                    <h4>DATOS DE INICIO DE SESIÓN</h4>
+                <div>            
+                    <label for = "email"value="<%=usuarioToEdit.email%>">EMAIL</label>
+                    <input type = "email" name = "email" id = "email">
+                </div>
+                <div>
+                    <label for = "password"value="<%=usuarioToEdit.password%>">CONTRASEÑA</label>
+                    <input type = "password" name = "password" id = "password">
+                </div>
+                <div>
+                    <label for = "password">CONFIRMAR CONTRASEÑA</label>
+                    <input type = "password" name = "confirmPassword" id = "confirmPassword">
+                </div>
+            </div>  
+                <div class = "suscripcion">
+                    <input type="checkbox" name="newsletter" >
+                    <label for="newsletter" name="subscription">SUSCRIBIRME AL NEWSLETTER</label>
+                </div>
+            <div class = "confirmar">  
+                <button class = "botonCrear" type = "submit">CREAR CUENTA</button>
+            </div>
+            <div class = "yaTieneCuenta">
+                <p>¿Ya tenés una cuenta? <a href="/login">Iniciá sesión</a></p>
+            </div>
+        </form>
+    </main>
+
+         <!-- footer-->
+         <%- include('./partials/footer.ejs') %>  
+
+
+</body>
+</html>

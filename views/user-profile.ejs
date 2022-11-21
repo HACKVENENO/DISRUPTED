@@ -22,7 +22,7 @@
         </div>
     </form>
 
-    <form action = "/user/edit" method = "GET">
+    <form action = "/user/edit/<%= locals.userLogged.id %>" method = "GET">
         <div class = "updateUsuario">  
             <button class = "botonSalir" type = "submit">MODIFICAR DATOS</button>
         </div>
