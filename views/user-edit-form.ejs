@@ -25,7 +25,7 @@
             <div>
                 <h2>CREÁ TU CUENTA</h2>
             
-        </div>
+            </div>
 
 
             <div class = "datosPersonales">
@@ -41,8 +41,13 @@
                 <div class = "div-3">
                     <label for = "gender">GÉNERO</label>
                     <select name = "gender" id = "gender">
+<<<<<<< HEAD
                         <option value = "selecciona">Seleccionar</option>
                         <option value = "femenino" <%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
+=======
+                        <option value = "selecciona"<%= (usuarioToEdit.gender == "selecciona")? "selected":"" %>>Seleccionar</option>
+                        <option value = "femenino"<%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
+>>>>>>> bbea2c69084a391ac25504bbc98a64fb0c325e2a
                         <option value = "masculino"<%= (usuarioToEdit.gender == "masculino")? "selected":"" %> >Masculino</option>
                         <option value = "noBinario"<%= (usuarioToEdit.gender == "noBinario")? "selected":"" %> >No Binario</option>
                         <option value = "noIndica"<%= (usuarioToEdit.gender == "noIndica")? "selected":"" %> >Prefiero no indicarlo</option>
