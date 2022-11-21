@@ -20,12 +20,12 @@
  
 
 
-    <main class = "register">
-        <form action = "/user/register" method = "POST" enctype="multipart/form-data">     
+    <main class = "update">
+        <form action = "/user/edit/<%= usuarioToEdit.id %>?_method=PUT" method = "POST" enctype="multipart/form-data">  
             <div>
-                <h2>CREÁ TU CUENTA</h2>
+                <h2>NODIFICÁ TU CUENTA</h2>
             
-        </div>
+            </div>
 
 
             <div class = "datosPersonales">
@@ -41,7 +41,7 @@
                 <div>
                     <label for = "gender">GÉNERO</label>
                     <select name = "gender" id = "gender">
-                        <option value = "selecciona">Seleccionar</option>
+                        <option value = "selecciona"<%= (usuarioToEdit.gender == "selecciona")? "selected":"" %>>Seleccionar</option>
                         <option value = "femenino"<%= (usuarioToEdit.gender == "femenino")? "selected":"" %> >Femenino</option>
                         <option value = "masculino"<%= (usuarioToEdit.gender == "masculino")? "selected":"" %> >Masculino</option>
                         <option value = "noBinario"<%= (usuarioToEdit.gender == "noBinario")? "selected":"" %> >No Binario</option>
