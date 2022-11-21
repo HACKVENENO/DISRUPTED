@@ -27,7 +27,7 @@ const fileUpload = multer({storage});
 
 const validations = [
     body('name').notEmpty().withMessage('Tienes que escribir tu Nombre!'),
-    body('lastName').notEmpty().withMessage('Tienes que escribir tu Apellido!'),
+    body('lastName').notEmpty().withMessage('Tienes que escribir tu APELLIDO!'),
     body('email').isEmail().withMessage('Tienes que ingresar un eMail válido!'),
     body('gender').notEmpty().withMessage('Tienes que seleccionar una opción'),
     body('password').notEmpty().withMessage('Debes generar un Password válido!')
@@ -47,7 +47,7 @@ router.post("/login", usersController.processLogin);
 router.get("/logout", usersController.logout);
 
 //profile
-router.get("/user-profile", noUsersMiddlewares, usersController.profile);
+router.get("/user-profile/:id", noUsersMiddlewares, usersController.profile);
 
 router.delete('/delete/:id', usersController.borrarUsuario);
 

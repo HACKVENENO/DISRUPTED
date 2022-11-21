@@ -7,7 +7,8 @@ const path = require('path');
 const registrosFilePath = path.join(__dirname, "../data/users.json");
 const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 
-const {validationResult}= require ('express-validator')
+const {validationResult}= require ('express-validator');
+const Usuario = require("../database/models/Usuario");
 
 const usersController = {
 
@@ -19,6 +20,8 @@ const usersController = {
   create: async(req, res) => {
         const resultValidation = validationResult(req);
 
+    let nuevoUsuario = db.Usuario
+
     if (resultValidation.errors.length > 0) {
         return res.render('register', {
             errors : resultValidation.mapped()
@@ -26,7 +29,7 @@ const usersController = {
     }
       try{
             let hash = bcrypt.hashSync(req.body.password, 10);
-            let nuevoUsuario = await db.Usuario.create({
+            nuevoUsuario.create({
             //imagen: archivo,
             name: req.body.name,
             lastName: req.body.lastName,
@@ -36,7 +39,7 @@ const usersController = {
             
       })
       
-      res.redirect('/login');
+      res.redirect('login');
     } catch (error) {
         console.log(error);
     }
@@ -104,7 +107,7 @@ const usersController = {
 
     processLogin: async(req, res) => {
         try{
-            let userToLogin = await db.users.findOne({ where: { email: req.body.email } });
+            let userToLogin = await db.Usuario.findOne({ where: { email: req.body.email } });
             
             if(userToLogin) {
 
@@ -112,7 +115,7 @@ const usersController = {
                 if (correctPassword) {
                     delete userToLogin.password; //por seguridad
                     req.session.userLogged = userToLogin;
-                    return res.redirect("/user/user-profile");
+                    return res.redirect("/");
                 }
     //POR QUÈ NO HAY UN ELSE??!!!!
                 return res.render("login", {
@@ -135,7 +138,8 @@ const usersController = {
                     }
             });
         } catch (error) {
-            res.send({ error })
+ //           res.send({ error })
+            console.log( error );
         }
     },
         logout: (req, res) =>{
@@ -146,14 +150,16 @@ const usersController = {
     profile: async (req, res) => {
         try {
  
-            const user = await db.products.findByPk(req.params.id);
-            res.render('details', { user: user });
+            const user = await db.Usuario.findByPk(req.params.id);
+            res.render('user-profile', { user: req.session.userLogged });
 
         } catch (error) {
             res.send(error)
         }
    
     },
+
+
   
   borrarUsuario: async(req,res)=>{
       try {
