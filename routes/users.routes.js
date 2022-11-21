@@ -49,6 +49,11 @@ router.get("/logout", usersController.logout);
 //profile
 router.get("/user-profile/:id", noUsersMiddlewares, usersController.profile);
 
+router.get('/edit/:id', usersController.updateUsuario);
+router.put('/edit/:id',
+    fileUpload.single ('imagenPerfil'),
+    usersController.updateUsuario);
+
 router.delete('/delete/:id', usersController.borrarUsuario);
 
 module.exports = router;

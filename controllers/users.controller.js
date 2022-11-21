@@ -65,7 +65,7 @@ const usersController = {
       }
   },
   
-  actualizarUsuario: async (req, res) => {
+  updateUsuario: async (req, res) => {
       let file = req.file;
   
       let archivo;
