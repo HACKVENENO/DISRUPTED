@@ -1,7 +1,11 @@
 const express = require('express');
-const productosController = require('../controllers/productos.controller');
 const router = express.Router();
+const path = require('path');
+//const multer = require("multer");
+//const {body} = require ('express-validator');
 
+
+const productosController = require('../controllers/productos.controller');
 
 
 /*** OBTENER TODOS LOS PRODUCTOS **/

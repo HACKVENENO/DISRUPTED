@@ -1,6 +1,7 @@
 const { decodeBase64 } = require("bcryptjs");
 const fs = require("fs");
 const path = require('path');
+const db = require("../database/models");
 
 
 const productosFilePath = path.join(__dirname, "../data/productos.json");
@@ -10,7 +11,7 @@ const productosFilePath = path.join(__dirname, "../data/productos.json");
 const productosController = {
   list: async (req, res) => {
       try {
-          const productos = await decodeBase64.productos.findAll();
+          const productos = await db.Productos.findAll();
           console.log(productos);
           res.render("productos", { productos : productos });
         } catch (error) {
@@ -21,8 +22,8 @@ const productosController = {
     details: async (req, res) => {
         try {
  
-            const producto = await db.products.findByPk(req.params.id);
-            res.render('details', { producto: producto });
+            const producto = await db.Productos.findByPk(req.params.id);
+            res.render('details', { productos: producto });
 
         } catch (error) {
             res.send(error)
@@ -38,9 +39,9 @@ crearProducto: async (req, res) => {
 
 modificarProducto: async (req, res) => {
     try {
-        const producto = await db.products.findByPk(req.params.idUser);
+        const producto = await db.Productos.findByPk(req.params.idUser);
         console.log(producto);
-        res.render('/edit', { producto: producto });
+        res.render('/edit', { productos: productos });
     } catch (error) {
         console.log(error)
     }
@@ -48,7 +49,7 @@ modificarProducto: async (req, res) => {
 
 actualizarProducto: async (req, res) => {
     let file = req.file;
-    const productoEditado = db.products
+    const productoEditado = db.Productos
 
     let archivo;
 
@@ -89,7 +90,7 @@ actualizarProducto: async (req, res) => {
 
 borrarProducto: async(req,res)=>{
     try {
-        const productoABorrar = await db.productos.destroy({
+        const productoABorrar = await db.Productos.destroy({
             where:{
                 id_product: req.params.id_user
             }
