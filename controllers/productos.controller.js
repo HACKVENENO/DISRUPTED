@@ -7,11 +7,14 @@ const db = require("../database/models");
 const productosFilePath = path.join(__dirname, "../data/productos.json");
 // const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 
+const {validationResult}= require ('express-validator');
+const Usuario = require("../database/models/Producto");
+
 
 const productosController = {
   list: async (req, res) => {
       try {
-          const productos = await db.Productos.findAll();
+          const productos = await db.Producto.findAll();
           console.log(productos);
           res.render("productos", { productos : productos });
         } catch (error) {
@@ -22,7 +25,7 @@ const productosController = {
     details: async (req, res) => {
         try {
  
-            const producto = await db.Productos.findByPk(req.params.id);
+            const producto = await db.Producto.findByPk(req.params.id);
             res.render('details', { productos: producto });
 
         } catch (error) {
