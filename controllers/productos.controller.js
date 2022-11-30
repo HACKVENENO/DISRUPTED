@@ -8,7 +8,7 @@ const productosFilePath = path.join(__dirname, "../data/productos.json");
 // const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 
 const {validationResult}= require ('express-validator');
-const Usuario = require("../database/models/Producto");
+const Producto = require("../database/models/Producto");
 
 
 const productosController = {

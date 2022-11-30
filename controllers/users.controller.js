@@ -9,61 +9,76 @@ const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 
 const {validationResult}= require ('express-validator');
 const Usuario = require("../database/models/Usuario");
+const { CLIENT_RENEG_LIMIT } = require("tls");
 
 const usersController = {
-
-
-
-  register: async (req, res) => {
+  register: (req, res) => {
       res.render('register')
   },
-  create: async(req, res) => {
-        const resultValidation = validationResult(req);
 
-    let nuevoUsuario = db.Usuario
+
+ create: (req, res) => {
+
+    const resultValidation = validationResult(req);
+    console.log(resultValidation);
+    
 
     if (resultValidation.errors.length > 0) {
         return res.render('register', {
             errors : resultValidation.mapped()
-        });
+         });
+    } else { 
+        db.Usuario.create({
+        name: req.body.name,
+        lastName: req.body.lastName,
+        gender: req.body.gender,
+      //  imagen: archivo,
+        email: req.body.email,
+       // password: bcrypt.hashSync(req.body.password, 10),
+       password: req.body.password,
+        })
+        .then(()=>res.redirect ("/login"))
     }
-      try{
-            let hash = bcrypt.hashSync(req.body.password, 10);
-            nuevoUsuario.create({
-            //imagen: archivo,
-            name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            gender: req.body.gender,
-            password: hash
-            
-      })
-      
-      res.redirect('login');
-    } catch (error) {
-        console.log(error);
-    }
-  },
+},
 
-    // proccessRegister: (req, res)=> {
-    //     const resultValidation = validationResult(req);
+ // store: async (req, res) => {
 
-    //     if (resultValidation.errors.length > 0) {
-    //         return res.render('/register', {
-    //             errors : resultValidation.mapped()
-    //         });
-    //     }
-    //     },
+    // let resultValidation = validationResult(req)
 
-  store: async (req, res) => {
-      try {
-          const user = await db.User.findByPk(req.params.id);
-          console.log(user);
-          res.render('/edit', { user: user });
-      } catch (error) {
-          console.log(error)
-      }
-  },
+    // if (resultValidation.errors.length > 0) {
+    //     return res.render('register', {
+    //         errors : resultValidation.mapped()
+    //     });
+    // }
+
+//     let file = req.file;
+
+//     let archivo;
+
+//     if (file) {
+//         archivo = req.file.filename
+//     }   else {
+//         archivo = "avatar_default.png"
+//     }
+
+
+//       try {
+//           const user = await 
+//           db.Usuario.create({
+//             name: 'matias',
+//             lastName: req.body.lastName,
+//             gender: req.body.gender,
+//             imagen: archivo,
+//             email: req.body.email,
+//             //password: bcrypt.hashSync(req.body.password, 10),
+//             password: req.body.password,});
+//           console.log(req.body);
+//           res.redirect('/login');
+//       } catch (error) {
+//           console.log(error)
+//       }
+    
+//   },
   
   updateUsuario: async (req, res) => {
       let file = req.file;
