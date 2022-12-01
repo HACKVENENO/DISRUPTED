@@ -14,8 +14,8 @@ const Producto = require("../database/models/Producto");
 const productosController = {
   list: async (req, res) => {
       try {
-          const productos = await db.Producto.findAll();
-          console.log(productos);
+          const productos = await db.Productos.findAll();
+          console.log({productos});
           res.render("productos", { productos : productos });
         } catch (error) {
             console.log({ error })
@@ -24,9 +24,8 @@ const productosController = {
     },
     details: async (req, res) => {
         try {
- 
-            const producto = await db.Producto.findByPk(req.params.id);
-            res.render('details', { productos: producto });
+             const producto = await db.Productos.findByPk(req.params.id);
+             res.render('details', { producto: Producto });
 
         } catch (error) {
             res.send(error)
@@ -164,7 +163,7 @@ module.exports = productosController;
   //       const data = JSON.stringify(productos, null, " ");
   //       fs.writeFileSync(productosFilePath, data);
 
-  //       res.redirect("/productos");
+  //       res.redirect("/productos/detail/id");
   //     },
 
 	// // Update - Form to edit

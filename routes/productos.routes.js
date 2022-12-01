@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-//const multer = require("multer");
-//const {body} = require ('express-validator');
+const multer = require("multer");
+const {body} = require ('express-validator');
 
 
 const productosController = require('../controllers/productos.controller');
@@ -16,8 +16,7 @@ const productosController = require('../controllers/productos.controller');
 /*** OBTENER TODOS LOS PRODUCTOS **/
 
 
- // ************ MULTER ************
-const multer = require("multer");
+ // ************ MULTER ************    
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
