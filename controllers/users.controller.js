@@ -8,7 +8,7 @@ const registrosFilePath = path.join(__dirname, "../data/users.json");
 const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 
 const {validationResult}= require ('express-validator');
-const Usuario = require("../database/models/Usuario");
+// const Usuario = require("../database/models/Usuario");
 const { CLIENT_RENEG_LIMIT } = require("tls");
 
 const usersController = {
@@ -21,6 +21,8 @@ const usersController = {
 
     const resultValidation = validationResult(req);
     console.log(resultValidation);
+    console.log(req);
+    console.log("holis");
     
 
     if (resultValidation.errors.length > 0) {
