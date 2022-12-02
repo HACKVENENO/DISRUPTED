@@ -81,6 +81,10 @@
                 <p>¿Ya tenés una cuenta? <a href="/login">Iniciá sesión</a></p>
             </div>
         </form>
+        <div class = "eliminarUser">
+            <form action="/user/delete/<%=usuarioToEdit.id%>?_method=DELETE" method="POST" >
+                <button type="submit" class = "botonBorrarUser">ELIMINAR</button>
+            </form>
     </main>
 
          <!-- footer-->

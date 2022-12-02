@@ -162,7 +162,7 @@ modificarUsuario: async (req, res) => {
       try {
           const usuarioABorrar = await db.Usuario.destroy({
               where:{
-                id_user : req.params.id
+                id : req.params.id
               }
           });
               res.redirect('/')
