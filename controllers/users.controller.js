@@ -21,8 +21,8 @@ const usersController = {
 
     const resultValidation = validationResult(req);
     console.log(resultValidation);
-    console.log(req);
-    console.log("holis");
+    // console.log(req);
+    // console.log("holis");
     
 
     if (resultValidation.errors.length > 0) {
@@ -30,16 +30,27 @@ const usersController = {
             errors : resultValidation.mapped()
          });
     } else { 
+    let file = req.file;
+
+    let archivo;
+
+    if (file) {
+        archivo = req.file.filename
+    }   else {
+        archivo = "avatar_default.png"
+    }
+    // console.log(archivo);
         db.Usuario.create({
         name: req.body.name,
         lastName: req.body.lastName,
         gender: req.body.gender,
-      //  imagen: archivo,
+        image: archivo,
         email: req.body.email,
+        productosComprados: 12,
        // password: bcrypt.hashSync(req.body.password, 10),
        password: req.body.password,
         })
-        .then(()=>res.redirect ("/login"))
+        .then(()=>res.redirect ("login"))
     }
 },
 
