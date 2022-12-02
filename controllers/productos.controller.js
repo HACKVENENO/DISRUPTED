@@ -24,8 +24,8 @@ const productosController = {
     },
     details: async (req, res) => {
         try {
-             const producto = await db.Productos.findByPk(req.params.id);
-             res.render('details', { producto: Producto });
+             const productos = await db.Productos.findByPk(req.params.id);
+             res.render('details', { producto: productos });
 
         } catch (error) {
             res.send(error)
