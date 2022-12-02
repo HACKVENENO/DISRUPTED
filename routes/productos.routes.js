@@ -39,15 +39,13 @@ router.get('/', productosController.list);
 
 router.get("/details/:id", productosController.details);
 
-router.get('/create', productosController.crearProducto);
+router.get('/create', productosController.add);
 router.post('/create', fileUpload.single("fotoProducto"), productosController.crearProducto);
 
 
 
 router.get('/edit/:id', productosController.modificarProducto);
-router.put('/edit/:id',
-    fileUpload.single ('fotoProducto'),
-    productosController.actualizarProducto);
+router.put('/edit/:id', fileUpload.single ('fotoProducto'), productosController.actualizarProducto);
 
 router.delete('/delete/:id', productosController.borrarProducto);
 

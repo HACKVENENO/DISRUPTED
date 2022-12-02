@@ -9,6 +9,7 @@ const productosFilePath = path.join(__dirname, "../data/productos.json");
 
 const {validationResult}= require ('express-validator');
 const Producto = require("../database/models/Producto");
+const { DEFAULT_ECDH_CURVE } = require("tls");
 
 
 const productosController = {
@@ -34,9 +35,52 @@ const productosController = {
     },
 
     
+add: function(req, res){
+      res.render("product-create-form")
+},
 
-crearProducto: async (req, res) => {
-    res.render('product-create-form')
+
+crearProducto: (req, res) => {
+//     try{
+//         const productoNuevo = await db.Productos.create({
+//               imagen: archivo,
+//               name : req.body.name,
+//               price : req.body.price,
+//               color : req.body.color,
+//               description : req.body.description,
+//               size : req.body.size,
+//               category : req.body.category,
+//               stock : req.body.stock,
+//         });
+//         console.log({productoNuevo});
+//         res.redirect('/products');
+//     } catch (error) {
+//         console.log({error});
+//     }
+// },
+
+
+// let file = req.file;
+
+// let archivo;
+
+// if (file) {
+//     archivo = req.file.filename
+// }   else {
+//     archivo = "product-DEFAULT.png"
+// }
+// console.log(archivo);
+    db.Productos.create({
+        imagen: product-DEFAULT.png,
+        name : req.body.name,
+        price : req.body.price,
+        color : req.body.color,
+        description : req.body.description,
+        size : req.body.size,
+        category : req.body.category,
+        stock : req.body.stock,
+    })
+    .then(()=>res.redirect ("products"))
 },
 
 modificarProducto: async (req, res) => {
