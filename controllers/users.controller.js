@@ -4,11 +4,10 @@ const db = require("../database/models");
 const fs = require ('fs');
 const path = require('path');
 
-const registrosFilePath = path.join(__dirname, "../data/users.json");
-const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
+// const registrosFilePath = path.join(__dirname, "../data/users.json");
+// const registros = JSON.parse(fs.readFileSync(registrosFilePath, "utf-8"));
 
 const {validationResult}= require ('express-validator');
-// const Usuario = require("../database/models/Usuario");
 const { CLIENT_RENEG_LIMIT } = require("tls");
 
 const usersController = {
@@ -21,9 +20,6 @@ const usersController = {
 
     const resultValidation = validationResult(req);
     console.log(resultValidation);
-    // console.log(req);
-    // console.log("holis");
-    
 
     if (resultValidation.errors.length > 0) {
         return res.render('register', {
@@ -39,7 +35,6 @@ const usersController = {
     }   else {
         archivo = "avatar_default.png"
     }
-    // console.log(archivo);
         db.Usuario.create({
         name: req.body.name,
         lastName: req.body.lastName,
@@ -65,9 +60,6 @@ modificarUsuario: async (req, res) => {
  
     const resultValidation = validationResult(req);
     console.log(resultValidation);
-    // console.log(req);
-    // console.log("holis");
-    
 
     if (resultValidation.errors.length > 0) {
         return res.render('register', {
@@ -83,6 +75,7 @@ modificarUsuario: async (req, res) => {
       } else {
           archivo = "avatar_default.png"
       }
+      console.log(req.body);
       try {
           const usuarioEditado = await db.Usuario.update({
             name: req.body.name,
@@ -91,19 +84,19 @@ modificarUsuario: async (req, res) => {
             image: archivo,
             email: req.body.email,
             productosComprados: 12,
-           password: bcrypt.hashSync(req.body.password, 10),
+           password: bcrypt.hashSync(req.body.confirmPassword, 10),
          },
        {
               where :{
                   id : req.params.id
               }  
         })
-            console.log({ usuarioEditado })
-           req.session.userLogged = userToLogin;
-          res.render("user-edit-form", { usuarioToEdit: usuarioEditado });  
-          res.redirect('/')
+        req.session.userLogged = await db.Usuario.findByPk(req.params.id);
+           
+        return res.redirect('/')
       } catch (error) {
          res.send({ error })
+         console.log({error});
       }
     }
   
@@ -117,16 +110,12 @@ modificarUsuario: async (req, res) => {
             let userToLogin = await db.Usuario.findOne({ where: { email: req.body.email } });
             
             if(userToLogin) {
-
                 let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                 if (correctPassword) {
                     delete userToLogin.password; //por seguridad
                     req.session.userLogged = userToLogin;
                     return res.redirect("/");
-                }else {
-                    
                 }
-    //POR QUÈ NO HAY UN ELSE??!!!!
                 return res.render("login", {
                     errors: {
                         password: {
@@ -147,7 +136,6 @@ modificarUsuario: async (req, res) => {
                     }
             });
         } catch (error) {
- //           res.send({ error })
             console.log( error );
         }
     },
