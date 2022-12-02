@@ -62,6 +62,18 @@ modificarUsuario: async (req, res) => {
 },
   
   updateUsuario: async (req, res) => {
+ 
+    const resultValidation = validationResult(req);
+    console.log(resultValidation);
+    // console.log(req);
+    // console.log("holis");
+    
+
+    if (resultValidation.errors.length > 0) {
+        return res.render('register', {
+            errors : resultValidation.mapped()
+         });
+    } else {      
       let file = req.file;
   
       let archivo;
@@ -69,7 +81,6 @@ modificarUsuario: async (req, res) => {
       if (file) {
           archivo = req.file.filename
       } else {
-  
           archivo = "avatar_default.png"
       }
       try {
@@ -81,20 +92,20 @@ modificarUsuario: async (req, res) => {
             email: req.body.email,
             productosComprados: 12,
            password: bcrypt.hashSync(req.body.password, 10),
-              },
-          {
+         },
+       {
               where :{
                   id : req.params.id
               }  
-          })
-  
-        //    console.log({ usuarioEditado })
+        })
+            console.log({ usuarioEditado })
            req.session.userLogged = userToLogin;
-           res.render("user-edit-form", { usuarioToEdit: usuarioEditado });  
+          res.render("user-edit-form", { usuarioToEdit: usuarioEditado });  
           res.redirect('/')
       } catch (error) {
          res.send({ error })
       }
+    }
   
   },
   login: (req,res)=>{
