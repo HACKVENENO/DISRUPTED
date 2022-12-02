@@ -52,6 +52,14 @@ const usersController = {
         .then(()=>res.redirect ("login"))
     }
 },
+modificarUsuario: async (req, res) => {
+    try {
+    const usuarioToEdit = await db.Usuario.findByPk(req.params.id)
+    res.render('user-edit-form', {usuarioToEdit: usuarioToEdit})
+    } catch (error) {
+        console.log(error)
+    }
+},
   
   updateUsuario: async (req, res) => {
       let file = req.file;
@@ -62,29 +70,25 @@ const usersController = {
           archivo = req.file.filename
       } else {
   
-          archivo = "default-image.png"
+          archivo = "avatar_default.png"
       }
       try {
           const usuarioEditado = await db.Usuario.update({
-                  id: req.params.id,
-                 image: "avatar_default.png",
-                  name: req.body.name,
-                  lastName: req.body.lastName,
-                  email: req.body.email, 
-                  gender: req.body.gender,
-                  password: bcrypt.hashSync(req.body.password, 10),
-                  password: req.body.password,
-                 imagen: archivo
+            name: req.body.name,
+            lastName: req.body.lastName,
+            gender: req.body.gender,
+            image: archivo,
+            email: req.body.email,
+            productosComprados: 12,
+           password: bcrypt.hashSync(req.body.password, 10),
               },
           {
               where :{
                   id : req.params.id
-              }
-              
-          }
-          )
+              }  
+          })
   
-           console.log({ usuarioEditado })
+        //    console.log({ usuarioEditado })
            req.session.userLogged = userToLogin;
            res.render("user-edit-form", { usuarioToEdit: usuarioEditado });  
           res.redirect('/')
@@ -157,7 +161,7 @@ const usersController = {
   
   borrarUsuario: async(req,res)=>{
       try {
-          const usuarioABorrar = await db.users.destroy({
+          const usuarioABorrar = await db.Usuario.destroy({
               where:{
                 id_user : req.params.id
               }
