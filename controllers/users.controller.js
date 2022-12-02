@@ -47,51 +47,11 @@ const usersController = {
         image: archivo,
         email: req.body.email,
         productosComprados: 12,
-       // password: bcrypt.hashSync(req.body.password, 10),
-       password: req.body.password,
+       password: bcrypt.hashSync(req.body.password, 10),
         })
         .then(()=>res.redirect ("login"))
     }
 },
-
- // store: async (req, res) => {
-
-    // let resultValidation = validationResult(req)
-
-    // if (resultValidation.errors.length > 0) {
-    //     return res.render('register', {
-    //         errors : resultValidation.mapped()
-    //     });
-    // }
-
-//     let file = req.file;
-
-//     let archivo;
-
-//     if (file) {
-//         archivo = req.file.filename
-//     }   else {
-//         archivo = "avatar_default.png"
-//     }
-
-
-//       try {
-//           const user = await 
-//           db.Usuario.create({
-//             name: 'matias',
-//             lastName: req.body.lastName,
-//             gender: req.body.gender,
-//             imagen: archivo,
-//             email: req.body.email,
-//             //password: bcrypt.hashSync(req.body.password, 10),
-//             password: req.body.password,});
-//           console.log(req.body);
-//           res.redirect('/login');
-//       } catch (error) {
-//           console.log(error)
-//       }
-    
-//   },
   
   updateUsuario: async (req, res) => {
       let file = req.file;
@@ -148,6 +108,8 @@ const usersController = {
                     delete userToLogin.password; //por seguridad
                     req.session.userLogged = userToLogin;
                     return res.redirect("/");
+                }else {
+                    
                 }
     //POR QUÈ NO HAY UN ELSE??!!!!
                 return res.render("login", {
@@ -211,6 +173,46 @@ const usersController = {
   }
 
 module.exports = usersController;
+
+
+ // store: async (req, res) => {
+
+    // let resultValidation = validationResult(req)
+
+    // if (resultValidation.errors.length > 0) {
+    //     return res.render('register', {
+    //         errors : resultValidation.mapped()
+    //     });
+    // }
+
+//     let file = req.file;
+
+//     let archivo;
+
+//     if (file) {
+//         archivo = req.file.filename
+//     }   else {
+//         archivo = "avatar_default.png"
+//     }
+
+
+//       try {
+//           const user = await 
+//           db.Usuario.create({
+//             name: 'matias',
+//             lastName: req.body.lastName,
+//             gender: req.body.gender,
+//             imagen: archivo,
+//             email: req.body.email,
+//             //password: bcrypt.hashSync(req.body.password, 10),
+//             password: req.body.password,});
+//           console.log(req.body);
+//           res.redirect('/login');
+//       } catch (error) {
+//           console.log(error)
+//       }
+    
+//   },
 
 
 
