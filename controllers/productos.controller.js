@@ -85,7 +85,7 @@ crearProducto: (req, res) => {
 
 modificarProducto: async (req, res) => {
     try {
-        const producto = await db.Productos.findByPk(req.params.idUser);
+        const producto = await db.Productos.findByPk(req.params.id);
         console.log(producto);
         res.render('/edit', { productos: productos });
     } catch (error) {
