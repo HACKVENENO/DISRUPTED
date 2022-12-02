@@ -5,7 +5,7 @@
 <div class="top-header">
     <ul>
         <% if (locals.logged) { %>
-            <li><a><img src = "/img/profile/avatar_default.png" width = "40">Hola <%= locals.userLogged.name %></a></li>
+            <li><a><img src = "/img/profile/<%= locals.userLogged.image %>" width = "40">Hola <%= locals.userLogged.name %></a></li>
             <li><a href = "/user/user-profile/<%= locals.userLogged.id %>">  Mi cuenta</a></li>
             <li><a href = "/user/logout">Cerrar Sesión</a></li>
         <% } else {%>

@@ -13,7 +13,7 @@
     <h1>Este es el perfil de <%= locals.userLogged.name%> <%= locals.userLogged.lastName%></h1>
 
     <div class = "fotoPerfil">
-        <img class = "imagen" src = "/img/profile/avatar_default.png" alt = "foto perfil">
+        <img class = "imagen" src = "/img/profile/<%= locals.userLogged.image %>" alt = "foto perfil">
     </div>
 
     <form action = "/user/logout" method = "GET">
