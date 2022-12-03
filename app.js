@@ -17,6 +17,8 @@ const userProfileRouter = require("./routes/users.routes");
 const registerRouter = require("./routes/users.routes"); 
 const recuperarContraseniaRouter = require("./routes/recuperar-contrasenia.routes"); //este también debería ser cambiado a users.routes
 const logoutRouter = require("./routes/users.routes");
+const apiUserRoutes = require("./routes/apiUsers/usersApiRoutes")
+const apiProductRoutes = require("./routes/apiProducts/productsApiRoutes");; //
 
 //session
 app.use(session({ secret : "secret", resave : false, saveUninitialized : false }));
@@ -58,6 +60,8 @@ app.use("/recuperar-contrasenia", recuperarContraseniaRouter);
 app.use("/user", usersRouter);
 app.use("/user-profile", userProfileRouter);
 app.use("/logout", logoutRouter);
-
+app.use("/api/v1", apiUserRoutes);
+app.use("/api/v1", apiProductRoutes);
 // Creamos el servidor
 app.listen(3040, () => console.log('Servidor corriendo en el puerto 3040'));
+
