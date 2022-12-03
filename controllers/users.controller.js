@@ -165,7 +165,8 @@ modificarUsuario: async (req, res) => {
                 id : req.params.id
               }
           });
-              res.redirect('/')
+            req.session.destroy();
+            return res.redirect('/')
   
       } catch (error) {
           
