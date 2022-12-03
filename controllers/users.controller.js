@@ -75,7 +75,7 @@ modificarUsuario: async (req, res) => {
       } else {
           archivo = "avatar_default.png"
       }
-      console.log(req.body);
+   
       try {
           const usuarioEditado = await db.Usuario.update({
             name: req.body.name,
