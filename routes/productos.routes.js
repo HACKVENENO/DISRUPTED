@@ -44,8 +44,8 @@ router.post('/create', fileUpload.single("fotoProducto"), productosController.cr
 
 
 
-router.get('/edit/:id', productosController.modificarProducto);
-router.put('/edit/:id', fileUpload.single ('fotoProducto'), productosController.actualizarProducto);
+router.get('/edit/:id', productosController.modificarProductos);
+router.put('/edit/:id', fileUpload.single ('fotoProducto'), productosController.updateProducto);
 
 router.delete('/delete/:id', productosController.borrarProducto);
 

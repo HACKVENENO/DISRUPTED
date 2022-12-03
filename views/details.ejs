@@ -59,7 +59,7 @@
             <div class = "edicion">
 
                 <button><a href= "/productos/edit/<%= producto.id%>" class="action-button edit">EDITAR PRODUCTO</a></button>
-                <form action="/productos/delete/<%= producto.id%>_method=DELETE" method="POST" style="display: inline-flex" >
+                <form action="/productos/delete/<%= productoToEdit.id%>_method=DELETE" method="POST" style="display: inline-flex" >
                 <button type="submit" class="action-button-delete">ELIMINAR</button>
 
                 </form>
