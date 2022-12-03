@@ -44,31 +44,3 @@ const apiUserController = {
 
 }
 module.exports = apiUserController
-
-                // users: (req, res) => {
-                //     db.Usuario
-                //         .findAll()
-                //         .then(user => {
-                //             return res.status(200).json({
-                //                 id: user.id,
-                //                 nombre: user.name,
-                //                 email: user.email,
-                //                 detail: 'http://localhost:3040/api/v1/users' + user.id
-                //             });
-                //     })
-                // },
-
-            // },
-    
-
-    // list: async(req,res) => {
-    //     try {
-    //         const users = await db.Usuario.findAll()
-    //         const usuarios = users.map((user) => {
-    //             return {
-    //                 id: user.id,
-    //                 nombre: user.name,
-    //                 email: user.email,
-    //                 detail: 'http://localhost:3040/api/v1/users' + user.id
-    //             } res.json(usuarios);
-    //         }) 
