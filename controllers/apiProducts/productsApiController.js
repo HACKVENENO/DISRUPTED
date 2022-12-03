@@ -5,13 +5,19 @@ const apiProductController = {
         productos : async (req,res) => {
             try {
                 let product = await db.Productos.findAll()
-                let productos=product.map((producto)=> {
+                let productos = product.map((producto)=> {
                     return {
-                        id : producto.id_product,
-                        nombre : producto.nombre,
-                        caracteristicas : producto.caracteristicas,
-                        url : 'http://localhost:3005/api/v1/producto/' + producto.id,
-                        category:producto.category
+                        count: product.length,
+                        countByCategory: { 
+                            category: category.length
+                        }, 
+                        data: {
+                            id : producto.id,
+                            nombre : producto.name,
+                            description: producto.description,
+                            detail: 'http://localhost:3005/api/v1/producto/' + producto.id,
+                            category:producto.category
+                    }
                     }
                 })
                 res.status(200).json({productos})
@@ -21,14 +27,28 @@ const apiProductController = {
 
     },
     detalle : async (req, res) => {
-    try {
-        const user = await db.Usuario.findByPk(req.params.id);
-        res.json({ user: user});
+        try {
+            const producto = await db.Productos.findByPk(req.params.id);
+            const productos = {
+                data: {
+                    id: producto.id,
+                    imagen : producto.image,
+                    nombre: producto.name,
+                    precio: producto.price,
+                    color: producto.color,
+                    descripcion: producto.description,
+                    talle: producto.size,
+                    category: producto.category,
+                    stock: producto.stock,
 
-    } catch (error) {
-            console.log({error})
-        }
+                }
+            }
+            res.json({ productos });
 
+        } catch (error) {
+                console.log({error})
+            }
+        
     },
 
 }

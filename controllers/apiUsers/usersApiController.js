@@ -30,7 +30,7 @@ const apiUserController = {
                     id: user.id,
                     nombre: user.name,
                     email: user.email,
-                    image: user.image
+                    image: user.image,
                 }
             }
             res.json({ users });
