@@ -44,10 +44,10 @@ const apiProductController = {
                     descripcion: producto.description,
                     talle: producto.size,
                     category: producto.category,
-                    stock: producto.stock,
+                    stock: producto.stock
                 }
             }
-            res.json({productos});
+            res.status(200).json({ productos });
 
         } catch (error) {
                 console.log({error})
