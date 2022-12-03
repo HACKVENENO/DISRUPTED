@@ -5,18 +5,23 @@ const apiProductController = {
         productos : async (req,res) => {
             try {
                 let product = await db.Productos.findAll()
+                // let generos = [];
+                // for (let i = 1; i < 2; i ++ ){
+                //     let contador = product.filter((p)=> p.id_genre == i )
+                //     generos.push(contador.length)
+                // }
                 let productos = product.map((producto)=> {
                     return {
                         count: product.length,
-                        countByCategory: { 
-                            category: category.length
-                        }, 
+                        // countByCategory: { 
+                        //     // category: category.length
+                        // }, 
                         data: {
                             id : producto.id,
                             nombre : producto.name,
                             description: producto.description,
-                            detail: 'http://localhost:3005/api/v1/producto/' + producto.id,
-                            category:producto.category
+                            detail: 'http://localhost:3040/api/v1/products/' + producto.id,
+                            category:producto.category,
                     }
                     }
                 })
@@ -40,10 +45,9 @@ const apiProductController = {
                     talle: producto.size,
                     category: producto.category,
                     stock: producto.stock,
-
                 }
             }
-            res.json({ productos });
+            res.json({productos});
 
         } catch (error) {
                 console.log({error})

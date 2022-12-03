@@ -30,10 +30,10 @@ const apiUserController = {
                     id: user.id,
                     nombre: user.name,
                     email: user.email,
-                    image: user.image,
+                    image: user.image
                 }
             }
-            res.json({ users });
+            res.status(200).json({ users });
 
         } catch (error) {
                 console.log({error})
