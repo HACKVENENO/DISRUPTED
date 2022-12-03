@@ -77,7 +77,7 @@ updateUsuario: async (req, res) => {
       } else {
           archivo = usuarioToEdit.image
       }
-      console.log(req.body);
+   
       try {
           const usuarioEditado = await db.Usuario.update({
             name: req.body.name,
