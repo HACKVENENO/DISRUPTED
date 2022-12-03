@@ -60,6 +60,7 @@ crearProducto: async (req, res) => {
     size : req.body.size,
     category : req.body.category,
     stock : req.body.stock,
+    id_genero : 6
         });
     return res.redirect('/productos');
     } catch (error) {
@@ -115,19 +116,19 @@ updateProducto: async (req, res) => {
 },
 
 
-borrarProducto: async(req,res)=>{
-    try {
-        const borrarProducto = await db.Productos.destroy({
+borrarProducto: async function (req,res){
+     try {
+        await db.Productos.destroy({
             where:{
                 id: req.params.id
             }
         });
+            
             res.redirect('/productos')
 
     } catch (error) {
         
         console.log ({error})
-
     }
 }
 }
