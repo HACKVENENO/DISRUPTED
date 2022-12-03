@@ -40,95 +40,76 @@ add: function(req, res){
 },
 
 
-crearProducto: (req, res) => {
-//     try{
-//         const productoNuevo = await db.Productos.create({
-//               imagen: archivo,
-//               name : req.body.name,
-//               price : req.body.price,
-//               color : req.body.color,
-//               description : req.body.description,
-//               size : req.body.size,
-//               category : req.body.category,
-//               stock : req.body.stock,
-//         });
-//         console.log({productoNuevo});
-//         res.redirect('/products');
-//     } catch (error) {
-//         console.log({error});
-//     }
-// },
-
-
-// let file = req.file;
-
-// let archivo;
-
-// if (file) {
-//     archivo = req.file.filename
-// }   else {
-//     archivo = "product-DEFAULT.png"
-// }
-// console.log(archivo);
-    db.Productos.create({
-        imagen: product-DEFAULT.png,
-        name : req.body.name,
-        price : req.body.price,
-        color : req.body.color,
-        description : req.body.description,
-        size : req.body.size,
-        category : req.body.category,
-        stock : req.body.stock,
-    })
-    .then(()=>res.redirect ("products"))
+crearProducto: async (req, res) => {
+    let file = req.file;
+    
+    let archivo;
+    
+    if (file) {
+        archivo = req.file.filename
+    }   else {
+        archivo = "product-DEFAULT.png"
+    }
+    try{
+        const productoNuevo = await db.Productos.create({
+    image: archivo,
+    name : req.body.name,
+    price : req.body.price,
+    color : req.body.color,
+    description : req.body.description,
+    size : req.body.size,
+    category : req.body.category,
+    stock : req.body.stock,
+        });
+    return res.redirect('/productos');
+    } catch (error) {
+        res.send({ error });
+        console.log({error});
+    }
 },
 
-modificarProducto: async (req, res) => {
+modificarProductos: async (req, res) => {
     try {
-        const producto = await db.Productos.findByPk(req.params.id);
-        console.log(producto);
-        res.render('/edit', { productos: productos });
+    const productoToEdit = await db.Productos.findByPk(req.params.id)
+    res.render('product-edit-form', {productoToEdit: productoToEdit})
     } catch (error) {
         console.log(error)
     }
 },
 
-actualizarProducto: async (req, res) => {
+updateProducto: async (req, res) => {
     let file = req.file;
-    const productoEditado = db.Productos
-
+    const productoToEdit = await db.Productos.findByPk(req.params.id)
     let archivo;
 
     if (file) {
         archivo = req.file.filename
     } else {
-
-        archivo = productoEditado.imagen
+        archivo = productoToEdit.imagen
     }
-
+    console.log(req.body);
     try {
-        await productoEditado.update({
-              name : req.body.name,
-              price : req.body.price,
-              bought : req.body.bought,
-              color : req.body.color,
-              description : req.body.description,
-              size : req.body.size,
-              category : req.body.category,
-              stock : req.body.stock,
-              imagen: archivo
+        const productoEditado = await db.Productos.update({
+            image: archivo,
+            name : req.body.name,
+            price : req.body.price,
+            color : req.body.color,
+            description : req.body.description,
+            size : req.body.size,
+            category : req.body.category,
+            stock : req.body.stock,
             },
         {
             where :{
-                id_product : req.params.user_id
+                id : req.params.id
             }
-        }
-        )
+        })
 
          console.log({ productoEditado })
-        res.redirect('/')
+        return res.redirect('/productos')
     } catch (error) {
         res.send({ error })
+        console.log({error});
     }
 
 },
@@ -136,12 +117,12 @@ actualizarProducto: async (req, res) => {
 
 borrarProducto: async(req,res)=>{
     try {
-        const productoABorrar = await db.Productos.destroy({
+        const borrarProducto = await db.Productos.destroy({
             where:{
-                id_product: req.params.id_user
+                id: req.params.id
             }
         });
-            res.redirect('/')
+            res.redirect('/productos')
 
     } catch (error) {
         

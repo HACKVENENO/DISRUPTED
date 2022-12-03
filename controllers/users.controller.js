@@ -56,7 +56,7 @@ modificarUsuario: async (req, res) => {
     }
 },
   
-  updateUsuario: async (req, res) => {
+updateUsuario: async (req, res) => {
  
     const resultValidation = validationResult(req);
     console.log(resultValidation);
@@ -65,7 +65,9 @@ modificarUsuario: async (req, res) => {
         return res.render('register', {
             errors : resultValidation.mapped()
          });
-    } else {      
+    } else {     
+        const usuarioToEdit = await db.Usuario.findByPk(req.params.id)
+        
       let file = req.file;
   
       let archivo;
@@ -73,7 +75,7 @@ modificarUsuario: async (req, res) => {
       if (file) {
           archivo = req.file.filename
       } else {
-          archivo = "avatar_default.png"
+          archivo = usuarioToEdit.image
       }
    
       try {
@@ -100,7 +102,8 @@ modificarUsuario: async (req, res) => {
       }
     }
   
-  },
+  },  
+
   login: (req,res)=>{
               return res.render("login");
     },
