@@ -1,5 +1,6 @@
 import { json } from "express"
 import React, { useEffect, useState } from "react"
+import * as express from "express";
 
 const Categorias = (props) => {
     // const[categorias, setCategorias]= useState({})
