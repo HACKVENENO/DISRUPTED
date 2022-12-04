@@ -1,5 +1,6 @@
 const db = require("../../database/models");
 const Op = db.sequelize.Op
+const { Sequelize, dataTypes } = require("sequelize");
 
 
 const apiUserController = {
@@ -31,7 +32,7 @@ const apiUserController = {
                     id: user.id,
                     nombre: user.name,
                     email: user.email,
-                    image: 'img/profile/' + user.image 
+                    image: 'localhost:3040/public/img/' + user.image
                 }
             }
             res.status(200).json({ users });
@@ -45,3 +46,19 @@ const apiUserController = {
 
 }
 module.exports = apiUserController
+
+
+// img: {
+//     type: dataTypes.STRING
+// },
+// detail: {
+//     type: dataTypes.VIRTUAL,
+//     get() {
+//         return '/apiUsers/' + this.id;
+//     }
+// },
+// image: {
+//     type: dataTypes.VIRTUAL,
+//     get() {
+//         return '/img/profile/' + this.image;
+//     }
