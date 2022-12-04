@@ -1,6 +1,7 @@
 const db = require("../../database/models");
 const Op = db.sequelize.Op
 
+
 const apiUserController = {
     usuarios : async (req,res) => {
                 try {
@@ -30,7 +31,7 @@ const apiUserController = {
                     id: user.id,
                     nombre: user.name,
                     email: user.email,
-                    image: user.image
+                    image: 'img/profile/' + user.image 
                 }
             }
             res.status(200).json({ users });

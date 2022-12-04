@@ -1,21 +1,26 @@
 const db = require("../../database/models");
 const Op = db.sequelize.Op
+const { Sequelize } = require("sequelize");
+
 
 const apiProductController = {
         productos : async (req,res) => {
             try {
                 let product = await db.Productos.findAll()
-                // let generos = [];
-                // for (let i = 1; i < 2; i ++ ){
-                //     let contador = product.filter((p)=> p.id_genre == i )
-                //     generos.push(contador.length)
-                // }
+                let categorias = await db.Productos.findAll({
+                    attributes: ["category",
+                    [Sequelize.fn("COUNT", Sequelize.col("category")), "productosPorCategoria"],
+                ],
+                    group: "category"
+                });
+                
                 let productos = product.map((producto)=> {
                     return {
                         count: product.length,
-                        // countByCategory: { 
-                        //     // category: category.length
-                        // }, 
+                        countByCategory: { 
+                            categorias
+
+                        }, 
                         data: {
                             id : producto.id,
                             nombre : producto.name,
@@ -57,3 +62,4 @@ const apiProductController = {
 
 }
 module.exports = apiProductController
+
