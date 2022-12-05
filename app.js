@@ -3,6 +3,9 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 const path = require('path');
 const app = express();
+const cors = require('cors')
+
+app.use(cors())
 
 //middlewares
 const loggedMiddlewares = require("./middlewares/loggedMiddlewares");
