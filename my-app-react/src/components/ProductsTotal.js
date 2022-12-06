@@ -1,29 +1,24 @@
 // import React, { useEffect, useState } from "react"
 import React, { Component } from "react";
 
-
 class ProductsTotal extends Component {
     state = {
         productos: [],
-    }
-    
+    }  
         componentDidMount() {
             fetch('http://localhost:3040/api/v1/products')
             .then((res) => {
                 return res.json();
               })
               .then((productos) => {
-                this.setState({ productos: productos.data });
+                this.setState({ productos: productos.productos });
                 console.log(productos);
               })
             .catch((error) => console.log(error))
 
-        }
-   
-   
+        }  
     render() {
         return (
-            
                     <div> 
 
                         <ul>
@@ -31,9 +26,11 @@ class ProductsTotal extends Component {
                                 this.state.productos.map((producto, i) => {
                                     return (
                                         <li key = {i}>
-                                            <h3> {producto.nombre} </h3>
-                                            <h2> {producto.description} </h2>
-                                            <h2> {producto.category} </h2>
+                                    
+                                            <h2> Nombre: {producto.data.nombre} </h2>
+                                            <h3> Producto número: {i+=1} </h3>
+                                            <h3> Descripción: {producto.data.description} </h3>
+                                            <h3> Categoría: {producto.data.category} </h3>
                                         </li>
                                     )
                                     })
@@ -44,9 +41,7 @@ class ProductsTotal extends Component {
 
                     </div>
             
-            
             );
-
     }
 }
 

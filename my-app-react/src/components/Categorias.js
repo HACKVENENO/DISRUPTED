@@ -31,8 +31,8 @@ class Categorias extends Component {
                                 this.state.categorias.map((categoria, i) => {
                                     return (
                                         <li key = {i}>
-                                            <h3> {categoria.category} </h3>
-                                            <h2> {categoria.productosPorCategoria} </h2>
+                                            <h1> Categoría:{categoria.category} </h1>
+                                            <h2> Cantidad de productos por categoría: {categoria.productosPorCategoria} </h2>
                                         </li>
                                     )
                                     })
