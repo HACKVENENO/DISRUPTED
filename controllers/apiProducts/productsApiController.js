@@ -4,23 +4,44 @@ const { Sequelize } = require("sequelize");
 
 
 const apiProductController = {
+        
+        categorias: async (req, res) => {
+            try{
+            let product = await db.Productos.findAll()
+            let categorias = await db.Productos.findAll({
+                attributes: ["category",
+                [Sequelize.fn("COUNT", Sequelize.col("category")), "productosPorCategoria"],
+            ],
+                group: "category"
+            });
+
+            let countByCategory = {
+                count: product.length,
+                categorias
+            }
+            res.status(200).json({countByCategory})
+        } catch (error) {
+            console.log({error})       
+        }
+        },
+
         productos : async (req,res) => {
             try {
                 let product = await db.Productos.findAll()
-                let categorias = await db.Productos.findAll({
-                    attributes: ["category",
-                    [Sequelize.fn("COUNT", Sequelize.col("category")), "productosPorCategoria"],
-                ],
-                    group: "category"
-                });
+                // let categorias = await db.Productos.findAll({
+                //     attributes: ["category",
+                //     [Sequelize.fn("COUNT", Sequelize.col("category")), "productosPorCategoria"],
+                // ],
+                //     group: "category"
+                // });
                 
                 let productos = product.map((producto)=> {
                     return {
-                        count: product.length,
-                        countByCategory: { 
-                            categorias
+                        // count: product.length,
+                        // countByCategory: { 
+                        //     categorias
 
-                        }, 
+                        // }, 
                         data: {
                             id : producto.id,
                             nombre : producto.name,

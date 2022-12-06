@@ -2,10 +2,9 @@
 // import ContentWrapper from "./ContentWrapper";
 import { BrowserRouter, Routes, Route, NavLink, Switch } from "react-router-dom";
 import Usuario from "./Usuario";
-import Home from "./Home";
 import ProductsTotal from "./ProductsTotal";
 import Categorias from "./Categorias";
-import Generos from "./Generos";
+
 // import Route404 from "./Route404";
 
 function RouterApp() {
@@ -26,11 +25,9 @@ function RouterApp() {
    
         <Switch>
           
-          <Route path={"/users/:id"} component={Usuario} />
+          <Route path={"/lastUser"} component={Usuario} />
           <Route path={"/products/total"} component={ProductsTotal} />
           <Route path={"/products/categorias"} component={Categorias} />
-          <Route path={"/genres"} component={Generos} />
-          <Route path={"/"} element={Home} />
 
         </Switch>
       </div>
