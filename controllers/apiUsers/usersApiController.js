@@ -32,7 +32,7 @@ const apiUserController = {
                     id: user.id,
                     nombre: user.name,
                     email: user.email,
-                    image: 'localhost:3040/public/img/' + user.image
+                    image: 'http://localhost:3040/img/profile/' + user.image
                 }
             }
             res.status(200).json({ users });

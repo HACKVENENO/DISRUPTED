@@ -1,19 +1,16 @@
 import logo from "./logo.svg";
 import "./App.css" ;
 import React from 'react'
-import * as express from "express";
 
 
 import { Routes, Route, Link } from "react-router-dom"
-// import User from ".componentes/Usuario";
-// import Home from ".componentes/Home";
-// import ProductsTotal from ".componentes/ProductsTotal";
+import Usuario from "./components/Usuario";
+import Home from "./components/Home";
+import ProductsTotal from "./components/ProductsTotal";
 import Categorias from "./components/Categorias";
-// import GenresTotal from ".componentes/GenresTotal";
+import Generos from "./components/Generos";
 // import Route404 from ".componentes/Route404";
 
-const cors = require('cors')
-const app = express();
 
 //COMPONENTES
 // import RouterApp from "./components/RouterApp";
@@ -24,13 +21,12 @@ function App() {
 
   return (
     <Routes>
-            {/* <Route path={"/users/total"} element={<UsersTotal/>} />
-            <Route path={"/users/:id"} element={<User/>} />
-            <Route path={"/products/total"} element={<ProductsTotal/>} /> */}
+            <Route path={"/users/:id"} element={<Usuario/>} />
+            <Route path={"/products/total"} element={<ProductsTotal/>} />
+            <Route path={"/products/total"} element={<ProductsTotal/>} />
             <Route path={"/products/categorias"} element={<Categorias/>} />
-            {/* <Route path={"/generos/total"} element={<GenresTotal/>} />
             <Route path={"/"} element={<Home/>} />
-            <Route path={"*"} element={<Route404/>} /> */}
+            {/* <Route path={"*"} element={<Route404/>} /> */}
     </Routes>
   )
 }

@@ -1,16 +1,14 @@
-import { json } from "express"
 import React, { useEffect, useState } from "react"
-import * as express from "express";
 
 const Categorias = (props) => {
     // const[categorias, setCategorias]= useState({})
     
     useEffect(()=>{
-        const contador = async()=> {
-            const categorys = await fetch('http://localhost:3040/api/v1/products').then(res=>res.json())
-            
-            // return categorys
+        const contador = ()=> {
+            fetch('http://localhost:3040/api/v1/products').then(res=>res.json())
         }
+        console.log({contador});
+
         // const d = contador()
         // setCategorias(d)
 
@@ -20,6 +18,8 @@ const Categorias = (props) => {
     return (
             <>
                 <div> 
+
+                    <h1>Categorias</h1>
                
 
                 </div>

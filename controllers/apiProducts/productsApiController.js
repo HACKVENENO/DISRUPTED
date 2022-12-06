@@ -42,7 +42,7 @@ const apiProductController = {
             const productos = {
                 data: {
                     id: producto.id,
-                    imagen : producto.image,
+                    imagen : 'http://localhost:3040/img/' + producto.image,
                     nombre: producto.name,
                     precio: producto.price,
                     color: producto.color,
