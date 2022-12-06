@@ -26,10 +26,11 @@ class ProductsTotal extends Component {
                                 this.state.productos.map((producto, i) => {
                                     return (
                                         <li key = {i}>
-                                            <h3> Producto número: {i} </h3>
-                                            <h3> Nombre: {producto.data.nombre} </h3>
-                                            <h2> Descripción: {producto.data.description} </h2>
-                                            <h2> Categoría: {producto.data.category} </h2>
+                                    
+                                            <h2> Nombre: {producto.data.nombre} </h2>
+                                            <h3> Producto número: {i+=1} </h3>
+                                            <h3> Descripción: {producto.data.description} </h3>
+                                            <h3> Categoría: {producto.data.category} </h3>
                                         </li>
                                     )
                                     })
