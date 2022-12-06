@@ -10,6 +10,15 @@
     <%- include('./partials/header.ejs') %>
 
     <main class = "login">
+        
+        <div id="errores">
+            <ul>
+                
+            </ul>
+        </div>
+
+
+
         <form action = "/user/login" method = "POST">
             <div>
                 <h2>INGRESÁ</h2>
@@ -53,7 +62,7 @@
          <!-- footer-->
          <%- include('./partials/footer.ejs') %>  
 
-         <script src="/js/validator.js"></script>
+         <script src="/js/validatorLogin.js"></script>
 
 </body>
 </html>

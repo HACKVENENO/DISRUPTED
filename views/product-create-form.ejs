@@ -9,6 +9,13 @@
     <%- include('./partials/header.ejs') %>
 
 <main class = "crearProducto">
+
+	<div id="errores">
+		<ul>
+
+		</ul>
+	</div>
+
 	<form action="/productos/create" method="POST" enctype="multipart/form-data">
 		<div>
 			<h2>CREAR PRODUCTO</h2>
@@ -107,10 +114,12 @@
 	</form>	
 </main>
 
+<script src="/js/validatorCreate.js"></script>
+
      <!-- footer-->
      <%- include('./partials/footer.ejs') %>    
 
-	 <script src="/js/validator.js"></script>
+	 <script src="/js/validatorCreate.js"></script>
 
 </body>
 </html>

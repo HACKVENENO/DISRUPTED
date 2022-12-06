@@ -5,25 +5,10 @@ window.addEventListener('load', function(){
 
         let errores =[];
 
-        let campoNombre = document.querySelector('#name');
-        let campoApellido = document.querySelector('#lastName');
         let campoEmail = document.querySelector('#email');
         let campoPassword = document.querySelector('#password');
 
-        if (campoNombre.value.trim()== ''){
-            errores.push ("El espacio del NOMBRE debe estar completo")
-        } else if (campoNombre.value.length < 2){
-            errores.push ("El NOMBRE debe tener al menos 2 letras")
-        };
-
-
-        if (campoApellido.value.trim()== ''){
-            errores.push ("El espacio del APELLIDO debe estar completo")
-        } else if (campoNombre.value.length < 2){
-            errores.push ("El APELLIDO debe tener al menos 2 letras")
-        };
-
-
+      
         if (campoEmail.value== ''){
             errores.push ("El ingreso del EMAIL es obligatorio")
         } else if (!expresionregular.test(campoEmail.value)){
