@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Usuario extends Component {
     state = {
-        usuarios: [],
+        usuario: {},
     }
         componentDidMount() {
             fetch('http://localhost:3040/api/v1/users')
@@ -10,8 +10,8 @@ class Usuario extends Component {
                 return res.json();
               })
               .then((usuarios) => {
-                this.setState({ usuarios: usuarios.usuarios });
                 const usuario = usuarios.usuarios.pop()
+                this.setState({ usuario: usuario.data });
                 console.log(usuario);
               })
             .catch((error) => console.log(error))
@@ -20,16 +20,11 @@ class Usuario extends Component {
     render() {
         return (
                     <div> 
-                            {
-                                 this.state.usuarios.map((usuario, i) => {
-                                    return (
-                                        <li key = {i}>
-                                            <h3> {usuario.data.nombre} </h3>
-                                            <h2> {usuario.data.email} </h2>
-                                        </li>
-                                    )
-                                    })
-                                }
+                        <h3> ÚLTIMO USUARIO AGREGADO: </h3>
+                        <h3> Nombre: {this.state.usuario.nombre} </h3>
+                        <h2> Email: {this.state.usuario.email} </h2>
+
+                              
                     </div> 
             );
     }
