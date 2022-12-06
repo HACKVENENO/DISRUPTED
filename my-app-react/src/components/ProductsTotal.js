@@ -1,31 +1,54 @@
-import React, { useEffect, useState } from "react"
+// import React, { useEffect, useState } from "react"
+import React, { Component } from "react";
 
-const ProductsTotal = (props) => {
-    // const[categorias, setCategorias]= useState({})
+
+class ProductsTotal extends Component {
+    state = {
+        productos: [],
+    }
     
-    // useEffect(()=>{
-    //     const contador = ()=> {
-    //          fetch('http://localhost:3040/api/v1/products').then(res=>res.json())
+        componentDidMount() {
+            fetch('http://localhost:3040/api/v1/products')
+            .then((res) => {
+                return res.json();
+              })
+              .then((productos) => {
+                this.setState({ productos: productos.data });
+                console.log(productos);
+              })
+            .catch((error) => console.log(error))
+
+        }
+   
+   
+    render() {
+        return (
             
-    //         // return categorys
-    //     }
-    //     // const d = contador()
-    //     // setCategorias(d)
+                    <div> 
 
-    // }, []
-    // )
+                        <ul>
+                            {
+                                this.state.productos.map((producto, i) => {
+                                    return (
+                                        <li key = {i}>
+                                            <h3> {producto.nombre} </h3>
+                                            <h2> {producto.description} </h2>
+                                            <h2> {producto.category} </h2>
+                                        </li>
+                                    )
+                                    })
+                                }
+                            
+                        </ul>
+                
 
-    return (
-            <>
-                <div> 
-                    <h1>Productos Total</h1>
+                    </div>
+            
+            
+            );
 
-                </div>
-            </>
-        
-    )
+    }
 }
-
 
 
 export default ProductsTotal

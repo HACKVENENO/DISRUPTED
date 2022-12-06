@@ -1,33 +1,53 @@
-import React, { useEffect, useState } from "react"
+// import React, { useEffect, useState } from "react"
+import React, { Component } from "react";
 
-const Categorias = (props) => {
-    // const[categorias, setCategorias]= useState({})
+
+class Categorias extends Component {
+    state = {
+        categorias: [],
+    }
     
-    useEffect(()=>{
-        const contador = ()=> {
-            fetch('http://localhost:3040/api/v1/products').then(res=>res.json())
+        componentDidMount() {
+            fetch('http://localhost:3040/api/v1/products/categorias')
+            .then((res) => {
+                return res.json();
+              })
+              .then((categorias) => {
+                this.setState({ categorias: categorias.countByCategory.categorias });
+             
+              })
+            .catch((error) => console.log(error))
+
         }
-        console.log({contador});
+   
+   
+    render() {
+        return (
+            
+                    <div> 
 
-        // const d = contador()
-        // setCategorias(d)
+                        <ul>
+                            {
+                                this.state.categorias.map((categoria, i) => {
+                                    return (
+                                        <li key = {i}>
+                                            <h3> {categoria.category} </h3>
+                                            <h2> {categoria.productosPorCategoria} </h2>
+                                        </li>
+                                    )
+                                    })
+                                }
+                            
+                        </ul>
+                
 
-    }, []
-    )
+                    </div>
+            
+            
+            );
 
-    return (
-            <>
-                <div> 
-
-                    <h1>Categorias</h1>
-               
-
-                </div>
-            </>
-        
-    )
+    }
 }
-
 
 
 export default Categorias
