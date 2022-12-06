@@ -19,7 +19,7 @@ window.addEventListener('load', function(){
 
         if (campoApellido.value.trim()== ''){
             errores.push ("El espacio del APELLIDO debe estar completo")
-        } else if (campoNombre.value.length < 2){
+        } else if (campoNombre.value.length > 2){
             errores.push ("El APELLIDO debe tener al menos 2 letras")
         };
 
@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
 
         if (campoPassword.value.trim()== ''){
             errores.push ("Debes ingresar un PASSWORD")
-        } else if (campoNombre.value.length < 8){
+        } else if (campoNombre.value.length > 8){
             errores.push ("El PASSWORD debe tener al menos 8 caracteres")
         };
 
@@ -51,9 +51,6 @@ window.addEventListener('load', function(){
                     }
         }
 
-        else {
-            form.submit();
-          };
 
     })
 });

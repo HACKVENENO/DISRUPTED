@@ -12,15 +12,15 @@ window.addEventListener("load", function () {
    
 
         if (campoNombre.value.trim() == "") {
-          errores.push("el campo nombre tiene que estar completo")
-        } else if (campoNombre.value.length < 5) {
-            alert("el nombre debe tener mas de 5 caracteres")
+          errores.push("El campo nombre tiene que estar completo")
+        } else if (campoNombre.value.length > 5) {
+            alert("El nombre debe tener mas de 5 caracteres")
         };
 
 
         if (campoDescripcion.value.trim() == "") {
-            errores.push("el campo de descripción tiene que estar completo")
-        } else if (campoCaracteristicas.value.length < 10) {
+            errores.push("La descripción tiene que estar completa")
+        } else if (campoCaracteristicas.value.length > 10) {
             errores.push("La descripción debe tener mas de 10 caracteres")
         };
 

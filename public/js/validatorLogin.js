@@ -18,7 +18,7 @@ window.addEventListener('load', function(){
 
         if (campoPassword.value.trim()== ''){
             errores.push ("Debes ingresar un PASSWORD")
-        } else if (campoNombre.value.length < 8){
+        } else if (campoNombre.value.length > 8){
             errores.push ("El PASSWORD debe tener al menos 8 caracteres")
         };
 
@@ -35,10 +35,6 @@ window.addEventListener('load', function(){
 
                     }
         }
-
-        else {
-            form.submit();
-          };
 
     })
 });

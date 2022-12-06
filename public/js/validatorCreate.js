@@ -7,20 +7,20 @@ window.addEventListener("load", function () {
         let errores = [];
 
         let campoNombre = document.querySelector("#name");
-        let campoFotoProducto = document.querySelector("#imagen");
+        let campoFotoProducto = document.querySelector("#image");
         let campoDescripcion = document.querySelector("#description");
    
 
         if (campoNombre.value.trim() == "") {
-          errores.push("el campo nombre tiene que estar completo")
-        } else if (campoNombre.value.length < 5) {
-            alert("el nombre debe tener mas de 5 caracteres")
+          errores.push("El nombre del producto tiene que estar completo")
+        } else if (campoNombre.value.length > 5) {
+            alert("El nombre del producto debe tener mas de 5 caracteres")
         };
 
 
         if (campoDescripcion.value.trim() == "") {
-            errores.push("el campo de descripción tiene que estar completo")
-        } else if (campoCaracteristicas.value.length < 10) {
+            errores.push("La descripción no puede estar vacía")
+        } else if (campoCaracteristicas.value.length > 10) {
             errores.push("La descripción debe tener mas de 10 caracteres")
         };
 
