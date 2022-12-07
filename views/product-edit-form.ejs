@@ -18,7 +18,7 @@
             <form action="/productos/edit/<%= productoToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="div-1">
                             <label for="name">NOMBRE DEL PRODUCTO</label>
-                            <input type="text" id="name" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
+                            <input type="text" class="name4" name="name" value="<%= productoToEdit.name %>" placeholder="Ej: Campera Negra" class="form-input">
                     </div>
                 <!-- </form> -->
 
@@ -106,7 +106,7 @@
                     </div>
                     <div  class = "div-3">
                         <label>DESCRIPCIÓN</label>
-                        <textarea name = "description"  id = "description"><%=productoToEdit.description%></textarea>
+                        <textarea name = "description"  class = "description4"><%=productoToEdit.description%></textarea>
                     </div>
                 <!-- </form> -->
 
@@ -135,7 +135,7 @@
           <!-- footer-->
           <%- include('./partials/footer.ejs') %>  
 
-          <script src="/js/validatorModify.js"></script>
-
-</body>
+          
+        </body>
+        <script src="/js/validatorModify.js"></script>
 </html>

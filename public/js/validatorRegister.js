@@ -7,8 +7,8 @@ window.addEventListener('load', function(){
 
         let campoNombre = document.querySelector('#name');
         let campoApellido = document.querySelector('#lastName');
-        let campoEmail = document.querySelector('#email');
-        let campoPassword = document.querySelector('#password');
+        let campoEmail = document.querySelector('.email2');
+        let campoPassword = document.querySelector('.password2');
 
         if (campoNombre.value.trim()== ''){
             errores.push ("El espacio del NOMBRE debe estar completo")
@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
 
         if (campoPassword.value.trim()== ''){
             errores.push ("Debes ingresar un PASSWORD")
-        } else if (campoNombre.value.length > 8){
+        } else if (campoNombre.value.length < 8){
             errores.push ("El PASSWORD debe tener al menos 8 caracteres")
         };
 

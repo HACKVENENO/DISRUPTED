@@ -3,35 +3,35 @@ window.addEventListener('load', function(){
 
     formulario.addEventListener('submit', function(e){
 
-        let errores =[];
+        let errores2 =[];
 
         let campoEmail = document.querySelector('#email');
         let campoPassword = document.querySelector('#password');
 
       
         if (campoEmail.value== ''){
-            errores.push ("El ingreso del EMAIL es obligatorio")
+            errores2.push ("El ingreso del EMAIL es obligatorio")
         } else if (!expresionregular.test(campoEmail.value)){
-            errores.push ("Debes ingresar un EMAIL válido")
+            errores2.push ("Debes ingresar un EMAIL válido")
         };
 
 
         if (campoPassword.value.trim()== ''){
-            errores.push ("Debes ingresar un PASSWORD")
-        } else if (campoNombre.value.length > 8){
-            errores.push ("El PASSWORD debe tener al menos 8 caracteres")
+            errores2.push ("Debes ingresar un PASSWORD")
+        } else if (campoNombre.value.length < 8){
+            errores2.push ("El PASSWORD debe tener al menos 8 caracteres")
         };
 
-        let ulerrores =document.querySelector('#errores')
-        console.log(errores)
-        console.log(ulerrores)
+        let ulerrores2 =document.querySelector('#errores')
+        console.log(errores2)
+        console.log(ulerrores2)
 
-        ulerrores.innerHTML=""
+        ulerrores2.innerHTML=""
         
-        if(errores.length>0){
+        if(errores2.length>0){
             e.preventDefault();
-            for (let i=0; i<errores.length; i++){
-            ulerrores.innerHTML+="<li>"+errores[i] + "</li>"
+            for (let i=0; i<errores2.length; i++){
+            ulerrores2.innerHTML+="<li>"+errores2[i] + "</li>"
 
                     }
         }
