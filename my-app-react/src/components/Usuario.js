@@ -12,7 +12,7 @@ class Usuario extends Component {
               .then((usuarios) => {
                 const usuario = usuarios.usuarios.pop()
                 this.setState({ usuario: usuario.data });
-                console.log(usuario);
+                // console.log(usuario);
               })
             .catch((error) => console.log(error))
         }

@@ -1,38 +1,25 @@
-// import Sidebar from "./SideBar";
-// import ContentWrapper from "./ContentWrapper";
-import { BrowserRouter, Routes, Route, NavLink, Switch } from "react-router-dom";
+
+import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Usuario from "./Usuario";
 import ProductsTotal from "./ProductsTotal";
-import Categorias from "./Categorias";
+import Categorias from './Categorias'
+import MainNavigation from "./MainNavigation";
 
-// import Route404 from "./Route404";
 
 function RouterApp() {
+
   return (
     <BrowserRouter>
-      <div id="wrapper">
-        <nav>
-          <ul>
-            <li>
-              <NavLink exact to="/home" activeClassName ="activo">
-              Home
-              </NavLink>
-            </li>
-          </ul>
-
-
-        </nav>
-   
-        <Switch>
-          
-          <Route path={"/lastUser"} component={Usuario} />
-          <Route path={"/products/total"} component={ProductsTotal} />
-          <Route path={"/products/categorias"} component={Categorias} />
-
-        </Switch>
-      </div>
+      <MainNavigation>
+        <Routes>
+                <Route path={"/lastUser"} element={<Usuario/>} />
+                <Route path={"/products/total"} element={<ProductsTotal/>} />
+                <Route path={"/products/categorias"} element={<Categorias/>} />
+        </Routes>
+      </MainNavigation>
     </BrowserRouter>
-  );
+  )
 }
 
 export default RouterApp;

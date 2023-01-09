@@ -1,30 +1,37 @@
-import "./App.css" ;
 import React from 'react'
 
-
-import { Routes, Route } from "react-router-dom"
-import Usuario from "./components/Usuario";
-import ProductsTotal from "./components/ProductsTotal";
-import Categorias from "./components/Categorias";
-
+import "./assets/css/app.css";
 
 
 //COMPONENTES
-// import RouterApp from "./components/RouterApp";
-// import { application } from "express";
+import RouterApp from "./components/RouterApp";
 
-// app.use(cors())
 function App() {
-
-  return (
-    <Routes>
-            <Route path={"/lastUser"} element={<Usuario/>} />
-            <Route path={"/products/total"} element={<ProductsTotal/>} />
-            <Route path={"/products/categorias"} element={<Categorias/>} />
-
-
-    </Routes>
-  )
+  return <RouterApp />;
 }
 
 export default App;
+
+
+
+
+
+
+
+// app.use(cors())
+// function App() {
+
+//   return (
+//     <BrowserRouter>
+//       <MainNavigation>
+//         <Routes>
+//                 <Route path={"/lastUser"} element={<Usuario/>} />
+//                 <Route path={"/products/total"} element={<ProductsTotal/>} />
+//                 <Route path={"/products/categorias"} element={<Categorias/>} />
+//         </Routes>
+//       </MainNavigation>
+//     </BrowserRouter>
+//   )
+// }
+
+// export default App;
