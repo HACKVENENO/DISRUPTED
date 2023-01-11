@@ -12,9 +12,10 @@ function RouterApp() {
 
   return (
     <BrowserRouter>
-    <div id="wrapper">
+    <div style= {{display:'block'}} id="wrapper">
       <MainNavigation/>
         <Routes>
+        {/* <Route path='/' element={<PrimaryLayout />}> */}
                 <Route path="/" component={<ContentWrapper/>}/>
                 <Route path={"/lastUser"} element={<Usuario/>} />
                 <Route path={"/products/total"} element={<ProductsTotal/>} />

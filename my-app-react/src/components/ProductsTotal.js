@@ -20,7 +20,11 @@ class ProductsTotal extends Component {
         }  
     render() {
         return (
-                    <div> 
+            <div style={{display: 'block'}}>
+            <div className="card-body fondoCaja" style={{display: 'block', boxSizing: 'border-box'}}>
+                <div className="text-left">
+                            
+                                <div className="card-header py-3" style={{backgroundColor:'#772e4a', color:'#fcb8d2', width: '40%', display: 'block', borderRadius: '8px', margin: 'auto'}}>
 
                         <ul>
                             {
@@ -28,10 +32,10 @@ class ProductsTotal extends Component {
                                     return (
                                         <li key = {i}>
                                     
-                                            <h2> Nombre: {producto.data.nombre} </h2>
-                                            <h3> Producto número: {i+=1} </h3>
-                                            <h3> Descripción: {producto.data.description} </h3>
-                                            <h3> Categoría: {producto.data.category} </h3>
+                                            <h2 style={{backgroundColor:'#77002e',  borderRadius: '8px', padding: '12px', textAlign: 'center'}}> Nombre: {producto.data.nombre} </h2>
+                                            <h3 style={{backgroundColor:'77002e'}}> Producto número: {i+=1} </h3>
+                                            <h3 style={{backgroundColor:'77002e'}}> Descripción: {producto.data.description} </h3>
+                                            <h3 style={{backgroundColor:'77002e'}}> Categoría: {producto.data.category} </h3>
                                         </li>
                                     )
                                     })
@@ -40,7 +44,11 @@ class ProductsTotal extends Component {
                         </ul>
                 
 
+                          
+                            </div>                        
                     </div>
+                </div>
+                </div>
             
             );
     }

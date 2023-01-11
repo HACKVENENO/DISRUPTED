@@ -20,15 +20,15 @@ class Usuario extends Component {
    
     render() {
         return (
-            <div>
-            <div className="card-body fondoCaja" style={{display: 'flex', boxSizing: 'border-box'}}>
+            <div style={{display: 'block'}}>
+            <div  style={{display: 'block', boxSizing: 'border-box'}}>
                 <div className="text-left">
-                            <div className="card shadow mb-4">
+                            
                                 <div className="card-header py-3" style={{backgroundColor:'#772e4a', color:'#fcb8d2', width: '400px', display: 'block', borderRadius: '8px', margin: 'auto'}}>
-                        <h2 style={{backgroundColor:'#77002e', padding: '12px', textAlign: 'center'}}> Último Usuario Agregado </h2>
+                        <h2 style={{backgroundColor:'#77002e',borderRadius: '8px', padding: '12px', textAlign: 'center'}}> Último Usuario Agregado </h2>
                         <h3 style={{backgroundColor:'77002e'}}> Nombre: {this.state.usuario.nombre} </h3>
                         <h3 style={{backgroundColor:'77002e'}}> Email: {this.state.usuario.email} </h3>
-                                </div>      
+                                  
                             </div>                        
                     </div>
                 </div>

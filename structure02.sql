@@ -52,7 +52,7 @@ CREATE TABLE `productos` (
   `image` varchar(45) NOT NULL,
   `name` varchar(200) NOT NULL,
   `price` decimal(10,0) NOT NULL,
-  `bought` int(11) NOT NULL,
+  `bought` int(11) ,
   `color` varchar(20) NOT NULL,
   `description` varchar(200) NOT NULL,
   `size` varchar(3) NOT NULL,
