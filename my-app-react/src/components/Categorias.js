@@ -1,5 +1,6 @@
 // import React, { useEffect, useState } from "react"
 import React, { Component } from "react";
+//import classes from './Categorias.module.css'
 
 
 class Categorias extends Component {
